@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dxh98.cn">
-  <title>Vue入门之写一个简易的Todolist | 人模人样的搬砖老段</title>
+  <title>初次见面，redux你好 | 人模人样的搬砖老段</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Todolist待办事项。效果参考网址vue-todolist示例效果中用的是localStorage本地存储，所以直接定义了空数组，利用数组的方式。">
-<meta name="keywords" content="Vue">
+  <meta name="description" content="Redux简介先放一下redux官网，多读一读官方文档总是有好处的。redux官网 redux是一个用于Javascript应用的可预测状态容器">
+<meta name="keywords" content="React,redux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue入门之写一个简易的Todolist">
-<meta property="og:url" content="http:&#x2F;&#x2F;dxh98.cn&#x2F;Vue%E5%85%A5%E9%97%A8%E4%B9%8B%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E7%9A%84Todolist&#x2F;index.html">
+<meta property="og:title" content="初次见面，redux你好">
+<meta property="og:url" content="http:&#x2F;&#x2F;dxh98.cn&#x2F;%E5%88%9D%E6%AC%A1%E8%A7%81%E9%9D%A2%EF%BC%8Credux%E4%BD%A0%E5%A5%BD&#x2F;index.html">
 <meta property="og:site_name" content="人模人样的搬砖老段">
-<meta property="og:description" content="Todolist待办事项。效果参考网址vue-todolist示例效果中用的是localStorage本地存储，所以直接定义了空数组，利用数组的方式。">
+<meta property="og:description" content="Redux简介先放一下redux官网，多读一读官方文档总是有好处的。redux官网 redux是一个用于Javascript应用的可预测状态容器">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-28T14:26:15.736Z">
+<meta property="og:updated_time" content="2020-02-24T12:57:51.948Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="人模人样的搬砖老段" type="application/atom+xml">
@@ -182,27 +182,64 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Vue入门之写一个简易的Todolist" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-初次见面，redux你好" class="article article-type-post " itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
   
     <h1 class="article-title" itemprop="name">
-      Vue入门之写一个简易的Todolist
+      初次见面，redux你好
     </h1>
   
 
                     
-                        <a href="/Vue%E5%85%A5%E9%97%A8%E4%B9%8B%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E7%9A%84Todolist/" class="archive-article-date">
-  	<time datetime="2019-12-28T14:12:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-28</time>
+                        <a href="/%E5%88%9D%E6%AC%A1%E8%A7%81%E9%9D%A2%EF%BC%8Credux%E4%BD%A0%E5%A5%BD/" class="archive-article-date">
+  	<time datetime="2020-02-24T11:15:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-24</time>
 </a>
                             
             </header>
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                                        <h4 id="Todolist"><a href="#Todolist" class="headerlink" title="Todolist"></a>Todolist</h4><p>待办事项。效果参考网址<a href="https://codepen.io/btc022003/pen/OdagLN" target="_blank" rel="noopener">vue-todolist</a><br>示例效果中用的是localStorage本地存储，所以直接定义了空数组，利用数组的方式。</p>
+                                        <h2 id="Redux简介"><a href="#Redux简介" class="headerlink" title="Redux简介"></a>Redux简介</h2><p>先放一下redux官网，多读一读官方文档总是有好处的。<br><a href="https://redux.js.org/introduction/getting-started" target="_blank" rel="noopener">redux官网</a></p>
+<p><strong>redux是一个用于Javascript应用的可预测状态容器</strong></p>
+<a id="more"></a>
+
+<p><strong>可预测:</strong>reducer是个纯函数，有怎样的输入就有怎样的输出，reducer接收旧庄台和action集合，经过某些操作返回新状态，其状态规则都是开发者站在上帝视角设定好的，新状态可预测。<br><strong>状态容器:</strong>store用来存储state，集中统一管理树状结构。<br><strong>Jsvascript应用:</strong>Redux是独立的库，可通用于各种Javascript应用，不仅仅是react。</p>
+<p>redux的设计思想很简单</p>
+<ul>
+<li>Web应用是一个状态机，视图与状态是一一对应的。</li>
+<li>所有的状态，保存在一个对象里。</li>
+</ul>
+<h2 id="Redux模型"><a href="#Redux模型" class="headerlink" title="Redux模型"></a>Redux模型</h2><blockquote>
+<p>Store:</p>
+</blockquote>
+<p>Store意为数据仓库，是保存数据的地方，整个应用只能有一个store。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">import &#123;createStore&#125; from &#39;redux&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">const store &#x3D; createStore(fn)</span></pre></td></tr></table></figure>
+<p>createStore函数接受另一个函数作为参数，返回新生成的Store对象。</p>
+<blockquote>
+<p>State:</p>
+</blockquote>
+<p>State就是数据，数据都存在仓库里，怎么去获取仓库里的数据呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">import &#123;createStore&#125; from &#39;redux&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">const store &#x3D; createStore(fn)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">const state &#x3D; store.getState()</span></pre></td></tr></table></figure>
+<p>通过getState()来获取仓库中的数据。</p>
+<blockquote>
+<p>reducer:</p>
+</blockquote>
+<p>Reducer是一个纯函数，只要是同样的输入，必定得到同样的输出<br>纯函数的一些规则:</p>
+<ul>
+<li>不能修改参数 </li>
+<li>不能调用系统 I/O 的API</li>
+<li>不能调用Date.now()或者Math.random()等不纯的方法，因为每次会得到不一样的结果<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reducer = <span class="function">(<span class="params">state = defaultState, action</span>) =&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">switch</span> (action.type) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">case</span> <span class="string">'INCREMENT'</span>: <span class="keyword">return</span> state + <span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">case</span> <span class="string">'DECREMENT'</span>: <span class="keyword">return</span> state - <span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">default</span>: </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">          <span class="keyword">return</span> state;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure>
+<blockquote>
+<p>未完待续……</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p>阮一峰大佬的文章:<br><a href="http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html" target="_blank" rel="noopener">Redux 入门教程（一）：基本用法</a><br><a href="http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html" target="_blank" rel="noopener">Redux 入门教程（二）：中间件与异步操作</a><br><a href="http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html" target="_blank" rel="noopener">Redux 入门教程（三）：React-Redux 的用法</a></p>
+<hr>
+<p>本文作者:人模人样的搬砖老段<br>本文链接:<a href="http://dxh98.cn/%E9%97%AD%E5%8C%85%EF%BC%9F%E9%82%A3%E6%98%AF%E5%95%A5%EF%BC%9F%E8%BF%9B%E6%9D%A5%E5%BA%B7%E5%BA%B7/">初次见面，redux你好</a><br>如有错误，请及时评论或者知乎私信或者B站私信哦~</p>
 
                                             
 
@@ -248,7 +285,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">Vue</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">React</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">redux</a>
         		</li>
       		
 		</ul>
@@ -304,7 +345,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://dxh98.cn/Vue%E5%85%A5%E9%97%A8%E4%B9%8B%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E7%9A%84Todolist/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://dxh98.cn/%E5%88%9D%E6%AC%A1%E8%A7%81%E9%9D%A2%EF%BC%8Credux%E4%BD%A0%E5%A5%BD/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -318,18 +359,9 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0%E4%BC%98%E9%9B%85%E7%9A%84React/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          从零开始学习优雅的React
-        
-      </div>
-    </a>
   
-  
-    <a href="/Vue%E5%85%A5%E9%97%A8-%E5%AE%98%E7%BD%91%E5%A4%8D%E5%88%BB%E7%89%88/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Vue入门(官网复刻版)</div>
+    <a href="/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0%E4%BC%98%E9%9B%85%E7%9A%84React/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">从零开始学习优雅的React</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -356,7 +388,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Todolist"><span class="toc-number">1.</span> <span class="toc-text">Todolist</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Redux简介"><span class="toc-number">1.</span> <span class="toc-text">Redux简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redux模型"><span class="toc-number">2.</span> <span class="toc-text">Redux模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-number">3.</span> <span class="toc-text">参考文章</span></a></li></ol>
                     </div>
                 </span>
             </div>
