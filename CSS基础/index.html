@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dxh98.cn">
-  <title>HTML基础(二) | 人模人样的搬砖老段</title>
+  <title>CSS基础 | 人模人样的搬砖老段</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="CSS简介cascading style sheets    汉译:层叠样式表 WEB标准中的表现标准语言,表现标准语言在网页中主要对网页信息的显示进行控制，简单说就是如何修饰网页信息的显示样式。目前推荐遵循的是W3C发布的CSS3.0 用来表现XHTML或者XML等样式文件的计算机语言。1998年5月21日由w3C正式推出的css2.0">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML基础(二)">
+<meta property="og:title" content="CSS基础">
 <meta property="og:url" content="http:&#x2F;&#x2F;dxh98.cn&#x2F;CSS%E5%9F%BA%E7%A1%80&#x2F;index.html">
 <meta property="og:site_name" content="人模人样的搬砖老段">
 <meta property="og:description" content="CSS简介cascading style sheets    汉译:层叠样式表 WEB标准中的表现标准语言,表现标准语言在网页中主要对网页信息的显示进行控制，简单说就是如何修饰网页信息的显示样式。目前推荐遵循的是W3C发布的CSS3.0 用来表现XHTML或者XML等样式文件的计算机语言。1998年5月21日由w3C正式推出的css2.0">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-12T17:43:29.025Z">
+<meta property="og:updated_time" content="2020-03-12T17:49:11.950Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="人模人样的搬砖老段" type="application/atom+xml">
@@ -189,7 +189,7 @@ var _hmt = _hmt || [];
                 
   
     <h1 class="article-title" itemprop="name">
-      HTML基础(二)
+      CSS基础
     </h1>
   
 
@@ -233,14 +233,23 @@ var _hmt = _hmt || [];
 <h4 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h4><p>CSS选择符包括4大类:类型选择符、id选择符、class选择符、和特殊选择符;</p>
 <p>常用的选择符有十种左右:<br>类型选择符（标记选择器）<br>类选择符 （class选择符）<br>ID选择符 （id选择器）<br>伪类选择器<br>群组选择符（集合选择器）<br>通配符（*）<br>子选择符<br>包含选择符（后代选择器）</p>
 <ol>
-<li><p>元素选择符/类型选择符    </p>
-<p>  元素名称 { 属性：属性值；}    如p{background:red;}</p>
-</li>
+<li>元素选择符/类型选择符    </li>
 </ol>
+<p>元素名称 { 属性：属性值；}  如</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;<span class="attribute">background</span>:red;&#125;</span></pre></td></tr></table></figure>
+
 <p>说明：<br>①元素选择符即使用结构中元素名称作为选择符。<br>如body、div、p,img,em,strong,span……等。<br>②所有的页面元素都可以作为选择符;<br>③使用元素选择器，会把文档中所有的标签都加相同的样式;<br>如：a｛background:red｝  所有a的背景颜色都是红色<br>2. id选择器<br>   #id名{属性：属性值;}       </p>
-<p>说明：<br>①使用ID选择器时需给元素定义id属性;<br>如：<div id="top"></div><br>②在css样式表中写id选择器时，id名称前加#;<br>如：#box{width:300px; height:300px;}<br>③ 起id名时要取英文名，不能用关键字(所有的标记和属性都是关键字);<br>如：head标记<br>④一个id名称只能对应文档中一个具体的元素;<br>3. class选择器/class选择符<br>   .class名{属性:属性值;}</p>
-<p>说明：<br>①使用类选择符时需为元素定义一个class属性；<br>如：<div class="top"></div>“<br>②一个class属性可以起多个名字；<br>如<p class="box main"></p></p>
-<p>扩展：div.box{background:red;}   指定选择器<br>     <div class="box"></div><br>     <p class="box"></p><br>只会给class名为box的div标签加样式<br>4. 群组选择器<br>      选择符1，选择符2，选择符3{属性：属性值;}</p>
+<p>说明：<br>①使用ID选择器时需给元素定义id属性;<br>如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"top"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr></table></figure>
+<p>②在css样式表中写id选择器时，id名称前加#;<br>如：#box{width:300px; height:300px;}<br>③ 起id名时要取英文名，不能用关键字(所有的标记和属性都是关键字);<br>如：head标记<br>④一个id名称只能对应文档中一个具体的元素;<br>3. class选择器/class选择符<br>   .class名{属性:属性值;}</p>
+<p>说明：<br>①使用类选择符时需为元素定义一个class属性；<br>如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"top"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>“</span></pre></td></tr></table></figure>
+<p>②一个class属性可以起多个名字；<br>如</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"box main"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<p>扩展：div.box{background:red;}   指定选择器</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></pre></td></tr></table></figure>
+<p>只会给class名为box的div标签加样式<br>4. 群组选择器<br>      选择符1，选择符2，选择符3{属性：属性值;}</p>
 <p>说明：当有多个选择符应用相同的样式时,可以使用群组选择器;<br>5. 包含选择器(后代选择器)<br>      选择符1    选择符2{属性：属性值;}</p>
 <p>说明:选择符1和选择符2用空格隔开，选择符1中必须包含的所有选择符2;<br>6. 子元素选择器</p>
 <pre><code>选择符1&gt;选择符2{属性:属性值;}</code></pre><p>说明:子元素选择器只能匹配父元素下的第一级子元素<br>7. 伪类选择器(伪类选择符)<br>a:link{属性：属性值;}           超链接的初始状态;<br>a:visited{属性：属性值;}      超链接被访问后的状态;<br>a:hover{属性：属性值;}       鼠标划过超链接时的状态;<br>a:active{属性：属性值;}       即鼠标按下时超链接的状态</p>
@@ -578,15 +587,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">React入门</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">React入门</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,6 +600,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">闭包</a>
               </li>
             
             <div class="clearfix"></div>
