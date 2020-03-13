@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dxh98.cn">
-  <title>Vue入门(官网复刻版) | 人模人样的搬砖老段</title>
+  <title>定位锚点 | 人模人样的搬砖老段</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Vue.jsVue.js是一款渐进式Javascript框架，什么是渐进式？就是我们可以由浅入深的，由简单到复杂的，去使用Vue.js">
-<meta name="keywords" content="Vue">
+  <meta name="description" content="与定位相关的属性position：static &#x2F;absolute&#x2F;relative&#x2F;fixed  static：默认值，无特殊定位，对象遵循HTML原则； absolute：绝对定位，将对象从文档流中拖离出来，使用left&#x2F;right&#x2F;top&#x2F;bottom属性相对其最接近的一个并有定位设置的父元素进行绝对定位；如果不存在这样的父对象，则依据html对象(浏览器)，而其层叠通过z-index属性定">
+<meta name="keywords" content="CSS,定位,锚点跳转">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue入门(官网复刻版)">
-<meta property="og:url" content="http:&#x2F;&#x2F;dxh98.cn&#x2F;Vue%E5%85%A5%E9%97%A8-%E5%AE%98%E7%BD%91%E5%A4%8D%E5%88%BB%E7%89%88&#x2F;index.html">
+<meta property="og:title" content="定位锚点">
+<meta property="og:url" content="http:&#x2F;&#x2F;dxh98.cn&#x2F;%E5%AE%9A%E4%BD%8D%E9%94%9A%E7%82%B9&#x2F;index.html">
 <meta property="og:site_name" content="人模人样的搬砖老段">
-<meta property="og:description" content="Vue.jsVue.js是一款渐进式Javascript框架，什么是渐进式？就是我们可以由浅入深的，由简单到复杂的，去使用Vue.js">
+<meta property="og:description" content="与定位相关的属性position：static &#x2F;absolute&#x2F;relative&#x2F;fixed  static：默认值，无特殊定位，对象遵循HTML原则； absolute：绝对定位，将对象从文档流中拖离出来，使用left&#x2F;right&#x2F;top&#x2F;bottom属性相对其最接近的一个并有定位设置的父元素进行绝对定位；如果不存在这样的父对象，则依据html对象(浏览器)，而其层叠通过z-index属性定">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-27T13:17:16.152Z">
+<meta property="og:updated_time" content="2020-03-13T17:17:42.311Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="人模人样的搬砖老段" type="application/atom+xml">
@@ -182,58 +182,81 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Vue入门-官网复刻版" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-定位锚点" class="article article-type-post " itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
   
     <h1 class="article-title" itemprop="name">
-      Vue入门(官网复刻版)
+      定位锚点
     </h1>
   
 
                     
-                        <a href="/Vue%E5%85%A5%E9%97%A8-%E5%AE%98%E7%BD%91%E5%A4%8D%E5%88%BB%E7%89%88/" class="archive-article-date">
-  	<time datetime="2019-12-27T12:12:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
+                        <a href="/%E5%AE%9A%E4%BD%8D%E9%94%9A%E7%82%B9/" class="archive-article-date">
+  	<time datetime="2020-03-13T16:53:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-14</time>
 </a>
                             
             </header>
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                                        <h4 id="Vue-js"><a href="#Vue-js" class="headerlink" title="Vue.js"></a>Vue.js</h4><p>Vue.js是一款渐进式Javascript框架，什么是渐进式？就是我们可以由浅入深的，由简单到复杂的，去使用Vue.js</p>
+                                        <h4 id="与定位相关的属性"><a href="#与定位相关的属性" class="headerlink" title="与定位相关的属性"></a>与定位相关的属性</h4><p>position：static /absolute/relative/fixed</p>
+<ol>
+<li>static：默认值，无特殊定位，对象遵循HTML原则；</li>
+<li>absolute：绝对定位，将对象从文档流中拖离出来，使用left/right/top/bottom属性相对其最接近的一个并有定位设置的父元素进行绝对定位；如果不存在这样的父对象，则依据html对象(浏览器)，而其层叠通过z-index属性定义； </li>
+<li>relative ：相对定位，相对于标签原来的位置进行定位，对依据right，top，left，bottom（相对定位）等属性在正常文档流中偏移位置；</li>
+<li>fixed：固定定位：相对于浏览器定位，脱离文档流；</li>
+</ol>
 <a id="more"></a>
 
-<h4 id="Vue-js的优点"><a href="#Vue-js的优点" class="headerlink" title="Vue.js的优点"></a>Vue.js的优点</h4><ol>
-<li>体积小<br> 压缩后的Vue.js只有33K</li>
-<li>更高的运行效率<br> Vue.js基于虚拟Dom，是一种可以预先通过Javascript进行各种计算，把最终的Dom操作计算出来并优化的技术，由于这个Dom操作属于预处理操作，并没有真实的操作Dom，所以叫做虚拟Dom。</li>
-<li>实现了双向数据绑定<br> 双向数据绑定让开发者不用再去操作Dom对象，把更多的精力投入到业务逻辑上。</li>
-<li>生态丰富、学习成本低<br> 市场上拥有大量成熟、稳定的基于Vue.js的ui框架、常用组件！拿来即用就可以实现快速开发。</li>
+<h6 id="绝对定位与相对定位的区别"><a href="#绝对定位与相对定位的区别" class="headerlink" title="绝对定位与相对定位的区别"></a>绝对定位与相对定位的区别</h6><ol>
+<li>参照物不同绝对定位的参照物是包含块，相对定位的参照物是元素本身位置；</li>
+<li>绝对定位将对象从文档流中拖离出来因此不占据空间，相对定位不破坏正常的文档流顺序无论是否进行移动，元素仍然占据空间。</li>
 </ol>
-<h4 id="Vue-js的安装"><a href="#Vue-js的安装" class="headerlink" title="Vue.js的安装"></a>Vue.js的安装</h4><ol>
-<li><p>可以直接使用 “script” 标签引入，Vue会被注册为一个全局变量。<br> 对于初学者来说，还是使用第一种方法较好</p>
-<p> 开发的时候，在官网下载开发版本，会直接下载下来一个Vue.js的文件，引入到我们的项目中，用script标签引入即可。如果将来学会了Vue的单文件组件的应用，可以创建一个.vue结尾的文件。</p>
-<p> 或者使用CDN的方式，用script标签引入一个CDN链接</p>
-</li>
-<li><p>可以使用命令行工具CLI，去快速搭建一个脚手架。<br> 建议:当我们对Vue有了一定的了解之后，再使用第二种方式</p>
+<h6 id="包含块的概念及作用"><a href="#包含块的概念及作用" class="headerlink" title="包含块的概念及作用"></a>包含块的概念及作用</h6><p>包含块是绝对定位的基础，包含块就是为绝对定位元素提供坐标，偏移和显示范围的参照物，即确定绝对定位的偏移起点和百分比 长度的参考；<br>默认状态下，html是一个大的包含块，所有绝对定位的元素都是根据窗口来定自己所处的位置和百分比大小的显示的，如果我们定义了包含元素为包含块以后，对于被包含的绝对定位元素来说，就会根据最接近的具有定位功能的上级包含元素来定位自己的显示位置。</p>
+<p>定义父元素为包含块：给直接父元素添加声明position：relative；</p>
+<h6 id="定位元素层叠属性"><a href="#定位元素层叠属性" class="headerlink" title="定位元素层叠属性"></a>定位元素层叠属性</h6><p>z-index : auto | number<br>检索或设置对象的层叠顺序。<br>auto：默认值。遵从其父对象<br>number:无单位的整数值。可为负数</p>
+<p>较大 number 值的对象会覆盖在较小 number 值的对象之上。如两个绝对定位对象的此属性具有同样的 number 值，那么将依据它们在HTML文档中声明的顺序层叠。<br>此属性仅仅作用于 position 属性值为  absolute/relative/fixed 的对象。</p>
+<h4 id="命名锚点链接"><a href="#命名锚点链接" class="headerlink" title="命名锚点链接"></a>命名锚点链接</h4><ol>
+<li>命名锚点的作用：在同一页面内的不同位置进行跳转。</li>
+<li>给元素定义命名锚记名<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;标记 id="命名锚记名"&gt;&lt;/标记&gt; --&gt;</span></span></pre></td></tr></table></figure></li>
+<li>命名锚记连接<br>语法：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#命名锚记名称"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></pre></td></tr></table></figure>
+
 </li>
 </ol>
-<h4 id="创建第一个Vue-js的应用"><a href="#创建第一个Vue-js的应用" class="headerlink" title="创建第一个Vue.js的应用"></a>创建第一个Vue.js的应用</h4><p>Vue.js的核心是个允许采用简洁的模板语法来声明式地将数据渲染进Dom的系统</p>
-<p>Vue.js应用主要分为两个部分:</p>
-<p>一为视图，即为HTML代码。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    &#123;&#123;message&#125;&#125; &#123;&#123;name&#125;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr></table></figure>
+<h4 id="元素透明兼容写法"><a href="#元素透明兼容写法" class="headerlink" title="元素透明兼容写法"></a>元素透明兼容写法</h4><p>Filter:alpha(opacity=50);IE8以下浏览器可以兼容<br>Opacity:0.5;高版本浏览器可以兼容</p>
+<p>Border-radius:10px; 可以写个圆角</p>
+<h4 id="补充部分"><a href="#补充部分" class="headerlink" title="补充部分"></a>补充部分</h4><h6 id="flash"><a href="#flash" class="headerlink" title="flash"></a>flash</h6><p>1、插入flash</p>
+<p>1）语法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">object</span> <span class="attr">width</span>=<span class="string">"value"</span> <span class="attr">height</span>=<span class="string">"value"</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">embed</span> <span class="attr">width</span>=<span class="string">"value"</span> <span class="attr">height</span>=<span class="string">"value"</span> <span class="attr">src</span>=<span class="string">"flash路径及全称"</span>&gt;</span><span class="tag">&lt;/<span class="name">embed</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">object</span>&gt;</span></span></pre></td></tr></table></figure>
+<p>2）将flash背景设置为透明</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">embed</span> <span class="attr">wmode</span>=<span class="string">"transparent"</span> /&gt;</span></span></pre></td></tr></table></figure>
+<p>给<code>&lt;embed&gt;</code>标记添加属性：wmode=”transparent”</p>
+<p>说明：<br>flash源文件格式.fla,<br>导出影片为.swf,<br>创建播放器格式为.exe.<br>gif格式：.gif</p>
+<h6 id="滚动字幕"><a href="#滚动字幕" class="headerlink" title="滚动字幕"></a>滚动字幕</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">marquee</span> </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="tag"><span class="attr">behavior</span>（行为）=<span class="string">"scroll(滚动)/alternate（晃动）"</span><span class="attr">direction</span>（方向）=<span class="string">"up(从下向上)/down（从上向下）/left（从右向左）/right（从左向右）"</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="tag"><span class="attr">scrollamount</span>（滚动速度）=<span class="string">"value"</span> <span class="attr">height</span>=<span class="string">"value(上下滚动范围)"</span> <span class="attr">width</span>=<span class="string">""</span> (左右滚动范围)&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">滚动内容</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">marquee</span>&gt;</span></span></pre></td></tr></table></figure>
 
-<p>一为脚本，即为js代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过 new Vue 的方式可以获得一个Vue的应用</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//app即为一个对象，或者称为Vue.js的对象</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        el: <span class="string">'#app'</span>,  <span class="comment">// el即为element,代表元素</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        data: &#123;  <span class="comment">// data 用于保存数据  我们在视图中声明了哪些变量，就需要在data里面注册这些变量，并且为这些变量进行初始化的赋值。</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">            message: <span class="string">'Hey Girl!'</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">            name: <span class="string">'Vue'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    &#125;);</span></pre></td></tr></table></figure>
+<h6 id="滚动条"><a href="#滚动条" class="headerlink" title="滚动条"></a>滚动条</h6><p>Overflow内容溢出时的设置   属性：<br>overflow 水平及垂直方向内容溢出时的设置 overflow-x 水平方向内容溢出时的设置overflow-y 垂直方向内容溢出时的设置</p>
+<p>visible 默认值。使用该值时，无论设置的”width”和”height”的值是多少，其中的内容无论是否超出范围都将被强制显示。<br>hidden 效果与visible相反。任何超出”width”和”height”的内容都会不可见。<br>scroll 无论内容是否超越范围，都将显示滚动条。<br>auto 当内容超出范围时，显示滚动条，否则不显示。</p>
+<p>应用：<br>1)没有水平滚动条:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"overflow-x:hidden"</span>&gt;</span>test<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr></table></figure>
+<p>2)没有垂直滚动条 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"overflow-y:hidden"</span>&gt;</span>test<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr></table></figure>
+<p>3)没有滚动条 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"overflow-x:hidden;overflow-y:hidden"</span> 或</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="tag"><span class="attr">style</span>=<span class="string">"overflow:hidden"</span>&gt;</span>test<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr></table></figure>
+<p>4)自动显示滚动条</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height:100px;width:100px;overflow:auto;"</span>&gt;</span>test<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr></table></figure>
 
-<h4 id="Vue实例"><a href="#Vue实例" class="headerlink" title="Vue实例"></a>Vue实例</h4><p>每一个Vue应用其实都是通过Vue函数创建一个新的实例开始的</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 选项</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr></table></figure>
+<p>自己定义滚动条的颜色</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">scrollbar-arrow-color</span>: <span class="number">#f4ae21</span>; <span class="comment">/*图6,三角箭头的颜色*/</span><span class="attribute">scrollbar-face-color</span>: <span class="number">#333</span>; <span class="comment">/*图5,立体滚动条的颜色*/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  scrollbar-3dlight-color: #666; /*图1,立体滚动条亮边的颜色*/scrollbar-highlight-color: #666; /*图2,滚动条空白部分的颜色*/scrollbar-shadow-color: #999; /*图3,立体滚动条阴影的颜色*/scrollbar-darkshadow-color: #666; /*图4,立体滚动条强阴影的颜色*/scrollbar-track-color: #666; /*图7,立体滚动条背景颜色*/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="selector-tag">scrollbar-base-color</span>:<span class="selector-id">#f8f8f8</span>; <span class="comment">/*滚动条的基本颜色*/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr></table></figure>
 
-<p>Vue虽然没有完全遵循MVVM模型，但是Vue的设计也受到了它的启发，因此在文档中经常会使用vm</p>
-<p>未完待续…..</p>
+<h6 id="Cursor定义个性鼠标"><a href="#Cursor定义个性鼠标" class="headerlink" title="Cursor定义个性鼠标"></a>Cursor定义个性鼠标</h6><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cursor:pointer/move/text/help/wait/w-resize/s-resize/sw-resize/se-resize/crosshair/auto/default/</span></pre></td></tr></table></figure>
+
 <hr>
-<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/Vue%E5%85%A5%E9%97%A8-%E5%AE%98%E7%BD%91%E5%A4%8D%E5%88%BB%E7%89%88/">Vue入门(官网复刻版)</a><br>如有错误，请及时评论或者知乎私信或者B站私信哦~</p>
+<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/Vue%E5%85%A5%E9%97%A8-%E5%AE%98%E7%BD%91%E5%A4%8D%E5%88%BB%E7%89%88/">定位锚点</a><br>如有错误，请及时评论或者知乎私信或者B站私信哦~</p>
+<hr>
+<p><strong>最后更新于:2020/03/14</strong></p>
 
                                             
 
@@ -279,7 +302,15 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">Vue</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">定位</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">锚点跳转</a>
         		</li>
       		
 		</ul>
@@ -335,7 +366,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://dxh98.cn/Vue%E5%85%A5%E9%97%A8-%E5%AE%98%E7%BD%91%E5%A4%8D%E5%88%BB%E7%89%88/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://dxh98.cn/%E5%AE%9A%E4%BD%8D%E9%94%9A%E7%82%B9/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -349,18 +380,9 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/Vue%E5%85%A5%E9%97%A8%E4%B9%8B%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E7%9A%84Todolist/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Vue入门之写一个简易的Todolist
-        
-      </div>
-    </a>
   
-  
-    <a href="/%E9%97%AD%E5%8C%85%EF%BC%9F%E9%82%A3%E6%98%AF%E5%95%A5%EF%BC%9F%E8%BF%9B%E6%9D%A5%E5%BA%B7%E5%BA%B7/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">闭包？那是啥？进来康康</div>
+    <a href="/%E5%85%83%E7%B4%A0%E7%B1%BB%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">元素类型</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -387,7 +409,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue-js"><span class="toc-number">1.</span> <span class="toc-text">Vue.js</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue-js的优点"><span class="toc-number">2.</span> <span class="toc-text">Vue.js的优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue-js的安装"><span class="toc-number">3.</span> <span class="toc-text">Vue.js的安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建第一个Vue-js的应用"><span class="toc-number">4.</span> <span class="toc-text">创建第一个Vue.js的应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue实例"><span class="toc-number">5.</span> <span class="toc-text">Vue实例</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#与定位相关的属性"><span class="toc-number">1.</span> <span class="toc-text">与定位相关的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#绝对定位与相对定位的区别"><span class="toc-number">1.0.1.</span> <span class="toc-text">绝对定位与相对定位的区别</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#包含块的概念及作用"><span class="toc-number">1.0.2.</span> <span class="toc-text">包含块的概念及作用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#定位元素层叠属性"><span class="toc-number">1.0.3.</span> <span class="toc-text">定位元素层叠属性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#命名锚点链接"><span class="toc-number">2.</span> <span class="toc-text">命名锚点链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#元素透明兼容写法"><span class="toc-number">3.</span> <span class="toc-text">元素透明兼容写法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#补充部分"><span class="toc-number">4.</span> <span class="toc-text">补充部分</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#flash"><span class="toc-number">4.0.1.</span> <span class="toc-text">flash</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#滚动字幕"><span class="toc-number">4.0.2.</span> <span class="toc-text">滚动字幕</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#滚动条"><span class="toc-number">4.0.3.</span> <span class="toc-text">滚动条</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Cursor定义个性鼠标"><span class="toc-number">4.0.4.</span> <span class="toc-text">Cursor定义个性鼠标</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
