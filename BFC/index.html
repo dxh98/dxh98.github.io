@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="人模人样的搬砖老段">
 <meta property="og:description" content="什么是BFCBFC(Block formatting context)译为”块格式化上下文”，是一个独立的渲染区域，规定了内部的子元素如何布局，并且与这个区域外部毫不相干。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-14T13:05:53.027Z">
+<meta property="og:updated_time" content="2020-03-14T13:08:23.886Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="人模人样的搬砖老段" type="application/atom+xml">
@@ -221,6 +221,11 @@ var _hmt = _hmt || [];
 <li>计算BFC的高度时，浮动元素也参与计算</li>
 <li>并不是只有块元素才会生成BFC，任何元素只要符合条件即可生成BFC</li>
 </ol>
+<h4 id="BFC的应用"><a href="#BFC的应用" class="headerlink" title="BFC的应用"></a>BFC的应用</h4><ol>
+<li>自适应两栏布局</li>
+<li>清除内部浮动</li>
+<li>防止margin上下重叠</li>
+</ol>
 <hr>
 <p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/H5%E6%96%B0%E5%A2%9E%E5%85%83%E7%B4%A0%E5%92%8C%E5%B1%9E%E6%80%A7/">BFC</a><br>如有错误，请及时评论或者知乎私信或者B站私信哦~</p>
 <hr>
@@ -378,7 +383,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是BFC"><span class="toc-number">1.</span> <span class="toc-text">什么是BFC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#哪些元素会生成BFC"><span class="toc-number">2.</span> <span class="toc-text">哪些元素会生成BFC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BFC布局规则是怎样的"><span class="toc-number">3.</span> <span class="toc-text">BFC布局规则是怎样的</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是BFC"><span class="toc-number">1.</span> <span class="toc-text">什么是BFC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#哪些元素会生成BFC"><span class="toc-number">2.</span> <span class="toc-text">哪些元素会生成BFC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BFC布局规则是怎样的"><span class="toc-number">3.</span> <span class="toc-text">BFC布局规则是怎样的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BFC的应用"><span class="toc-number">4.</span> <span class="toc-text">BFC的应用</span></a></li></ol>
                     </div>
                 </span>
             </div>
