@@ -6,16 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dxh98.cn">
-  <title>Tag: Math | 人模人样的搬砖老段</title>
+  <title>DOM补充 | 人模人样的搬砖老段</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="自学成才的跨行小前端，喜欢钻研各种好玩的东西，前端学习的进阶之路上">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,css3,vue,react,博客搭建,网站建设,域名解析,代码,编程,程序员,切图仔,coding,github,html,css">
-<meta property="og:type" content="website">
-<meta property="og:title" content="人模人样的搬砖老段">
-<meta property="og:url" content="http:&#x2F;&#x2F;dxh98.cn&#x2F;tags&#x2F;Math&#x2F;index.html">
+  <meta name="description" content="DOM属性节点 Element.classNameclassName属性用来读写当前元素节点的class属性。它的值是一个字符串，每个class之间用空格分割。 1&#x2F;&#x2F; HTML 代码 &amp;lt;div class&#x3D;&quot;one two three&quot; id&#x3D;&quot;myDiv&quot;&amp;gt;&amp;lt;&#x2F;div&amp;gt;2var div &#x3D; document.getElementById(&amp;apos;myDiv&amp;apos;);3div.cl">
+<meta name="keywords" content="JavaScript,DOM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOM补充">
+<meta property="og:url" content="http:&#x2F;&#x2F;dxh98.cn&#x2F;DOM%E8%A1%A5%E5%85%85&#x2F;index.html">
 <meta property="og:site_name" content="人模人样的搬砖老段">
-<meta property="og:description" content="自学成才的跨行小前端，喜欢钻研各种好玩的东西，前端学习的进阶之路上">
+<meta property="og:description" content="DOM属性节点 Element.classNameclassName属性用来读写当前元素节点的class属性。它的值是一个字符串，每个class之间用空格分割。 1&#x2F;&#x2F; HTML 代码 &amp;lt;div class&#x3D;&quot;one two three&quot; id&#x3D;&quot;myDiv&quot;&amp;gt;&amp;lt;&#x2F;div&amp;gt;2var div &#x3D; document.getElementById(&amp;apos;myDiv&amp;apos;);3div.cl">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-27T02:34:56.139Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="人模人样的搬砖老段" type="application/atom+xml">
@@ -181,36 +182,114 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-DOM补充" class="article article-type-post " itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Math%E5%92%8CDate/" class="archive-article-date">
-  	<time datetime="2020-03-26T08:12:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Math%E5%92%8CDate/">Math和Date</a>
+    <h1 class="article-title" itemprop="name">
+      DOM补充
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+                    
+                        <a href="/DOM%E8%A1%A5%E5%85%85/" class="archive-article-date">
+  	<time datetime="2020-03-26T15:50:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
+</a>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+                                        <h4 id="DOM属性节点"><a href="#DOM属性节点" class="headerlink" title="DOM属性节点"></a>DOM属性节点</h4><ol>
+<li><p><code>Element.className</code><br>className属性用来读写当前元素节点的class属性。它的值是一个字符串，每个class之间用空格分割。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// HTML 代码 &lt;div class="one two three" id="myDiv"&gt;&lt;/div&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">'myDiv'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">div.className</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// "one two three"</span></span></pre></td></tr></table></figure>
+<a id="more"></a>
+</li>
+<li><p><code>Element.style</code><br>每个元素节点都有style用来读写该元素的行内样式信息<br>不过，连词号需要变成骆驼拼写法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> divStyle = <span class="built_in">document</span>.querySelector(<span class="string">'div'</span>).style;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">divStyle.backgroundColor = <span class="string">'red'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">divStyle.border = <span class="string">'1px solid black'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">divStyle.width = <span class="string">'100px'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">divStyle.height = <span class="string">'100px'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">divStyle.fontSize = <span class="string">'10em'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">divStyle.backgroundColor <span class="comment">// red</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">divStyle.border <span class="comment">// 1px solid black</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">divStyle.height <span class="comment">// 100px</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">divStyle.width <span class="comment">// 100px</span></span></pre></td></tr></table></figure>
+<p><code>Element.style</code>返回的只是行内样式，并不是该元素的全部样式。通过样式表设置的样式，或者从父元素继承的样式，无法通过这个属性得到。元素的全部样式要通过<code>window.getComputedStyle()</code>得到。</p>
+</li>
+</ol>
+<h4 id="获取属性和设置属性（自定义属性）"><a href="#获取属性和设置属性（自定义属性）" class="headerlink" title="获取属性和设置属性（自定义属性）"></a>获取属性和设置属性（自定义属性）</h4><ol>
+<li><code>Element.getAttribute</code>方法接受一个字符串作为参数，返回同名属性的值。如果没有该属性，则返回null。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mydiv = <span class="built_in">document</span>.getElementById(<span class="string">'mydiv'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> id = mydiv.getAttribute(<span class="string">'id'</span>);</span></pre></td></tr></table></figure></li>
+<li><code>Element.setAttribute</code>方法用于为当前节点设置属性。如果属性已经存在，将更新属性值，否则将添加该属性。该方法没有返回值。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// HTML 代码为</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// &lt;button&gt;Hello World&lt;/button&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">b.setAttribute(<span class="string">'name'</span>, <span class="string">'myButton'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">b.setAttribute(<span class="string">'disabled'</span>, <span class="literal">true</span>);</span></pre></td></tr></table></figure></li>
+<li><code>Element.removeAttribute</code>方法移除指定属性。该方法没有返回值。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>).removeAttribute(<span class="string">'id'</span>)</span></pre></td></tr></table></figure>
+<code>outerHTML</code>  包括整个标签，而不仅限于标签内部的内容<br><code>innerText</code>  只获取元素内的文本内容，html标签将被忽略</li>
+</ol>
+<h4 id="获取孩子节点-childNodes和children"><a href="#获取孩子节点-childNodes和children" class="headerlink" title="获取孩子节点  childNodes和children"></a>获取孩子节点  childNodes和children</h4><p><code>Element.children</code>属性返回一个类似数组的对象（HTMLCollection实例），包括当前元素节点的所有子元素。如果当前元素没有子元素，则返回的对象包含零个成员</p>
+<p>这个属性与<code>Node.childNodes</code>属性的区别是，它只包括元素类型的子节点，不包括其他类型的子节点。而childNodes属性包含空白节点</p>
+<h6 id="高级选取"><a href="#高级选取" class="headerlink" title="高级选取"></a>高级选取</h6><p><code>Element.firstElementChild</code>属性返回当前元素的第一个元素子节点，<code>Element.lastElementChild</code>返回最后一个元素子节点。如果没有元素子节点，这两个属性返回null。</p>
+<p><code>nextElementSibling</code>  下一个节点        </p>
+<p><code>previousElementSibling</code>  上一个节点   </p>
+<p><code>Element.nextElementSibling</code>属性返回当前元素节点的后一个同级元素节点，如果没有则返回null。   </p>
+<p><code>Element.previousElementSibling</code>属性返回当前元素节点的前一个同级元素节点，如果没有则返回null。</p>
+<p>（分别对应的还有 firstChild，lastChild，nextSibling ，previousSibling方法 不过这些个方法都能获取到文本节点）</p>
+<p><code>Element.parentNode</code>可以获取父节点</p>
+<h4 id="获取全部样式"><a href="#获取全部样式" class="headerlink" title="获取全部样式"></a>获取全部样式</h4><p>元素的全部样式要通过<code>window.getComputedStyle()</code>得到。</p>
+<p>行内样式（inline style）具有最高的优先级，改变行内样式，通常会立即反映出来。但是，网页元素最终的样式是综合各种规则计算出来的。因此，如果想得到元素实际的样式，只读取行内样式是不够的，需要得到浏览器最终计算出来的样式规则。</p>
+<p><code>window.getComputedStyle</code>方法，就用来返回浏览器计算后得到的最终规则。它接受一个节点对象作为参数，返回一个 CSSStyle 实例，包含了指定节点的最终样式信息。所谓“最终样式信息”，指的是各种 CSS 规则叠加后的结果。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">'div'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> styleObj = <span class="built_in">window</span>.getComputedStyle(div);(只能获取样式，不能设置)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">styleObj.backgroundColor</span></pre></td></tr></table></figure>
+<p>上面代码中，得到的背景色就是div元素真正的背景色</p>
+<p><strong>兼容性问题</strong><br>低版本ie 使用<br><code>box.currentStyle</code> 获取全部样式</p>
+<p><code>box.insertBefore(newNode, existNode)</code> 插入节点</p>
+<p>在box的子节点existNode前面插入一个新节点</p>
+<p><code>document.createTextNode()</code>  创建文本节点</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t = <span class="built_in">document</span>.createTextNode(<span class="string">'你好'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">box.appendChild(t) ;</span></pre></td></tr></table></figure>
+<p>在box尾部添加一个文本节点</p>
+<h6 id="offsetWidth-offsetHeight"><a href="#offsetWidth-offsetHeight" class="headerlink" title="offsetWidth/offsetHeight"></a>offsetWidth/offsetHeight</h6><p><code>Element.offsetHeight</code>属性返回一个整数，表示元素的 CSS 垂直高度（单位像素），包括元素本身的高度、padding 和 border</p>
+<p><code>Element.offsetWidth</code>属性表示元素的 CSS 水平宽度（单位像素），其他都与<code>Element.offsetHeight</code>一致。<br>这两个属性都是只读属性</p>
+<p>如果元素的 CSS 设为不可见（比如display: none;），则返回0</p>
+<p><code>Element.offsetParent</code>属性返回最靠近当前元素的、并且 CSS 的position属性不等于static的上层元素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;div style=<span class="string">"position: absolute;"</span>&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  &lt;p&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    &lt;span&gt;Hello&lt;<span class="regexp">/span&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="regexp">  &lt;/</span>p&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&lt;<span class="regexp">/div&gt;</span></span></pre></td></tr></table></figure>
+<p>上面代码中，span元素的offsetParent属性就是div元素。</p>
+<p>该属性主要用于确定子元素位置偏移的计算基准，<br><code>Element.offsetTop</code>和<code>Element.offsetLeft</code>就是<code>offsetParent</code>元素计算的。</p>
+<h6 id="offsetLeft-offsetTop"><a href="#offsetLeft-offsetTop" class="headerlink" title="offsetLeft/offsetTop"></a>offsetLeft/offsetTop</h6><p><code>Element.offsetLeft</code>返回当前元素左上角相对于<code>Element.offsetParent</code>节点的水平位移，<code>Element.offsetTop</code>返回垂直位移，单位为像素。通常，这两个值是指相对于父节点的位移</p>
+<hr>
+<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/BFC/">DOM补充</a><br>如有错误，请及时评论或者知乎私信或者B站私信哦~</p>
+<hr>
+<p><strong>最后更新于:2020/03/14</strong></p>
+
+                                            
+
+
+                                                
+                                                    <div class="page-reward">
+                                                        <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+                                                            <div class="tooltip tooltip-east">
+                                                                <span class="tooltip-item">
+              赏
+            </span>
+                                                                <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你让我少搬一块砖<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/zfbao.jpg">
+                      <span class="reward-type">支付宝</span>
+                                                            </div>
+                                                            
+                                                                
+                                                                    <div class="reward-box-item">
+                                                                        <img class="reward-img" src="/assets/img/wxin.png">
+                                                                        <span class="reward-type">微信</span>
+                                                                    </div>
+                                                                    
+                                                    </div>
+                                                    </span>
+                                                    </span>
+                                                    </span>
+                </div>
+                </a>
+    </div>
+    
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -220,31 +299,151 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">Math</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">Date</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">DOM</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+                        
 
+                            
+
+                                    
+                                        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://dxh98.cn/DOM%E8%A1%A5%E5%85%85/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                                            
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
 </article>
-  
-  
-    </div></section>
-  
 
     
+<nav id="article-nav">
+  
+  
+    <a href="/BOM%E5%92%8CDOM/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BOM和DOM</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+        
+            <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#DOM属性节点"><span class="toc-number">1.</span> <span class="toc-text">DOM属性节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取属性和设置属性（自定义属性）"><span class="toc-number">2.</span> <span class="toc-text">获取属性和设置属性（自定义属性）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取孩子节点-childNodes和children"><span class="toc-number">3.</span> <span class="toc-text">获取孩子节点  childNodes和children</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#高级选取"><span class="toc-number">3.0.1.</span> <span class="toc-text">高级选取</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取全部样式"><span class="toc-number">4.</span> <span class="toc-text">获取全部样式</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#offsetWidth-offsetHeight"><span class="toc-number">4.0.1.</span> <span class="toc-text">offsetWidth/offsetHeight</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#offsetLeft-offsetTop"><span class="toc-number">4.0.2.</span> <span class="toc-text">offsetLeft/offsetTop</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
 
 
+                
+
+                    
+                        <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NzgzOS8yNDMzNg==">
+    <script type="text/javascript">
+        (function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
+
+            if (typeof LivereTower === 'function') {
+                return;
+            }
+
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
+
+            e.parentNode.insertBefore(j, e);
+        })(document, 'script');
+    </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+                            
+
+
+                                
+
+                                            
+
+                                                        
+
+                                                                    
+
+                                                                            
+                                                                                        
           </div>
         </div>
       </div>
@@ -277,9 +476,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
