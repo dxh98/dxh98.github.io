@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://dxh98.cn">
   <title>DOM补充 | 人模人样的搬砖老段</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DOM属性节点 Element.classNameclassName属性用来读写当前元素节点的class属性。它的值是一个字符串，每个class之间用空格分割。 1&#x2F;&#x2F; HTML 代码 &amp;lt;div class&#x3D;&quot;one two three&quot; id&#x3D;&quot;myDiv&quot;&amp;gt;&amp;lt;&#x2F;div&amp;gt;2var div &#x3D; document.getElementById(&amp;apos;myDiv&amp;apos;);3div.cl">
+  <meta name="description" content="DOM属性节点 Element.classNameclassName属性用来读写当前元素节点的class属性。它的值是一个字符串，每个class之间用空格分割。1&#x2F;&#x2F; HTML 代码 &amp;lt;div class&#x3D;&quot;one two three&quot; id&#x3D;&quot;myDiv&quot;&amp;gt;&amp;lt;&#x2F;div&amp;gt;2var div &#x3D; document.getElementById(&amp;apos;myDiv&amp;apos;);3div.cla">
 <meta name="keywords" content="JavaScript,DOM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DOM补充">
 <meta property="og:url" content="http:&#x2F;&#x2F;dxh98.cn&#x2F;DOM%E8%A1%A5%E5%85%85&#x2F;index.html">
 <meta property="og:site_name" content="人模人样的搬砖老段">
-<meta property="og:description" content="DOM属性节点 Element.classNameclassName属性用来读写当前元素节点的class属性。它的值是一个字符串，每个class之间用空格分割。 1&#x2F;&#x2F; HTML 代码 &amp;lt;div class&#x3D;&quot;one two three&quot; id&#x3D;&quot;myDiv&quot;&amp;gt;&amp;lt;&#x2F;div&amp;gt;2var div &#x3D; document.getElementById(&amp;apos;myDiv&amp;apos;);3div.cl">
+<meta property="og:description" content="DOM属性节点 Element.classNameclassName属性用来读写当前元素节点的class属性。它的值是一个字符串，每个class之间用空格分割。1&#x2F;&#x2F; HTML 代码 &amp;lt;div class&#x3D;&quot;one two three&quot; id&#x3D;&quot;myDiv&quot;&amp;gt;&amp;lt;&#x2F;div&amp;gt;2var div &#x3D; document.getElementById(&amp;apos;myDiv&amp;apos;);3div.cla">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-27T02:34:56.139Z">
+<meta property="og:updated_time" content="2020-03-28T02:05:41.211Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="人模人样的搬砖老段" type="application/atom+xml">
@@ -203,14 +203,10 @@ var _hmt = _hmt || [];
                 <div class="article-entry" itemprop="articleBody">
                     
                                         <h4 id="DOM属性节点"><a href="#DOM属性节点" class="headerlink" title="DOM属性节点"></a>DOM属性节点</h4><ol>
-<li><p><code>Element.className</code><br>className属性用来读写当前元素节点的class属性。它的值是一个字符串，每个class之间用空格分割。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// HTML 代码 &lt;div class="one two three" id="myDiv"&gt;&lt;/div&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">'myDiv'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">div.className</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// "one two three"</span></span></pre></td></tr></table></figure>
-<a id="more"></a>
-</li>
-<li><p><code>Element.style</code><br>每个元素节点都有style用来读写该元素的行内样式信息<br>不过，连词号需要变成骆驼拼写法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> divStyle = <span class="built_in">document</span>.querySelector(<span class="string">'div'</span>).style;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">divStyle.backgroundColor = <span class="string">'red'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">divStyle.border = <span class="string">'1px solid black'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">divStyle.width = <span class="string">'100px'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">divStyle.height = <span class="string">'100px'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">divStyle.fontSize = <span class="string">'10em'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">divStyle.backgroundColor <span class="comment">// red</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">divStyle.border <span class="comment">// 1px solid black</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">divStyle.height <span class="comment">// 100px</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">divStyle.width <span class="comment">// 100px</span></span></pre></td></tr></table></figure>
-<p><code>Element.style</code>返回的只是行内样式，并不是该元素的全部样式。通过样式表设置的样式，或者从父元素继承的样式，无法通过这个属性得到。元素的全部样式要通过<code>window.getComputedStyle()</code>得到。</p>
-</li>
+<li><code>Element.className</code><br>className属性用来读写当前元素节点的class属性。它的值是一个字符串，每个class之间用空格分割。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// HTML 代码 &lt;div class="one two three" id="myDiv"&gt;&lt;/div&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">'myDiv'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">div.className</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// "one two three"</span></span></pre></td></tr></table></figure>
+<a id="more"></a></li>
+<li><code>Element.style</code><br>每个元素节点都有style用来读写该元素的行内样式信息<br>不过，连词号需要变成骆驼拼写法。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> divStyle = <span class="built_in">document</span>.querySelector(<span class="string">'div'</span>).style;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">divStyle.backgroundColor = <span class="string">'red'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">divStyle.border = <span class="string">'1px solid black'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">divStyle.width = <span class="string">'100px'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">divStyle.height = <span class="string">'100px'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">divStyle.fontSize = <span class="string">'10em'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">divStyle.backgroundColor <span class="comment">// red</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">divStyle.border <span class="comment">// 1px solid black</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">divStyle.height <span class="comment">// 100px</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">divStyle.width <span class="comment">// 100px</span></span></pre></td></tr></table></figure>
+<code>Element.style</code>返回的只是行内样式，并不是该元素的全部样式。通过样式表设置的样式，或者从父元素继承的样式，无法通过这个属性得到。元素的全部样式要通过<code>window.getComputedStyle()</code>得到。</li>
 </ol>
 <h4 id="获取属性和设置属性（自定义属性）"><a href="#获取属性和设置属性（自定义属性）" class="headerlink" title="获取属性和设置属性（自定义属性）"></a>获取属性和设置属性（自定义属性）</h4><ol>
 <li><code>Element.getAttribute</code>方法接受一个字符串作为参数，返回同名属性的值。如果没有该属性，则返回null。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mydiv = <span class="built_in">document</span>.getElementById(<span class="string">'mydiv'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> id = mydiv.getAttribute(<span class="string">'id'</span>);</span></pre></td></tr></table></figure></li>
@@ -546,6 +542,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">BOM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">DOM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
               </li>
              
@@ -559,18 +567,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">BFC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">BOM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">DOM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,14 +586,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Math</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Date</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">博客搭建</a>
               </li>
              
@@ -614,6 +602,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Math</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Date</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">元素类型</a>
               </li>
              
@@ -626,15 +622,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">定位</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">锚点跳转</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">函数</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -666,11 +662,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">盒模型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">响应式布局</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -682,11 +674,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">响应式布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">逻辑分支</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">数组</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">盒模型</a>
               </li>
             
             <div class="clearfix"></div>
