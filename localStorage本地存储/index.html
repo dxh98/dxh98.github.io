@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://dxh98.cn">
   <title>localStorage本地存储 | 人模人样的搬砖老段</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是localStorage在HTML5中，新加入了一个localStorage特性，这个特性主要是用来作为本地存储来使用的，解决了cookie存储空间不足的问题(cookie中每条cookie的存储空间为4k)，localStorage中一般浏览器支持的是5M大小，这个在不同的浏览器中localStorage会有所不同">
+  <meta name="description" content="什么是 localStorage在 HTML5 中，新加入了一个 localStorage 特性，这个特性主要是用来作为本地存储来使用的，解决了 cookie 存储空间不足的问题(cookie 中每条 cookie 的存储空间为 4k)，localStorage 中一般浏览器支持的是 5M 大小，这个在不同的浏览器中 localStorage 会有所不同">
 <meta name="keywords" content="JavaScript,localStorage">
 <meta property="og:type" content="article">
 <meta property="og:title" content="localStorage本地存储">
 <meta property="og:url" content="http:&#x2F;&#x2F;dxh98.cn&#x2F;localStorage%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8&#x2F;index.html">
 <meta property="og:site_name" content="人模人样的搬砖老段">
-<meta property="og:description" content="什么是localStorage在HTML5中，新加入了一个localStorage特性，这个特性主要是用来作为本地存储来使用的，解决了cookie存储空间不足的问题(cookie中每条cookie的存储空间为4k)，localStorage中一般浏览器支持的是5M大小，这个在不同的浏览器中localStorage会有所不同">
+<meta property="og:description" content="什么是 localStorage在 HTML5 中，新加入了一个 localStorage 特性，这个特性主要是用来作为本地存储来使用的，解决了 cookie 存储空间不足的问题(cookie 中每条 cookie 的存储空间为 4k)，localStorage 中一般浏览器支持的是 5M 大小，这个在不同的浏览器中 localStorage 会有所不同">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-09T08:31:13.626Z">
+<meta property="og:updated_time" content="2020-07-15T10:10:34.467Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="人模人样的搬砖老段" type="application/atom+xml">
@@ -195,43 +195,44 @@ var _hmt = _hmt || [];
 
                     
                         <a href="/localStorage%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" class="archive-article-date">
-  	<time datetime="2019-07-16T16:12:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
+  	<time datetime="2019-03-23T16:12:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-24</time>
 </a>
                             
             </header>
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                                        <h4 id="什么是localStorage"><a href="#什么是localStorage" class="headerlink" title="什么是localStorage"></a>什么是localStorage</h4><p>在HTML5中，新加入了一个localStorage特性，这个特性主要是用来作为本地存储来使用的，<br>解决了cookie存储空间不足的问题(cookie中每条cookie的存储空间为4k)，<br>localStorage中一般浏览器支持的是5M大小，这个在不同的浏览器中localStorage会有所不同</p>
+                                        <h4 id="什么是-localStorage"><a href="#什么是-localStorage" class="headerlink" title="什么是 localStorage"></a>什么是 localStorage</h4><p>在 HTML5 中，新加入了一个 localStorage 特性，这个特性主要是用来作为本地存储来使用的，<br>解决了 cookie 存储空间不足的问题(cookie 中每条 cookie 的存储空间为 4k)，<br>localStorage 中一般浏览器支持的是 5M 大小，这个在不同的浏览器中 localStorage 会有所不同</p>
 <a id="more"></a>
 
-<h6 id="localStorage的优势"><a href="#localStorage的优势" class="headerlink" title="localStorage的优势"></a>localStorage的优势</h6><ol>
-<li>localStorage拓展了cookie的4K限制</li>
-<li>localStorage会可以将第一次请求的数据直接存储到本地，这个相当于一个5M大小的针对于前端页面的数据库，相比于cookie可以节约带宽，但是这个却是只有在高版本的浏览器中才支持的</li>
+<h6 id="localStorage-的优势"><a href="#localStorage-的优势" class="headerlink" title="localStorage 的优势"></a>localStorage 的优势</h6><ol>
+<li>localStorage 拓展了 cookie 的 4K 限制</li>
+<li>localStorage 会可以将第一次请求的数据直接存储到本地，这个相当于一个 5M 大小的针对于前端页面的数据库，相比于 cookie 可以节约带宽，但是这个却是只有在高版本的浏览器中才支持的</li>
 </ol>
-<h6 id="localStorage的局限"><a href="#localStorage的局限" class="headerlink" title="localStorage的局限"></a>localStorage的局限</h6><ol>
-<li>浏览器的大小不统一，并且在IE8以上的IE版本才支持localStorage这个属性</li>
-<li>目前所有的浏览器中都会把localStorage的值类型限定为string类型，这个在对我们日常比较常见的JSON对象类型需要一些转换</li>
+<h6 id="localStorage-的局限"><a href="#localStorage-的局限" class="headerlink" title="localStorage 的局限"></a>localStorage 的局限</h6><ol>
+<li>浏览器的大小不统一，并且在 IE8 以上的 IE 版本才支持 localStorage 这个属性</li>
+<li>目前所有的浏览器中都会把 localStorage 的值类型限定为 string 类型，这个在对我们日常比较常见的 JSON 对象类型需要一些转换</li>
 </ol>
-<h4 id="localStorage的写入"><a href="#localStorage的写入" class="headerlink" title="localStorage的写入"></a>localStorage的写入</h4><p>localStorage的写入有三种方法。 localStorage只支持string类型的存储</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> storage=<span class="built_in">window</span>.localStorage;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//写入a字段</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">storage[<span class="string">"a"</span>]=<span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//写入b字段</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">storage.a=<span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//写入c字段</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">storage.setItem(<span class="string">"c"</span>,<span class="number">3</span>);</span></pre></td></tr></table></figure>
+<h4 id="localStorage-的写入"><a href="#localStorage-的写入" class="headerlink" title="localStorage 的写入"></a>localStorage 的写入</h4><p>localStorage 的写入有三种方法。 localStorage 只支持 string 类型的存储</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> storage = <span class="built_in">window</span>.localStorage;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//写入a字段</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">storage[<span class="string">"a"</span>] = <span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//写入b字段</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">storage.a = <span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//写入c字段</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">storage.setItem(<span class="string">"c"</span>, <span class="number">3</span>);</span></pre></td></tr></table></figure>
 
-<h4 id="三种对localStorage的读取"><a href="#三种对localStorage的读取" class="headerlink" title="三种对localStorage的读取"></a>三种对localStorage的读取</h4><p>其中官方推荐的是getItem\setItem这两种方法对其进行存取</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一种方法读取</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=storage.a;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//第二种方法读取</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b=storage[<span class="string">"b"</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(b);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//第三种方法读取</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c=storage.getItem(<span class="string">"c"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(c)</span></pre></td></tr></table></figure>
+<h4 id="三种对-localStorage-的读取"><a href="#三种对-localStorage-的读取" class="headerlink" title="三种对 localStorage 的读取"></a>三种对 localStorage 的读取</h4><p>其中官方推荐的是 getItem\setItem 这两种方法对其进行存取</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一种方法读取</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = storage.a;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//第二种方法读取</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = storage[<span class="string">"b"</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(b);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//第三种方法读取</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c = storage.getItem(<span class="string">"c"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(c);</span></pre></td></tr></table></figure>
 
-<h4 id="localStorage的修改"><a href="#localStorage的修改" class="headerlink" title="localStorage的修改"></a>localStorage的修改</h4><p>改这个步骤比较好理解，思路跟重新更改全局变量的值一样</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> storage=<span class="built_in">window</span>.localStorage;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//写入a字段</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">storage[<span class="string">"a"</span>]=<span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">storage.a=<span class="number">4</span>; <span class="comment">//修改</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(storage.a)</span></pre></td></tr></table></figure>
+<h4 id="localStorage-的修改"><a href="#localStorage-的修改" class="headerlink" title="localStorage 的修改"></a>localStorage 的修改</h4><p>改这个步骤比较好理解，思路跟重新更改全局变量的值一样</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> storage = <span class="built_in">window</span>.localStorage;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//写入a字段</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">storage[<span class="string">"a"</span>] = <span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">storage.a = <span class="number">4</span>; <span class="comment">//修改</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(storage.a);</span></pre></td></tr></table></figure>
 
-<h4 id="localStorage的删除"><a href="#localStorage的删除" class="headerlink" title="localStorage的删除"></a>localStorage的删除</h4><p>将localStorage中的某个键值对删除</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">storage.setItem(<span class="string">"c"</span>,<span class="number">3</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(storage);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">storage.removeItem(<span class="string">"a"</span>);</span></pre></td></tr></table></figure>
-<p>将localStorage的所有内容清除</p>
+<h4 id="localStorage-的删除"><a href="#localStorage-的删除" class="headerlink" title="localStorage 的删除"></a>localStorage 的删除</h4><p>将 localStorage 中的某个键值对删除</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">storage.setItem(<span class="string">"c"</span>, <span class="number">3</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(storage);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">storage.removeItem(<span class="string">"a"</span>);</span></pre></td></tr></table></figure>
+
+<p>将 localStorage 的所有内容清除</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">storage.clear();</span></pre></td></tr></table></figure>
 
-<h4 id="localStorage其他注意事项"><a href="#localStorage其他注意事项" class="headerlink" title="localStorage其他注意事项"></a>localStorage其他注意事项</h4><p>一般我们会将JSON(js中的对象)存入localStorage中，但是在localStorage会自动将localStorage转换成为字符串形式<br>这个时候我们可以使用JSON.stringify()这个方法，来将JSON转换成为JSON字符串</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data=&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  name:<span class="string">'zhangsan'</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  sex:<span class="string">'man'</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d=<span class="built_in">JSON</span>.stringify(data);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">storage.setItem(<span class="string">"data"</span>,d);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//将JSON字符串转换成为JSON对象输出</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> json=storage.getItem(<span class="string">"data"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jsonObj=<span class="built_in">JSON</span>.parse(json);</span></pre></td></tr></table></figure>
+<h4 id="localStorage-其他注意事项"><a href="#localStorage-其他注意事项" class="headerlink" title="localStorage 其他注意事项"></a>localStorage 其他注意事项</h4><p>一般我们会将 JSON(js 中的对象)存入 localStorage 中，但是在 localStorage 会自动将 localStorage 转换成为字符串形式<br>这个时候我们可以使用 JSON.stringify()这个方法，来将 JSON 转换成为 JSON 字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  name: <span class="string">"zhangsan"</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  sex: <span class="string">"man"</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="built_in">JSON</span>.stringify(data);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">storage.setItem(<span class="string">"data"</span>, d);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//将JSON字符串转换成为JSON对象输出</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> json = storage.getItem(<span class="string">"data"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jsonObj = <span class="built_in">JSON</span>.parse(json);</span></pre></td></tr></table></figure>
 
 <hr>
-<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/localStorage%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/">localStorage本地存储</a><br>如有错误，请及时评论或者知乎私信或者B站私信哦~</p>
+<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/localStorage%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/">localStorage 本地存储</a><br>如有错误，请及时评论或者知乎私信或者 B 站私信哦~</p>
 <hr>
 <p><strong>最后更新于:2020/01/28</strong></p>
 
@@ -391,7 +392,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是localStorage"><span class="toc-number">1.</span> <span class="toc-text">什么是localStorage</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#localStorage的优势"><span class="toc-number">1.0.1.</span> <span class="toc-text">localStorage的优势</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#localStorage的局限"><span class="toc-number">1.0.2.</span> <span class="toc-text">localStorage的局限</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#localStorage的写入"><span class="toc-number">2.</span> <span class="toc-text">localStorage的写入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三种对localStorage的读取"><span class="toc-number">3.</span> <span class="toc-text">三种对localStorage的读取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#localStorage的修改"><span class="toc-number">4.</span> <span class="toc-text">localStorage的修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#localStorage的删除"><span class="toc-number">5.</span> <span class="toc-text">localStorage的删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#localStorage其他注意事项"><span class="toc-number">6.</span> <span class="toc-text">localStorage其他注意事项</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是-localStorage"><span class="toc-number">1.</span> <span class="toc-text">什么是 localStorage</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#localStorage-的优势"><span class="toc-number">1.0.1.</span> <span class="toc-text">localStorage 的优势</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#localStorage-的局限"><span class="toc-number">1.0.2.</span> <span class="toc-text">localStorage 的局限</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#localStorage-的写入"><span class="toc-number">2.</span> <span class="toc-text">localStorage 的写入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三种对-localStorage-的读取"><span class="toc-number">3.</span> <span class="toc-text">三种对 localStorage 的读取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#localStorage-的修改"><span class="toc-number">4.</span> <span class="toc-text">localStorage 的修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#localStorage-的删除"><span class="toc-number">5.</span> <span class="toc-text">localStorage 的删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#localStorage-其他注意事项"><span class="toc-number">6.</span> <span class="toc-text">localStorage 其他注意事项</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -543,6 +544,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">CSS3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">3D转换</a>
               </li>
              
@@ -567,47 +572,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">2D转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">DOM高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">HTML5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Math</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Date</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">localStorage</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">元素类型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">事件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,7 +592,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">宽高自适应</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">DOM高级</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">string</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">localStorage</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">HTML5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">循环语句</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -639,11 +640,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">函数</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">元素类型</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">循环语句</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">弹性盒模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">多栏布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">宽高自适应</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表格高级</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表单高级</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -659,31 +680,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">弹性盒模型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">多栏布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">响应式布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表格高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表单高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">面向对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -691,11 +688,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">string</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">响应式布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -703,7 +696,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">面向对象</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Math</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Date</a>
               </li>
             
             <div class="clearfix"></div>

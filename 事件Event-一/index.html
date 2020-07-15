@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="人模人样的搬砖老段">
 <meta property="og:description" content="事件基础JavaScript 事件是由访问 Web 页面的用户引起的一系列操作。当用户执行某些操作的时候，再去执行一系列代码。或者用来获取事件详细信息，如鼠标位置、键盘按键等。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-09T08:32:18.620Z">
+<meta property="og:updated_time" content="2020-07-15T10:12:10.630Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="人模人样的搬砖老段" type="application/atom+xml">
@@ -195,57 +195,58 @@ var _hmt = _hmt || [];
 
                     
                         <a href="/%E4%BA%8B%E4%BB%B6Event-%E4%B8%80/" class="archive-article-date">
-  	<time datetime="2019-07-23T12:31:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
+  	<time datetime="2019-05-19T12:31:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
                             
             </header>
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                                        <h4 id="事件基础"><a href="#事件基础" class="headerlink" title="事件基础"></a>事件基础</h4><p>JavaScript 事件是由访问 Web 页面的用户引起的一系列操作。<br>当用户执行某些操作的时候，再去执行一系列代码。或者用来获取事件详细信息，如鼠标位置、键盘按键等。 </p>
+                                        <h4 id="事件基础"><a href="#事件基础" class="headerlink" title="事件基础"></a>事件基础</h4><p>JavaScript 事件是由访问 Web 页面的用户引起的一系列操作。<br>当用户执行某些操作的时候，再去执行一系列代码。或者用来获取事件详细信息，如鼠标位置、键盘按键等。</p>
 <a id="more"></a>
 
-<h4 id="事件处理函数"><a href="#事件处理函数" class="headerlink" title="事件处理函数"></a>事件处理函数</h4><p>javaScript可以处理的事件类型为：鼠标事件、键盘事件、HTML事件<br>所有的事件处理函数都会都有两个部分组成，on + 事件名称</p>
+<h4 id="事件处理函数"><a href="#事件处理函数" class="headerlink" title="事件处理函数"></a>事件处理函数</h4><p>javaScript 可以处理的事件类型为：鼠标事件、键盘事件、HTML 事件<br>所有的事件处理函数都会都有两个部分组成，on + 事件名称</p>
 <h4 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h4><p>onclick:用户单击鼠标按钮<br>ondblclick:当用户双击主鼠标按钮时触发<br>onmousedown:当用户按下鼠标还未弹起时触发<br>onmouseup：当用户释放鼠标按钮时触发<br>onmouseover：当鼠标移到某个元素上方时触发<br>onmouseout：当鼠标移出某个元素上方时触发<br>onmousemove：当鼠标指针在元素上移动时触发</p>
-<h4 id="HTML事件"><a href="#HTML事件" class="headerlink" title="HTML事件"></a>HTML事件</h4><p>onload：当页面或者资源完全加载后在 window 上面触发<br>onselect：当用户选择文本框(input 或 textarea)中的一个或多个字符触发<br>onchange：当文本框(input 或 textarea)内容改变且失去焦点后触发<br>onfocus：当页面或者元素获得焦点时在 window 及相关元素上面触发<br>onblur：当页面或元素失去焦点时在 window 及相关元素上触发<br>onresize：当窗口或框架的大小变化时在 window 或框架上触发<br>onscroll：当用户滚动带滚动条的元素时触发</p>
+<h4 id="HTML-事件"><a href="#HTML-事件" class="headerlink" title="HTML 事件"></a>HTML 事件</h4><p>onload：当页面或者资源完全加载后在 window 上面触发<br>onselect：当用户选择文本框(input 或 textarea)中的一个或多个字符触发<br>onchange：当文本框(input 或 textarea)内容改变且失去焦点后触发<br>onfocus：当页面或者元素获得焦点时在 window 及相关元素上面触发<br>onblur：当页面或元素失去焦点时在 window 及相关元素上触发<br>onresize：当窗口或框架的大小变化时在 window 或框架上触发<br>onscroll：当用户滚动带滚动条的元素时触发</p>
 <h4 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h4><p>当触发某个事件时，会产生一个事件对象，这个对象包含着所有与事件有关的信息 。包括导致事件的元素、事件的类型、以及其它与特定事件相关的信息。</p>
 <p>通过事件绑定的执行函数是可以得到一个隐藏参数的 。说明，浏览器会自动分配一个参数，这个参数其实就是 event 对象。</p>
-<p>Event对象获取方式    （兼容性）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">el.onclick=<span class="function"><span class="keyword">function</span>(<span class="params">evt</span>)</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">let</span> e = evt || <span class="built_in">window</span>.event</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<p>Event 对象获取方式 （兼容性）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">el.onclick = <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">let</span> e = evt || <span class="built_in">window</span>.event;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure>
 
-<p>event.button属性<br>  当前事件触发时哪个鼠标按键被点击<br>clientX、clientY属性<br>  鼠标在可视区X坐标和Y坐标，即距离左边框和上边框的距离<br>screenX、screenY属性<br>  鼠标在屏幕区X坐标和Y坐标，即距离左屏幕和上屏幕的距离<br>offsetX、offsetY属性<br>  鼠标相对于事件源的X坐标和Y坐标<br>pageX、pageY<br>  鼠标相对于文档的X坐标和Y坐标</p>
-<h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h4><p>onkeydown：当用户按下键盘上任意键触发，如果按住不放，会重复触发<br>onkeypress：当用户按下键盘上的字符键触发，如果按住不放，会重复触发<br>onkeyup：当用户释放键盘上的键触发<br>组合键ctrkey、altkey、shiftkey<br>altKey属性，bool类型，表示发生事件的时候alt键是否被按下<br>ctrlKey属性，bool类型，表示发生事件的时候ctrl键是否被按下<br>shiftKey属性，bool类型，表示发生事件的时候shift键是否被按下<br>keyCode/which兼容<br>事件源（事件在哪个元素上产生）</p>
+<p>event.button 属性<br>当前事件触发时哪个鼠标按键被点击<br>clientX、clientY 属性<br>鼠标在可视区 X 坐标和 Y 坐标，即距离左边框和上边框的距离<br>screenX、screenY 属性<br>鼠标在屏幕区 X 坐标和 Y 坐标，即距离左屏幕和上屏幕的距离<br>offsetX、offsetY 属性<br>鼠标相对于事件源的 X 坐标和 Y 坐标<br>pageX、pageY<br>鼠标相对于文档的 X 坐标和 Y 坐标</p>
+<h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h4><p>onkeydown：当用户按下键盘上任意键触发，如果按住不放，会重复触发<br>onkeypress：当用户按下键盘上的字符键触发，如果按住不放，会重复触发<br>onkeyup：当用户释放键盘上的键触发<br>组合键 ctrkey、altkey、shiftkey<br>altKey 属性，bool 类型，表示发生事件的时候 alt 键是否被按下<br>ctrlKey 属性，bool 类型，表示发生事件的时候 ctrl 键是否被按下<br>shiftKey 属性，bool 类型，表示发生事件的时候 shift 键是否被按下<br>keyCode/which 兼容<br>事件源（事件在哪个元素上产生）</p>
 <h4 id="冒泡"><a href="#冒泡" class="headerlink" title="冒泡"></a>冒泡</h4><ol>
-<li>事件的冒泡<br>事件按照从最特定的事件目标到最不特定的事件目标(document对象)的顺序触发。</li>
-<li>阻止事件冒泡<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//阻止事件冒泡</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">e.stopPropagation();			</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//低版本ie</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">e.cancelBubble = <span class="literal">true</span>;</span></pre></td></tr></table></figure>
+<li>事件的冒泡<br>事件按照从最特定的事件目标到最不特定的事件目标(document 对象)的顺序触发。</li>
+<li>阻止事件冒泡</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//阻止事件冒泡</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">e.stopPropagation();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//低版本ie</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">e.cancelBubble = <span class="literal">true</span>;</span></pre></td></tr></table></figure>
 
-</li>
-</ol>
 <h4 id="事件默认行为及阻止方式"><a href="#事件默认行为及阻止方式" class="headerlink" title="事件默认行为及阻止方式"></a>事件默认行为及阻止方式</h4><ol>
-<li>浏览器的默认行为<br>JavaScript事件本身所具有的属性，例如a标签的跳转，Submit按钮的提交，右键菜单，文本框的输入等。 </li>
-<li>阻止默认行为的方式<br>w3c的方法是<code>e.preventDefault()</code>，</li>
+<li>浏览器的默认行为<br>JavaScript 事件本身所具有的属性，例如 a 标签的跳转，Submit 按钮的提交，右键菜单，文本框的输入等。</li>
+<li>阻止默认行为的方式<br>w3c 的方法是<code>e.preventDefault()</code>，</li>
 </ol>
-<p>IE则是使用<br><code>e.returnValue = false;</code></p>
+<p>IE 则是使用<br><code>e.returnValue = false;</code></p>
 <p><code>return false;</code></p>
 <p>自定义右键菜单 <code>oncontextmenu</code></p>
-<h4 id="DOM2级事件处理程序"><a href="#DOM2级事件处理程序" class="headerlink" title="DOM2级事件处理程序"></a>DOM2级事件处理程序</h4><p>添加事件监听器：<code>ele.addEventListener(事件名,处理函数,布尔值)</code><br>现代浏览器（IE9、10、11 | ff, chorme, safari, opera）<br>注意：事件名不带on，处理函数为函数引用，布尔值代表冒泡(内到外)或捕获（外到内）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">element.addEventListener(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,<span class="literal">false</span>);<span class="comment">//false 事件冒泡</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">element.addEventListener(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,<span class="literal">true</span>);<span class="comment">//true事件捕获</span></span></pre></td></tr></table></figure>
+<h4 id="DOM2-级事件处理程序"><a href="#DOM2-级事件处理程序" class="headerlink" title="DOM2 级事件处理程序"></a>DOM2 级事件处理程序</h4><p>添加事件监听器：<code>ele.addEventListener(事件名,处理函数,布尔值)</code><br>现代浏览器（IE9、10、11 | ff, chorme, safari, opera）<br>注意：事件名不带 on，处理函数为函数引用，布尔值代表冒泡(内到外)或捕获（外到内）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">element.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;, <span class="literal">false</span>); <span class="comment">//false 事件冒泡</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">element.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;, <span class="literal">true</span>); <span class="comment">//true事件捕获</span></span></pre></td></tr></table></figure>
+
 <p>移除事件监听器：<code>removeEventListener(事件名,处理函数)</code></p>
-<p>IE8及以下的事件监听器：<code>attachEvent(事件名,处理函数)</code>，<code>detachEvent(事件名,处理函数)</code><br>注意：事件名带on</p>
+<p>IE8 及以下的事件监听器：<code>attachEvent(事件名,处理函数)</code>，<code>detachEvent(事件名,处理函数)</code><br>注意：事件名带 on</p>
 <h6 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h6><p>利用事件冒泡的原理，把本应添加给某元素上的事件委托给他的父级（外层）。</p>
-<p>使用案例<br>如果一个ul中有很多li，循环遍历所有的li，给li添加事件效率比较低，我们可以监听ul的点击事件，利用子元素的点击事件都会冒泡到父元素的特点，就可以知道什么时候点击了li。</p>
+<p>使用案例<br>如果一个 ul 中有很多 li，循环遍历所有的 li，给 li 添加事件效率比较低，我们可以监听 ul 的点击事件，利用子元素的点击事件都会冒泡到父元素的特点，就可以知道什么时候点击了 li。</p>
 <p>好处：效率高，可以给未来元素添加事件</p>
 <h4 id="事件对象中的拖拽效果"><a href="#事件对象中的拖拽效果" class="headerlink" title="事件对象中的拖拽效果"></a>事件对象中的拖拽效果</h4><p>拖拽原理<br>三个事件：onmousedown、onmousemove、onmouseup</p>
 <p>实现思路：</p>
 <ol>
-<li>给目标元素添加onmousedown事件，拖拽的前提是在目标元素按下鼠标左键。</li>
-<li>当onmousedown发生以后，此刻给document添加onmousemove事件，意味着此刻鼠标在网页的移动都将改变目标元素的位置。</li>
-<li>在onmousemove事件中，设定目标元素的left和top，<br>公式：<br>目标元素的left = 鼠标的clientX - (鼠标和元素的横坐标差，即offsetX)<br>目标元素的top = 鼠标的clientY - (鼠标和元素的纵坐标差，即offsetY)</li>
-<li>当onmousedown发生以后，此刻给document添加onmouseup事件，意味着此刻鼠标在网页的任意位置松开鼠标，都会放弃拖拽的效果。</li>
-<li>在onmouseup事件中，取消document的onmousemove事件即可。</li>
+<li>给目标元素添加 onmousedown 事件，拖拽的前提是在目标元素按下鼠标左键。</li>
+<li>当 onmousedown 发生以后，此刻给 document 添加 onmousemove 事件，意味着此刻鼠标在网页的移动都将改变目标元素的位置。</li>
+<li>在 onmousemove 事件中，设定目标元素的 left 和 top，<br>公式：<br>目标元素的 left = 鼠标的 clientX - (鼠标和元素的横坐标差，即 offsetX)<br>目标元素的 top = 鼠标的 clientY - (鼠标和元素的纵坐标差，即 offsetY)</li>
+<li>当 onmousedown 发生以后，此刻给 document 添加 onmouseup 事件，意味着此刻鼠标在网页的任意位置松开鼠标，都会放弃拖拽的效果。</li>
+<li>在 onmouseup 事件中，取消 document 的 onmousemove 事件即可。</li>
 </ol>
 <hr>
-<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/%E4%BA%8B%E4%BB%B6Event-%E4%B8%80/">事件Event</a><br>如有错误，请及时评论或者知乎私信或者B站私信哦~</p>
+<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/%E4%BA%8B%E4%BB%B6Event-%E4%B8%80/">事件 Event</a><br>如有错误，请及时评论或者知乎私信或者 B 站私信哦~</p>
 <hr>
 <p><strong>最后更新于:2020/02/02</strong></p>
 
@@ -405,7 +406,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#事件基础"><span class="toc-number">1.</span> <span class="toc-text">事件基础</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件处理函数"><span class="toc-number">2.</span> <span class="toc-text">事件处理函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#鼠标事件"><span class="toc-number">3.</span> <span class="toc-text">鼠标事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML事件"><span class="toc-number">4.</span> <span class="toc-text">HTML事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件对象"><span class="toc-number">5.</span> <span class="toc-text">事件对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#键盘事件"><span class="toc-number">6.</span> <span class="toc-text">键盘事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#冒泡"><span class="toc-number">7.</span> <span class="toc-text">冒泡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件默认行为及阻止方式"><span class="toc-number">8.</span> <span class="toc-text">事件默认行为及阻止方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DOM2级事件处理程序"><span class="toc-number">9.</span> <span class="toc-text">DOM2级事件处理程序</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#事件委托"><span class="toc-number">9.0.1.</span> <span class="toc-text">事件委托</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件对象中的拖拽效果"><span class="toc-number">10.</span> <span class="toc-text">事件对象中的拖拽效果</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#事件基础"><span class="toc-number">1.</span> <span class="toc-text">事件基础</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件处理函数"><span class="toc-number">2.</span> <span class="toc-text">事件处理函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#鼠标事件"><span class="toc-number">3.</span> <span class="toc-text">鼠标事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML-事件"><span class="toc-number">4.</span> <span class="toc-text">HTML 事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件对象"><span class="toc-number">5.</span> <span class="toc-text">事件对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#键盘事件"><span class="toc-number">6.</span> <span class="toc-text">键盘事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#冒泡"><span class="toc-number">7.</span> <span class="toc-text">冒泡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件默认行为及阻止方式"><span class="toc-number">8.</span> <span class="toc-text">事件默认行为及阻止方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DOM2-级事件处理程序"><span class="toc-number">9.</span> <span class="toc-text">DOM2 级事件处理程序</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#事件委托"><span class="toc-number">9.0.1.</span> <span class="toc-text">事件委托</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件对象中的拖拽效果"><span class="toc-number">10.</span> <span class="toc-text">事件对象中的拖拽效果</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -557,6 +558,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">CSS3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">3D转换</a>
               </li>
              
@@ -581,47 +586,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">2D转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">DOM高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">HTML5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Math</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Date</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">localStorage</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">元素类型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">事件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -641,7 +606,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">宽高自适应</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">DOM高级</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">string</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">localStorage</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">HTML5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">循环语句</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -653,11 +654,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">函数</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">元素类型</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">循环语句</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">弹性盒模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">多栏布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">宽高自适应</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表格高级</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表单高级</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -673,31 +694,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">弹性盒模型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">多栏布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">响应式布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表格高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表单高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">面向对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -705,11 +702,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">string</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">响应式布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -717,7 +710,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">面向对象</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Math</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Date</a>
               </li>
             
             <div class="clearfix"></div>

@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://dxh98.cn">
   <title>Math和Date | 人模人样的搬砖老段</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MathMath是 JavaScript 的原生对象，提供各种数学功能。该对象不是构造函数，不能生成实例，所有的属性和方法都必须在Math对象上调用。">
+  <meta name="description" content="MathMath 是 JavaScript 的原生对象，提供各种数学功能。该对象不是构造函数，不能生成实例，所有的属性和方法都必须在 Math 对象上调用。">
 <meta name="keywords" content="JavaScript,Math,Date">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Math和Date">
 <meta property="og:url" content="http:&#x2F;&#x2F;dxh98.cn&#x2F;Math%E5%92%8CDate&#x2F;index.html">
 <meta property="og:site_name" content="人模人样的搬砖老段">
-<meta property="og:description" content="MathMath是 JavaScript 的原生对象，提供各种数学功能。该对象不是构造函数，不能生成实例，所有的属性和方法都必须在Math对象上调用。">
+<meta property="og:description" content="MathMath 是 JavaScript 的原生对象，提供各种数学功能。该对象不是构造函数，不能生成实例，所有的属性和方法都必须在 Math 对象上调用。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-09T08:32:47.183Z">
+<meta property="og:updated_time" content="2020-07-15T10:13:29.829Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="人模人样的搬砖老段" type="application/atom+xml">
@@ -195,60 +195,89 @@ var _hmt = _hmt || [];
 
                     
                         <a href="/Math%E5%92%8CDate/" class="archive-article-date">
-  	<time datetime="2019-08-01T11:12:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-01</time>
+  	<time datetime="2019-06-30T11:12:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
 </a>
                             
             </header>
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                                        <h4 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h4><p>Math是 JavaScript 的原生对象，提供各种数学功能。该对象不是构造函数，不能生成实例，所有的属性和方法都必须在Math对象上调用。</p>
+                                        <h4 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h4><p>Math 是 JavaScript 的原生对象，提供各种数学功能。该对象不是构造函数，不能生成实例，所有的属性和方法都必须在 Math 对象上调用。</p>
 <a id="more"></a>
 
-<p>Math对象的属性，提供以下一些数学常数。（了解）<br>Math.E：常数e。<br>Math.PI：常数 Pi。</p>
+<p>Math 对象的属性，提供以下一些数学常数。（了解）<br>Math.E：常数 e。<br>Math.PI：常数 Pi。</p>
 <ol>
-<li><strong>Math.abs</strong>方法返回参数值的绝对值。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.abs(<span class="number">1</span>) <span class="comment">// 1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.abs(<span class="number">-1</span>) <span class="comment">// 1</span></span></pre></td></tr></table></figure>
-Math.max方法返回参数之中最大的那个值，Math.min返回最小的那个值。如果参数为空, Math.min返回Infinity, Math.max返回-Infinity。</li>
+<li><strong>Math.abs</strong>方法返回参数值的绝对值。</li>
 </ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.abs(<span class="number">1</span>); <span class="comment">// 1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.abs(<span class="number">-1</span>); <span class="comment">// 1</span></span></pre></td></tr></table></figure>
+
+<p>Math.max 方法返回参数之中最大的那个值，Math.min 返回最小的那个值。如果参数为空, Math.min 返回 Infinity, Math.max 返回-Infinity。</p>
 <p>Infinity 用于存放表示正无穷大的数值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.max(<span class="number">2</span>, <span class="number">-1</span>, <span class="number">5</span>) <span class="comment">// 5</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.min(<span class="number">2</span>, <span class="number">-1</span>, <span class="number">5</span>) <span class="comment">// -1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.min() <span class="comment">// Infinity  </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.max() <span class="comment">// -Infinity</span></span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.max(<span class="number">2</span>, <span class="number">-1</span>, <span class="number">5</span>); <span class="comment">// 5</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.min(<span class="number">2</span>, <span class="number">-1</span>, <span class="number">5</span>); <span class="comment">// -1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.min(); <span class="comment">// Infinity</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.max(); <span class="comment">// -Infinity</span></span></pre></td></tr></table></figure>
+
 <ol start="2">
-<li><strong>Math.floor</strong>方法小于参数值的最大整数（地板值）。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.floor(<span class="number">3.2</span>) <span class="comment">// 3</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.floor(<span class="number">-3.2</span>) <span class="comment">// -4</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//Math.ceil方法返回大于参数值的最小整数（天花板值）。</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.ceil(<span class="number">3.2</span>) <span class="comment">// 4</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.ceil(<span class="number">-3.2</span>) <span class="comment">// -3</span></span></pre></td></tr></table></figure></li>
-<li><strong>Math.round</strong>方法用于四舍五入。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.round(<span class="number">0.1</span>) <span class="comment">// 0</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.round(<span class="number">0.5</span>) <span class="comment">// 1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.round(<span class="number">0.6</span>) <span class="comment">// 1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.round(<span class="number">-1.1</span>) <span class="comment">// -1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.round(<span class="number">-1.5</span>) <span class="comment">// -1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.round(<span class="number">-1.6</span>) <span class="comment">// -2</span></span></pre></td></tr></table></figure></li>
-<li><strong>Math.pow</strong>方法返回以第一个参数为底数、第二个参数为幂的指数值。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 等同于 2 ** 2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">2</span>) <span class="comment">// 4</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 等同于 2 ** 3</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">3</span>) <span class="comment">// 8</span></span></pre></td></tr></table></figure></li>
-<li><strong>Math.sqrt</strong>方法返回参数值的平方根。如果参数是一个负值，则返回NaN。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.sqrt(<span class="number">4</span>) <span class="comment">// 2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.sqrt(<span class="number">-4</span>) <span class="comment">// NaN</span></span></pre></td></tr></table></figure>
-勾股定理<br>a^2+b^2=c^2</li>
+<li><strong>Math.floor</strong>方法小于参数值的最大整数（地板值）。</li>
 </ol>
-<p>三角函数<br>Math对象还提供一系列三角函数方<br><code>Math.sin()</code>：返回参数的正弦（参数为弧度值）<br><code>Math.cos()</code>：返回参数的余弦（参数为弧度值）<br><code>Math.tan()</code>：返回参数的正切（参数为弧度值）<br><code>30*Math.PI/180</code>   角度转为弧度</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.sin(<span class="number">0</span>) <span class="comment">// 0</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.cos(<span class="number">0</span>) <span class="comment">// 1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.tan(<span class="number">0</span>) <span class="comment">// 0</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.sin(<span class="built_in">Math</span>.PI / <span class="number">2</span>) <span class="comment">// 1</span></span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.floor(<span class="number">3.2</span>); <span class="comment">// 3</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.floor(<span class="number">-3.2</span>); <span class="comment">// -4</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//Math.ceil方法返回大于参数值的最小整数（天花板值）。</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.ceil(<span class="number">3.2</span>); <span class="comment">// 4</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.ceil(<span class="number">-3.2</span>); <span class="comment">// -3</span></span></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><strong>Math.round</strong>方法用于四舍五入。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.round(<span class="number">0.1</span>); <span class="comment">// 0</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.round(<span class="number">0.5</span>); <span class="comment">// 1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.round(<span class="number">0.6</span>); <span class="comment">// 1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.round(<span class="number">-1.1</span>); <span class="comment">// -1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.round(<span class="number">-1.5</span>); <span class="comment">// -1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.round(<span class="number">-1.6</span>); <span class="comment">// -2</span></span></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><strong>Math.pow</strong>方法返回以第一个参数为底数、第二个参数为幂的指数值。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 等同于 2 ** 2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">2</span>); <span class="comment">// 4</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 等同于 2 ** 3</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">3</span>); <span class="comment">// 8</span></span></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><strong>Math.sqrt</strong>方法返回参数值的平方根。如果参数是一个负值，则返回 NaN。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.sqrt(<span class="number">4</span>); <span class="comment">// 2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.sqrt(<span class="number">-4</span>); <span class="comment">// NaN</span></span></pre></td></tr></table></figure>
+
+<p>勾股定理<br>a^2+b^2=c^2</p>
+<p>三角函数<br>Math 对象还提供一系列三角函数方<br><code>Math.sin()</code>：返回参数的正弦（参数为弧度值）<br><code>Math.cos()</code>：返回参数的余弦（参数为弧度值）<br><code>Math.tan()</code>：返回参数的正切（参数为弧度值）<br><code>30*Math.PI/180</code> 角度转为弧度</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.sin(<span class="number">0</span>); <span class="comment">// 0</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.cos(<span class="number">0</span>); <span class="comment">// 1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.tan(<span class="number">0</span>); <span class="comment">// 0</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.sin(<span class="built_in">Math</span>.PI / <span class="number">2</span>); <span class="comment">// 1</span></span></pre></td></tr></table></figure>
+
 <ol start="6">
-<li><strong>Math.random()</strong>返回0到1之间的一个伪随机数，可能等于0，但是一定小于1。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.random() <span class="comment">// 0.7151307314634323</span></span></pre></td></tr></table></figure>
-任意范围的随机整数生成函数如下。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRandomInt</span>(<span class="params">min, max</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * (max - min + <span class="number">1</span>)) + min;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">getRandomInt(<span class="number">1</span>, <span class="number">6</span>) <span class="comment">// 5</span></span></pre></td></tr></table></figure>
-
-</li>
+<li><strong>Math.random()</strong>返回 0 到 1 之间的一个伪随机数，可能等于 0，但是一定小于 1。</li>
 </ol>
-<h4 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h4><p>Date对象是 JavaScript 原生的时间库。它以1970年1月1日00:00:00作为时间的零点，可以表示的时间范围是前后各1亿天（单位为毫秒）<br>日期对象创建<br>Date可以当作构造函数使用。对它使用new命令，会返回一个Date对象的实例。如果不加参数，实例代表的就是当前时间。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> today = <span class="keyword">new</span> <span class="built_in">Date</span>();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">today</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// "Tue Dec 01 2015 09:34:43 GMT+0800 (CST)"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 等同于</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">today.toString()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// "Tue Dec 01 2015 09:34:43 GMT+0800 (CST)"</span></span></pre></td></tr></table></figure>
-<p>对Date实例求值，返回的是一个字符串，代表该实例对应的时间。</p>
-<h6 id="日期处理"><a href="#日期处理" class="headerlink" title="日期处理"></a>日期处理</h6><p> <code>oDate.getDate()</code>      返回一个月中的某一天 (1 ~ 31)<br> <code>oDate.getDay()</code>       返回一周中的某一天 (0 ~ 6)<br> <code>oDate.getMonth()</code>     返回月份 (0 ~ 11)<br> <code>oDate.getFullYear()</code>  以四位数字返回年份</p>
-<p> 作为构造函数时，Date对象可以接受多种格式的参数，返回一个该参数对应的时间实例。<br> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 参数为时间零点开始计算的毫秒数</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1378218728000</span>)（最常用）</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// Tue Sep 03 2013 22:32:08 GMT+0800 (CST)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">/ 参数为多个整数，</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代表年、月、日、小时、分钟、秒、毫秒</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2013</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// Tue Jan 01 2013 00:00:00 GMT+0800 (CST)</span></span></pre></td></tr></table></figure><br>参数也可以是一个字符串（最常用）<br>日期字符串应该符合 RFC 2822 和 ISO 8061 这两个标准，即YYYY-MM-DDTHH:mm:ss.sssZ格式</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2013-2-15'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2013/2/15'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'02/15/2013'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2013-FEB-15'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'FEB, 15, 2013'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'Feberuary, 15, 2013'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'15 Feb 2013'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'15, Feberuary, 2013'</span>)</span></pre></td></tr></table></figure>
-<p>上面多种日期字符串的写法，返回的都是同一个时间</p>
-<p>日期处理<br><code>oDate.getDate()</code>      返回一个月中的某一天 (1 ~ 31)<br><code>oDate.getDay()</code>       返回一周中的某一天 (0 ~ 6)<br><code>oDate.getMonth()</code>     返回月份 (0 ~ 11)<br><code>oDate.getFullYear()</code>  以四位数字返回年份<br><code>oDate.getHours()</code>     返回当前小时（0-23）<br><code>oDate.getMinutes()</code>   返回当前分钟 (0 ~ 59)<br><code>oDate.getSeconds()</code>       返回当前秒(0 ~ 59)<br><code>oDate.getMillisenconds()</code>  返回当前毫秒(0 ~ 999)<br>注意，月份从0开始计算，但是，天数从1开始计算。另外，除了日期的默认值为1，小时、分钟、秒钟和毫秒的默认值都是0。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2013</span>, <span class="number">15</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// Tue Apr 01 2014 00:00:00 GMT+0800 (CST)</span></span></pre></td></tr></table></figure>
-<p><code>oDate.getTime()</code>       返回1970年1月1日至今的毫秒数<br><code>oDate.setDate()</code>      设置月中的某一天 (1 ~ 31)<br><code>oDate.setMonth()</code>     设置月份 (0 ~ 11)<br>例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">oDate.setMonth(<span class="number">9</span>);   alert(oDate.getMonth())</span></pre></td></tr></table></figure>
-<p><code>oDate.setFullYear()</code>   设置年份（四位数）<br><code>oDate.setHours()</code>             设置小时（0-23）<br><code>oDate.setMinutes()</code>          设置分钟 (0 ~ 59)<br><code>oDate.setSeconds()</code>          设置秒(0 ~ 59)<br><code>oDate.setMillisenconds()</code>  设置毫秒(0 ~ 999)<br><code>oDate.setTime()</code>                 设置1970年1月1日至今的毫秒数<br>这些参数如果超出了正常范围，会被自动折算。比如，如果月设为15，就折算为下一年的4月</p>
-<h6 id="日期的运算"><a href="#日期的运算" class="headerlink" title="日期的运算"></a>日期的运算</h6><p>类型自动转换时，Date实例如果转为数值，则等于对应的毫秒数；如果转为字符串，则等于对应的日期字符串。所以，两个日期实例对象进行减法运算时，返回的是它们间隔的毫秒数；进行加法运算时，返回的是两个字符串连接而成的新字符串。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2000</span>, <span class="number">2</span>, <span class="number">1</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d2 = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2000</span>, <span class="number">3</span>, <span class="number">1</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">d2 - d1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2678400000</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">d2 + d1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// "Sat Apr 01 2000 00:00:00 GMT+0800 (CST)Wed Mar 01 2000 00:00:00</span></span></pre></td></tr></table></figure>
-<h6 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h6><p><code>Date.parse</code>方法用来解析日期字符串，返回该时间距离时间零点（1970年1月1日 00:00:00）的毫秒数。<br>日期字符串应该符合 RFC 2822 和 ISO 8061 这两个标准，即YYYY-MM-DDTHH:mm:ss.sssZ格式，其中最后的Z表示时区。但是，其他格式也可以被解析，请看下面的例子。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.parse(<span class="string">'Aug 9, 1995'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.parse(<span class="string">'January 26, 2011 13:51:50'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.parse(<span class="string">'Mon, 25 Dec 1995 13:30:00 GMT'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.parse(<span class="string">'Mon, 25 Dec 1995 13:30:00 +0430'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.parse(<span class="string">'2011-10-10'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.parse(<span class="string">'2011-10-10T14:48:00'</span>)</span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.random(); <span class="comment">// 0.7151307314634323</span></span></pre></td></tr></table></figure>
 
-<h4 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h4><p><code>setInterval(func,time)</code><br>有两个参数，第一个参数是一个函数，第二个参数是时间间隔，单位是毫秒<br>每间隔time毫秒，会执行一次函数<br>setInterval的返回值是一个数字</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">box</span>(<span class="params"></span>)</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">	<span class="built_in">console</span>.log(<span class="number">1</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timer = setInerval(box,<span class="number">1000</span>);</span></pre></td></tr></table></figure>
-<p>上面代码意思是，没间隔1000毫秒，box函数执行一次。<br>取消定时器的执行<br>如果想要取消定时器的执行我们需要拿到setInerval定时器函数的返回值，调用clearInterval，清除定时器<br><code>clearInterval(timer)</code>，调用之后box函数就不会再执行了！</p>
+<p>任意范围的随机整数生成函数如下。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRandomInt</span>(<span class="params">min, max</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * (max - min + <span class="number">1</span>)) + min;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">getRandomInt(<span class="number">1</span>, <span class="number">6</span>); <span class="comment">// 5</span></span></pre></td></tr></table></figure>
+
+<h4 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h4><p>Date 对象是 JavaScript 原生的时间库。它以 1970 年 1 月 1 日 00:00:00 作为时间的零点，可以表示的时间范围是前后各 1 亿天（单位为毫秒）<br>日期对象创建<br>Date 可以当作构造函数使用。对它使用 new 命令，会返回一个 Date 对象的实例。如果不加参数，实例代表的就是当前时间。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> today = <span class="keyword">new</span> <span class="built_in">Date</span>();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">today;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// "Tue Dec 01 2015 09:34:43 GMT+0800 (CST)"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 等同于</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">today.toString();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// "Tue Dec 01 2015 09:34:43 GMT+0800 (CST)"</span></span></pre></td></tr></table></figure>
+
+<p>对 Date 实例求值，返回的是一个字符串，代表该实例对应的时间。</p>
+<h6 id="日期处理"><a href="#日期处理" class="headerlink" title="日期处理"></a>日期处理</h6><p><code>oDate.getDate()</code> 返回一个月中的某一天 (1 ~ 31)<br><code>oDate.getDay()</code> 返回一周中的某一天 (0 ~ 6)<br><code>oDate.getMonth()</code> 返回月份 (0 ~ 11)<br><code>oDate.getFullYear()</code> 以四位数字返回年份</p>
+<p>作为构造函数时，Date 对象可以接受多种格式的参数，返回一个该参数对应的时间实例。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 参数为时间零点开始计算的毫秒数</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1378218728000</span>)（最常用）</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// Tue Sep 03 2013 22:32:08 GMT+0800 (CST)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">/ 参数为多个整数，</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代表年、月、日、小时、分钟、秒、毫秒</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2013</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// Tue Jan 01 2013 00:00:00 GMT+0800 (CST)</span></span></pre></td></tr></table></figure>
+
+<p>参数也可以是一个字符串（最常用）<br>日期字符串应该符合 RFC 2822 和 ISO 8061 这两个标准，即 YYYY-MM-DDTHH:mm:ss.sssZ 格式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2013-2-15"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2013/2/15"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"02/15/2013"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2013-FEB-15"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"FEB, 15, 2013"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"Feberuary, 15, 2013"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"15 Feb 2013"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"15, Feberuary, 2013"</span>);</span></pre></td></tr></table></figure>
+
+<p>上面多种日期字符串的写法，返回的都是同一个时间</p>
+<p>日期处理<br><code>oDate.getDate()</code> 返回一个月中的某一天 (1 ~ 31)<br><code>oDate.getDay()</code> 返回一周中的某一天 (0 ~ 6)<br><code>oDate.getMonth()</code> 返回月份 (0 ~ 11)<br><code>oDate.getFullYear()</code> 以四位数字返回年份<br><code>oDate.getHours()</code> 返回当前小时（0-23）<br><code>oDate.getMinutes()</code> 返回当前分钟 (0 ~ 59)<br><code>oDate.getSeconds()</code> 返回当前秒(0 ~ 59)<br><code>oDate.getMillisenconds()</code> 返回当前毫秒(0 ~ 999)<br>注意，月份从 0 开始计算，但是，天数从 1 开始计算。另外，除了日期的默认值为 1，小时、分钟、秒钟和毫秒的默认值都是 0。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2013</span>, <span class="number">15</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// Tue Apr 01 2014 00:00:00 GMT+0800 (CST)</span></span></pre></td></tr></table></figure>
+
+<p><code>oDate.getTime()</code> 返回 1970 年 1 月 1 日至今的毫秒数<br><code>oDate.setDate()</code> 设置月中的某一天 (1 ~ 31)<br><code>oDate.setMonth()</code> 设置月份 (0 ~ 11)<br>例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">oDate.setMonth(<span class="number">9</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">alert(oDate.getMonth());</span></pre></td></tr></table></figure>
+
+<p><code>oDate.setFullYear()</code> 设置年份（四位数）<br><code>oDate.setHours()</code> 设置小时（0-23）<br><code>oDate.setMinutes()</code> 设置分钟 (0 ~ 59)<br><code>oDate.setSeconds()</code> 设置秒(0 ~ 59)<br><code>oDate.setMillisenconds()</code> 设置毫秒(0 ~ 999)<br><code>oDate.setTime()</code> 设置 1970 年 1 月 1 日至今的毫秒数<br>这些参数如果超出了正常范围，会被自动折算。比如，如果月设为 15，就折算为下一年的 4 月</p>
+<h6 id="日期的运算"><a href="#日期的运算" class="headerlink" title="日期的运算"></a>日期的运算</h6><p>类型自动转换时，Date 实例如果转为数值，则等于对应的毫秒数；如果转为字符串，则等于对应的日期字符串。所以，两个日期实例对象进行减法运算时，返回的是它们间隔的毫秒数；进行加法运算时，返回的是两个字符串连接而成的新字符串。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2000</span>, <span class="number">2</span>, <span class="number">1</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d2 = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2000</span>, <span class="number">3</span>, <span class="number">1</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">d2 - d1;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2678400000</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">d2 + d1;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// "Sat Apr 01 2000 00:00:00 GMT+0800 (CST)Wed Mar 01 2000 00:00:00</span></span></pre></td></tr></table></figure>
+
+<h6 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h6><p><code>Date.parse</code>方法用来解析日期字符串，返回该时间距离时间零点（1970 年 1 月 1 日 00:00:00）的毫秒数。<br>日期字符串应该符合 RFC 2822 和 ISO 8061 这两个标准，即 YYYY-MM-DDTHH:mm:ss.sssZ 格式，其中最后的 Z 表示时区。但是，其他格式也可以被解析，请看下面的例子。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.parse(<span class="string">"Aug 9, 1995"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.parse(<span class="string">"January 26, 2011 13:51:50"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.parse(<span class="string">"Mon, 25 Dec 1995 13:30:00 GMT"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.parse(<span class="string">"Mon, 25 Dec 1995 13:30:00 +0430"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.parse(<span class="string">"2011-10-10"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.parse(<span class="string">"2011-10-10T14:48:00"</span>);</span></pre></td></tr></table></figure>
+
+<h4 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h4><p><code>setInterval(func,time)</code><br>有两个参数，第一个参数是一个函数，第二个参数是时间间隔，单位是毫秒<br>每间隔 time 毫秒，会执行一次函数<br>setInterval 的返回值是一个数字</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">box</span>(<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timer = setInerval(box, <span class="number">1000</span>);</span></pre></td></tr></table></figure>
+
+<p>上面代码意思是，没间隔 1000 毫秒，box 函数执行一次。<br>取消定时器的执行<br>如果想要取消定时器的执行我们需要拿到 setInerval 定时器函数的返回值，调用 clearInterval，清除定时器<br><code>clearInterval(timer)</code>，调用之后 box 函数就不会再执行了！</p>
 <hr>
-<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/Math%E5%92%8CDate/">Math和Date</a><br>如有错误，请及时评论或者知乎私信或者B站私信哦~</p>
+<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/Math%E5%92%8CDate/">Math 和 Date</a><br>如有错误，请及时评论或者知乎私信或者 B 站私信哦~</p>
 <hr>
 <p><strong>最后更新于:2020/02/06</strong></p>
 
@@ -564,6 +593,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">CSS3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">3D转换</a>
               </li>
              
@@ -588,47 +621,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">2D转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">DOM高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">HTML5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Math</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Date</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">localStorage</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">元素类型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">事件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -648,7 +641,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">宽高自适应</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">DOM高级</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">string</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">localStorage</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">HTML5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">循环语句</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,11 +689,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">函数</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">元素类型</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">循环语句</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">弹性盒模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">多栏布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">宽高自适应</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表格高级</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表单高级</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -680,31 +729,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">弹性盒模型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">多栏布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">响应式布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表格高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表单高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">面向对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -712,11 +737,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">string</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">响应式布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -724,7 +745,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">面向对象</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Math</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Date</a>
               </li>
             
             <div class="clearfix"></div>

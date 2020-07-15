@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://dxh98.cn">
   <title>BOM和DOM | 人模人样的搬砖老段</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="BOMBOM的概念提供了独立于页面内容而与浏览器进行交互的对象，其核心对象是window在浏览器中，window对象（注意，w为小写）指当前的浏览器窗口。它也是所有对象的顶层对象。“顶层对象”指的是最高一层的对象，所有其他对象都是它的下属。JavaScript规定，浏览器环境的所有全局变量，都是window对象的属性。">
+  <meta name="description" content="BOMBOM 的概念提供了独立于页面内容而与浏览器进行交互的对象，其核心对象是 window在浏览器中，window 对象（注意，w 为小写）指当前的浏览器窗口。它也是所有对象的顶层对象。“顶层对象”指的是最高一层的对象，所有其他对象都是它的下属。JavaScript 规定，浏览器环境的所有全局变量，都是 window 对象的属性。">
 <meta name="keywords" content="JavaScript,BOM,DOM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BOM和DOM">
 <meta property="og:url" content="http:&#x2F;&#x2F;dxh98.cn&#x2F;BOM%E5%92%8CDOM&#x2F;index.html">
 <meta property="og:site_name" content="人模人样的搬砖老段">
-<meta property="og:description" content="BOMBOM的概念提供了独立于页面内容而与浏览器进行交互的对象，其核心对象是window在浏览器中，window对象（注意，w为小写）指当前的浏览器窗口。它也是所有对象的顶层对象。“顶层对象”指的是最高一层的对象，所有其他对象都是它的下属。JavaScript规定，浏览器环境的所有全局变量，都是window对象的属性。">
+<meta property="og:description" content="BOMBOM 的概念提供了独立于页面内容而与浏览器进行交互的对象，其核心对象是 window在浏览器中，window 对象（注意，w 为小写）指当前的浏览器窗口。它也是所有对象的顶层对象。“顶层对象”指的是最高一层的对象，所有其他对象都是它的下属。JavaScript 规定，浏览器环境的所有全局变量，都是 window 对象的属性。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-09T08:32:34.823Z">
+<meta property="og:updated_time" content="2020-07-15T10:12:58.275Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="人模人样的搬砖老段" type="application/atom+xml">
@@ -195,77 +195,103 @@ var _hmt = _hmt || [];
 
                     
                         <a href="/BOM%E5%92%8CDOM/" class="archive-article-date">
-  	<time datetime="2019-07-27T02:20:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-27</time>
+  	<time datetime="2019-06-16T02:20:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-16</time>
 </a>
                             
             </header>
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                                        <h4 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h4><p><strong>BOM的概念</strong><br>提供了独立于页面内容而与浏览器进行交互的对象，其核心对象是window<br>在浏览器中，window对象（注意，w为小写）指当前的浏览器窗口。它也是所有对象的顶层对象。<br>“顶层对象”指的是最高一层的对象，所有其他对象都是它的下属。JavaScript规定，浏览器环境的所有全局变量，都是window对象的属性。</p>
+                                        <h4 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h4><p><strong>BOM 的概念</strong><br>提供了独立于页面内容而与浏览器进行交互的对象，其核心对象是 window<br>在浏览器中，window 对象（注意，w 为小写）指当前的浏览器窗口。它也是所有对象的顶层对象。<br>“顶层对象”指的是最高一层的对象，所有其他对象都是它的下属。JavaScript 规定，浏览器环境的所有全局变量，都是 window 对象的属性。</p>
 <a id="more"></a>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.a <span class="comment">// 1</span></span></pre></td></tr></table></figure>
-<p>上面代码中，变量a是一个全局变量，但是实质上它是window对象的属性。声明一个全局变量，就是为window对象的同名属性赋值</p>
-<p>浏览器代理检测，可以检测出来用户使用的浏览器类型，也可以检测浏览器所在的操作系统<br>navigator.userAgent<br>判断浏览器类型</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t = navigator.userAgent;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(t.indexOf(<span class="string">'Trident'</span>)!= <span class="number">-1</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">	<span class="built_in">console</span>.log(<span class="string">'ie内核'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(t.indexOf(<span class="string">'Presto'</span>)!= <span class="number">-1</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	<span class="built_in">console</span>.log(<span class="string">'欧朋'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(t.indexOf(<span class="string">'Chrome'</span>)!= <span class="number">-1</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">	<span class="built_in">console</span>.log(<span class="string">'chrome '</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(t.indexOf(<span class="string">'Safari'</span>)!= <span class="number">-1</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">	<span class="built_in">console</span>.log(<span class="string">'Safari '</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">&#125;<span class="keyword">else</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">	<span class="built_in">console</span>.log(<span class="string">'其他'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<p>判断是移动端还是PC（重要）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//移动端</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">			<span class="keyword">var</span> ua = navigator.userAgent.toLowerCase();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">			<span class="keyword">if</span> (ua.indexOf(<span class="string">'mobi'</span>) !=<span class="number">-1</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">			  <span class="comment">// 手机浏览器</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">			  <span class="built_in">console</span>.log(<span class="string">'手机'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">			&#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">			  <span class="comment">// 非手机浏览器</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">			  <span class="built_in">console</span>.log(<span class="string">'非手机'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">			&#125;</span></pre></td></tr></table></figure>
-<p>并且判断是安卓还是苹果</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ua = navigator.userAgent.toLowerCase();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">			<span class="keyword">if</span> (ua.indexOf(<span class="string">'mobi'</span>) !=<span class="number">-1</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">			  <span class="comment">// 手机浏览器</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">			  <span class="built_in">console</span>.log(<span class="string">'手机'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">				<span class="keyword">if</span>(ua.indexOf(<span class="string">'android'</span>) !=<span class="number">-1</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">					<span class="built_in">console</span>.log(<span class="string">'移动端 安卓'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">				&#125;<span class="keyword">else</span> <span class="keyword">if</span>(ua.indexOf(<span class="string">'ipod'</span>) !=<span class="number">-1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        || ua.indexOf(<span class="string">'iphone'</span>) !=<span class="number">-1</span> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        || ua.indexOf(<span class="string">'ipad'</span>) !=<span class="number">-1</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">				&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">					<span class="built_in">console</span>.log(<span class="string">'移动端  苹果手机'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">				&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">			&#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">			  <span class="comment">// 非手机浏览器</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">			  <span class="built_in">console</span>.log(<span class="string">'非手机'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">			&#125;</span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.a; <span class="comment">// 1</span></span></pre></td></tr></table></figure>
 
-<h6 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h6><p>location对象包含有关当前 URL 的信息。<br>location对象是 Window 对象的一个部分，可通过 window.location 属性来访问。</p>
+<p>上面代码中，变量 a 是一个全局变量，但是实质上它是 window 对象的属性。声明一个全局变量，就是为 window 对象的同名属性赋值</p>
+<p>浏览器代理检测，可以检测出来用户使用的浏览器类型，也可以检测浏览器所在的操作系统<br>navigator.userAgent<br>判断浏览器类型</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t = navigator.userAgent;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (t.indexOf(<span class="string">"Trident"</span>) != <span class="number">-1</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="string">"ie内核"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (t.indexOf(<span class="string">"Presto"</span>) != <span class="number">-1</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="string">"欧朋"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (t.indexOf(<span class="string">"Chrome"</span>) != <span class="number">-1</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="string">"chrome "</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (t.indexOf(<span class="string">"Safari"</span>) != <span class="number">-1</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Safari "</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="string">"其他"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>判断是移动端还是 PC（重要）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//移动端</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ua = navigator.userAgent.toLowerCase();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (ua.indexOf(<span class="string">"mobi"</span>) != <span class="number">-1</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 手机浏览器</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="string">"手机"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 非手机浏览器</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="string">"非手机"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>并且判断是安卓还是苹果</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ua = navigator.userAgent.toLowerCase();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (ua.indexOf(<span class="string">"mobi"</span>) != <span class="number">-1</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 手机浏览器</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="string">"手机"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (ua.indexOf(<span class="string">"android"</span>) != <span class="number">-1</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">console</span>.log(<span class="string">"移动端 安卓"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    ua.indexOf(<span class="string">"ipod"</span>) != <span class="number">-1</span> ||</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    ua.indexOf(<span class="string">"iphone"</span>) != <span class="number">-1</span> ||</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    ua.indexOf(<span class="string">"ipad"</span>) != <span class="number">-1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  ) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">console</span>.log(<span class="string">"移动端  苹果手机"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 非手机浏览器</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="string">"非手机"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h6 id="location-对象"><a href="#location-对象" class="headerlink" title="location 对象"></a>location 对象</h6><p>location 对象包含有关当前 URL 的信息。<br>location 对象是 Window 对象的一个部分，可通过 window.location 属性来访问。</p>
 <p>属性：hash、host、hostname、href、pathname、port、protocol、search<br>href：设置或返回完整的 URL。（常用）<br>hash：设置或返回从井号 (#) 开始的 URL（锚）。<br>search：设置或返回从问号 (?) 开始的 URL（查询部分？id=1&amp;name=abb）。（常用）</p>
-<p>host    设置或返回主机名和当前 URL 的端口号。<br>hostname    设置或返回当前 URL 的主机名。<br>pathname    设置或返回当前 URL 的路径部分。<br>port    设置或返回当前 URL 的端口号。<br>protocol    设置或返回当前 URL 的协议。</p>
-<p>location对象<br>方法：<code>assign(url)</code>, <code>replace(url)</code> , <code>reload()</code><br><code>assign()</code>    加载新的文档。<br><code>reload()</code>    重新加载当前文档。<br><code>replace()</code>    用新的文档替换当前文档。</p>
+<p>host 设置或返回主机名和当前 URL 的端口号。<br>hostname 设置或返回当前 URL 的主机名。<br>pathname 设置或返回当前 URL 的路径部分。<br>port 设置或返回当前 URL 的端口号。<br>protocol 设置或返回当前 URL 的协议。</p>
+<p>location 对象<br>方法：<code>assign(url)</code>, <code>replace(url)</code> , <code>reload()</code><br><code>assign()</code> 加载新的文档。<br><code>reload()</code> 重新加载当前文档。<br><code>replace()</code> 用新的文档替换当前文档。</p>
 <p><code>window.open();</code><br>打开一个新的浏览器窗口。<br><code>window.close();</code><br>关闭浏览器窗口。</p>
 <p><code>alert(arg1)</code><br>显示带有一段消息和一个确认按钮的警告框。</p>
 <p><code>prompt(arg1,arg2)</code><br>显示可提示用户输入的对话框。</p>
 <p><code>confirm(arg1)</code> （偶尔）<br>显示带有一段消息以及确认按钮和取消按钮的对话框。</p>
-<h6 id="history对象："><a href="#history对象：" class="headerlink" title="history对象："></a>history对象：</h6><p>history对象保存着用户上网的历史记录,从窗口被 打开的那一刻算起.<br>后退一页  <code>history.go(-1)</code>     <code>history.back()</code><br>前进一页  <code>history.go(1)</code>      <code>history.forward()</code><br>前进两页  <code>history.go(2)</code> </p>
-<h6 id="window-onload"><a href="#window-onload" class="headerlink" title="window.onload"></a>window.onload</h6><p>load事件发生在文档在浏览器窗口加载完毕时。window.onload属性可以指定这个事件的回调函数。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">	<span class="built_in">console</span>.log(<span class="string">'页面加载完毕'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure>
+<h6 id="history-对象："><a href="#history-对象：" class="headerlink" title="history 对象："></a>history 对象：</h6><p>history 对象保存着用户上网的历史记录,从窗口被 打开的那一刻算起.<br>后退一页 <code>history.go(-1)</code> <code>history.back()</code><br>前进一页 <code>history.go(1)</code> <code>history.forward()</code><br>前进两页 <code>history.go(2)</code></p>
+<h6 id="window-onload"><a href="#window-onload" class="headerlink" title="window.onload"></a>window.onload</h6><p>load 事件发生在文档在浏览器窗口加载完毕时。window.onload 属性可以指定这个事件的回调函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="string">"页面加载完毕"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure>
 
-<h6 id="定时器和延时器"><a href="#定时器和延时器" class="headerlink" title="定时器和延时器"></a>定时器和延时器</h6><p>JavaScript 提供定时执行代码的功能，叫做定时器（timer），主要由setTimeout()和setInterval()这两个函数来完成。</p>
+<h6 id="定时器和延时器"><a href="#定时器和延时器" class="headerlink" title="定时器和延时器"></a>定时器和延时器</h6><p>JavaScript 提供定时执行代码的功能，叫做定时器（timer），主要由 setTimeout()和 setInterval()这两个函数来完成。</p>
 <ol>
-<li>延时器<br>setTimeout函数用来指定某个函数或某段代码，在多少毫秒之后执行。它返回一个整数，表示定时器的编号，以后可以用来取消这个定时器。<br>var timerId = setTimeout(func, delay);<br>上面代码中，setTimeout函数接受两个参数，第一个参数func是将要推迟执行的函数名，第二个参数delay是推迟执行的毫秒数。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//推迟执行</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">	<span class="built_in">console</span>.log(<span class="number">2</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;,<span class="number">1000</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">   <span class="built_in">console</span>.log(<span class="number">3</span>);</span></pre></td></tr></table></figure>
-setInterval函数的用法与setTimeout完全一致，区别仅仅在于setInterval指定某个任务每隔一段时间就执行一次，也就是无限次的定时执行。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;, <span class="number">1000</span>)</span></pre></td></tr></table></figure>
-上面代码中，每隔1000毫秒就输出一个2，会无限运行下去，直到关闭当前窗口。</li>
-<li>清除定时器<br>setTimeout和setInterval函数，都返回一个整数值，表示计数器编号。将该整数传入clearTimeout和clearInterval函数，就可以取消对应的定时器。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> id1 = setTimeout(f, <span class="number">1000</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> id2 = setInterval(f, <span class="number">1000</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">clearTimeout(id1);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">clearInterval(id2);</span></pre></td></tr></table></figure>
-上面代码中，回调函数f不会再执行了，因为两个定时器都被取消了。</li>
+<li>延时器<br>setTimeout 函数用来指定某个函数或某段代码，在多少毫秒之后执行。它返回一个整数，表示定时器的编号，以后可以用来取消这个定时器。<br>var timerId = setTimeout(func, delay);<br>上面代码中，setTimeout 函数接受两个参数，第一个参数 func 是将要推迟执行的函数名，第二个参数 delay 是推迟执行的毫秒数。</li>
 </ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//推迟执行</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;, <span class="number">1000</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span>);</span></pre></td></tr></table></figure>
+
+<p>setInterval 函数的用法与 setTimeout 完全一致，区别仅仅在于 setInterval 指定某个任务每隔一段时间就执行一次，也就是无限次的定时执行。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timer = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;, <span class="number">1000</span>);</span></pre></td></tr></table></figure>
+
+<p>上面代码中，每隔 1000 毫秒就输出一个 2，会无限运行下去，直到关闭当前窗口。</p>
+<ol start="2">
+<li>清除定时器<br>setTimeout 和 setInterval 函数，都返回一个整数值，表示计数器编号。将该整数传入 clearTimeout 和 clearInterval 函数，就可以取消对应的定时器。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> id1 = setTimeout(f, <span class="number">1000</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> id2 = setInterval(f, <span class="number">1000</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">clearTimeout(id1);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">clearInterval(id2);</span></pre></td></tr></table></figure>
+
+<p>上面代码中，回调函数 f 不会再执行了，因为两个定时器都被取消了。</p>
 <h6 id="window-onscroll"><a href="#window-onscroll" class="headerlink" title="window.onscroll"></a>window.onscroll</h6><p>可以监听页面的滚动</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onscroll = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">	<span class="built_in">console</span>.log(<span class="string">'页面滚动'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<p>一旦页面滚动就会触发onscroll 函数</p>
-<h4 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h4><h6 id="document-scrollingElement"><a href="#document-scrollingElement" class="headerlink" title="document.scrollingElement"></a>document.scrollingElement</h6><p>document.scrollingElement属性返回文档的滚动元素。也就是说，当文档整体滚动时，到底是哪个元素在滚动。<br>这个属性返回的文档的根元素document.documentElement（即<code>&lt;html&gt;</code>）。<br>获取可视区域距离页面顶部的距离<br>document.scrollingElement.scrollTop;<br>设置滚动条的距离页面顶面的距离<br>document.scrollingElement.scrollTop = 0<br>或者也可以像下面<br>    获取</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">scrollTop = <span class="built_in">document</span>.scrollingElement.scrollTop</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">scrollTop=<span class="built_in">document</span>.documentElement.scrollTop  || <span class="built_in">document</span>.body.scrollTop</span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onscroll = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="string">"页面滚动"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure>
+
+<p>一旦页面滚动就会触发 onscroll 函数</p>
+<h4 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h4><h6 id="document-scrollingElement"><a href="#document-scrollingElement" class="headerlink" title="document.scrollingElement"></a>document.scrollingElement</h6><p>document.scrollingElement 属性返回文档的滚动元素。也就是说，当文档整体滚动时，到底是哪个元素在滚动。<br>这个属性返回的文档的根元素 document.documentElement（即<code>&lt;html&gt;</code>）。<br>获取可视区域距离页面顶部的距离<br>document.scrollingElement.scrollTop;<br>设置滚动条的距离页面顶面的距离<br>document.scrollingElement.scrollTop = 0<br>或者也可以像下面<br>获取</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">scrollTop = <span class="built_in">document</span>.scrollingElement.scrollTop;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">scrollTop = <span class="built_in">document</span>.documentElement.scrollTop || <span class="built_in">document</span>.body.scrollTop;</span></pre></td></tr></table></figure>
+
 <p>设置</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.documentElement.scrollTop  = <span class="number">0</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.scrollTop = <span class="number">0</span>；</span></pre></td></tr></table></figure>
-<h6 id="DOM的概念及作用"><a href="#DOM的概念及作用" class="headerlink" title="DOM的概念及作用"></a>DOM的概念及作用</h6><p>DOM 是 JavaScript 操作网页的api接口，全称为“文档对象模型”（Document Object Model）。<br>它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如增删内容）。</p>
+
+<h6 id="DOM-的概念及作用"><a href="#DOM-的概念及作用" class="headerlink" title="DOM 的概念及作用"></a>DOM 的概念及作用</h6><p>DOM 是 JavaScript 操作网页的 api 接口，全称为“文档对象模型”（Document Object Model）。<br>它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如增删内容）。</p>
 <p>浏览器会根据 DOM 模型，将结构化文档（比如 HTML 和 XML）解析成一系列的节点，再由这些节点组成一个树状结构（DOM Tree）。所有的节点和最终的树状结构，都有规范的对外接口。</p>
 <p>DOM 只是一个接口规范，可以用各种语言实现。所以严格地说，DOM 不是 JavaScript 语法的一部分，但是 DOM 操作是 JavaScript 最常见的任务，离开了 DOM，JavaScript 就无法控制网页。另一方面，JavaScript 也是最常用于 DOM 操作的语言。后面介绍的就是 JavaScript 对 DOM 标准的实现和用法。<br>节点树<br>一个文档的所有节点，按照所在的层级，可以抽象成一种树状结构。这种树状结构就是 DOM 树。它有一个顶层节点，下一层都是顶层节点的子节点，然后子节点又有自己的子节点，就这样层层衍生出一个金字塔结构，倒过来就像一棵树。</p>
-<p>浏览器原生提供document节点，代表整个文档。</p>
-<h6 id="DOM的基本操作-查询、创建、添加，修改，删除"><a href="#DOM的基本操作-查询、创建、添加，修改，删除" class="headerlink" title="DOM的基本操作(查询、创建、添加，修改，删除)"></a>DOM的基本操作(查询、创建、添加，修改，删除)</h6><ol>
-<li><strong>document.getElementById</strong>方法返回匹配指定id属性的元素节点。如果没有发现匹配的节点，则返回null。</li>
-<li><strong>document.getElementsByClassName</strong>方法返回一个类似数组的对象（HTMLCollection实例），包括了所有class名字符合指定条件的元素</li>
-<li><strong>document.getElementsByTagName</strong>方法搜索 HTML 标签名，返回符合条件的元素。它的返回值是一个类似数组对象（HTMLCollection实例）</li>
-<li><strong>document.querySelector</strong>方法接受一个 CSS 选择器作为参数，返回匹配该选择器的元素节点。如果有多个节点满足匹配条件，则返回第一个匹配的节点。如果没有发现匹配的节点，则返回null。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> el1 = <span class="built_in">document</span>.querySelector(<span class="string">'.myclass'</span>);</span></pre></td></tr></table></figure></li>
-<li><strong>document.querySelectorAll</strong>方法与querySelector用法类似，区别是返回一个NodeList对象，包含所有匹配给定选择器的节点。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">elementList = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.myclass'</span>);</span></pre></td></tr></table></figure></li>
-<li><strong>document.createElement</strong>方法用来生成元素节点，并返回该节点。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newDiv = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span></pre></td></tr></table></figure>
-createElement方法的参数为元素的标签名，即元素节点的tagName属性，对于 HTML 网页大小写不敏感，即参数为div或DIV返回的是同一种节点</li>
-<li><strong>oDiv.appendChild(newDiv);</strong>把newDiv添加到oDiv内部的最后面<br><code>Element.innerHTML</code>属性返回一个字符串，等同于该元素包含的所有 HTML 代码。该属性可读写，常用来设置某个节点的内容。它能改写所有元素节点的内容，包括<code>&lt;HTML&gt;</code>和<code>&lt;body&gt;</code>元素。<br>如果将innerHTML属性设为空，等于删除所有它包含的所有节点。</li>
-<li><strong>box.replaceChild(newNode,oldNode)</strong><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.getElementById(<span class="string">'mydiv'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">el.remove();</span></pre></td></tr></table></figure>
-
-</li>
+<p>浏览器原生提供 document 节点，代表整个文档。</p>
+<h6 id="DOM-的基本操作-查询、创建、添加，修改，删除"><a href="#DOM-的基本操作-查询、创建、添加，修改，删除" class="headerlink" title="DOM 的基本操作(查询、创建、添加，修改，删除)"></a>DOM 的基本操作(查询、创建、添加，修改，删除)</h6><ol>
+<li><strong>document.getElementById</strong>方法返回匹配指定 id 属性的元素节点。如果没有发现匹配的节点，则返回 null。</li>
+<li><strong>document.getElementsByClassName</strong>方法返回一个类似数组的对象（HTMLCollection 实例），包括了所有 class 名字符合指定条件的元素</li>
+<li><strong>document.getElementsByTagName</strong>方法搜索 HTML 标签名，返回符合条件的元素。它的返回值是一个类似数组对象（HTMLCollection 实例）</li>
+<li><strong>document.querySelector</strong>方法接受一个 CSS 选择器作为参数，返回匹配该选择器的元素节点。如果有多个节点满足匹配条件，则返回第一个匹配的节点。如果没有发现匹配的节点，则返回 null。</li>
 </ol>
-<h6 id="DOM节点类型-元素和文本"><a href="#DOM节点类型-元素和文本" class="headerlink" title="DOM节点类型(元素和文本)"></a>DOM节点类型(元素和文本)</h6><p>DOM 的最小组成单位叫做节点（node）。文档的树形结构（DOM 树），就是由各种不同类型的节点组成。每个节点可以看作是文档树的一片叶子。 </p>
-<p>Element：网页的各种HTML标签（比如<code>&lt;body&gt;</code>、<code>&lt;a&gt;</code>等）</p>
-<p>Text：标签之间或标签包含的文本  （创建Text）</p>
-<p>注释也是节点 </p>
-<p>通过 nodeType属性可以查看类型<br>如果节点是一个元素节点，nodeType 属性返回 1。<br>如果节点是属性节点, nodeType 属性返回 2。<br>如果节点是一个文本节点，nodeType 属性返回 3。<br>如果节点是一个注释节点，nodeType 属性返回 8</p>
-<p>文档碎片  document.createDocumentFragment()  作为容器使用，可以避免频繁操作dom</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> el1 = <span class="built_in">document</span>.querySelector(<span class="string">".myclass"</span>);</span></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><strong>document.querySelectorAll</strong>方法与 querySelector 用法类似，区别是返回一个 NodeList 对象，包含所有匹配给定选择器的节点。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">elementList = <span class="built_in">document</span>.querySelectorAll(<span class="string">".myclass"</span>);</span></pre></td></tr></table></figure>
+
+<ol start="6">
+<li><strong>document.createElement</strong>方法用来生成元素节点，并返回该节点。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newDiv = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span></pre></td></tr></table></figure>
+
+<p>createElement 方法的参数为元素的标签名，即元素节点的 tagName 属性，对于 HTML 网页大小写不敏感，即参数为 div 或 DIV 返回的是同一种节点</p>
+<ol start="7">
+<li><strong>oDiv.appendChild(newDiv);</strong>把 newDiv 添加到 oDiv 内部的最后面<br><code>Element.innerHTML</code>属性返回一个字符串，等同于该元素包含的所有 HTML 代码。该属性可读写，常用来设置某个节点的内容。它能改写所有元素节点的内容，包括<code>&lt;HTML&gt;</code>和<code>&lt;body&gt;</code>元素。<br>如果将 innerHTML 属性设为空，等于删除所有它包含的所有节点。</li>
+<li><strong>box.replaceChild(newNode,oldNode)</strong></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.getElementById(<span class="string">"mydiv"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">el.remove();</span></pre></td></tr></table></figure>
+
+<h6 id="DOM-节点类型-元素和文本"><a href="#DOM-节点类型-元素和文本" class="headerlink" title="DOM 节点类型(元素和文本)"></a>DOM 节点类型(元素和文本)</h6><p>DOM 的最小组成单位叫做节点（node）。文档的树形结构（DOM 树），就是由各种不同类型的节点组成。每个节点可以看作是文档树的一片叶子。</p>
+<p>Element：网页的各种 HTML 标签（比如<code>&lt;body&gt;</code>、<code>&lt;a&gt;</code>等）</p>
+<p>Text：标签之间或标签包含的文本 （创建 Text）</p>
+<p>注释也是节点</p>
+<p>通过 nodeType 属性可以查看类型<br>如果节点是一个元素节点，nodeType 属性返回 1。<br>如果节点是属性节点, nodeType 属性返回 2。<br>如果节点是一个文本节点，nodeType 属性返回 3。<br>如果节点是一个注释节点，nodeType 属性返回 8</p>
+<p>文档碎片 document.createDocumentFragment() 作为容器使用，可以避免频繁操作 dom</p>
 <hr>
-<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/BOM%E5%92%8CDOM/">BOM和DOM</a><br>如有错误，请及时评论或者知乎私信或者B站私信哦~</p>
+<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/BOM%E5%92%8CDOM/">BOM 和 DOM</a><br>如有错误，请及时评论或者知乎私信或者 B 站私信哦~</p>
 <hr>
 <p><strong>最后更新于:2020/02/02</strong></p>
 
@@ -429,7 +455,7 @@ createElement方法的参数为元素的标签名，即元素节点的tagName属
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#BOM"><span class="toc-number">1.</span> <span class="toc-text">BOM</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#location对象"><span class="toc-number">1.0.1.</span> <span class="toc-text">location对象</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#history对象："><span class="toc-number">1.0.2.</span> <span class="toc-text">history对象：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#window-onload"><span class="toc-number">1.0.3.</span> <span class="toc-text">window.onload</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#定时器和延时器"><span class="toc-number">1.0.4.</span> <span class="toc-text">定时器和延时器</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#window-onscroll"><span class="toc-number">1.0.5.</span> <span class="toc-text">window.onscroll</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DOM"><span class="toc-number">2.</span> <span class="toc-text">DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#document-scrollingElement"><span class="toc-number">2.0.1.</span> <span class="toc-text">document.scrollingElement</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#DOM的概念及作用"><span class="toc-number">2.0.2.</span> <span class="toc-text">DOM的概念及作用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#DOM的基本操作-查询、创建、添加，修改，删除"><span class="toc-number">2.0.3.</span> <span class="toc-text">DOM的基本操作(查询、创建、添加，修改，删除)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#DOM节点类型-元素和文本"><span class="toc-number">2.0.4.</span> <span class="toc-text">DOM节点类型(元素和文本)</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#BOM"><span class="toc-number">1.</span> <span class="toc-text">BOM</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#location-对象"><span class="toc-number">1.0.1.</span> <span class="toc-text">location 对象</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#history-对象："><span class="toc-number">1.0.2.</span> <span class="toc-text">history 对象：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#window-onload"><span class="toc-number">1.0.3.</span> <span class="toc-text">window.onload</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#定时器和延时器"><span class="toc-number">1.0.4.</span> <span class="toc-text">定时器和延时器</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#window-onscroll"><span class="toc-number">1.0.5.</span> <span class="toc-text">window.onscroll</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DOM"><span class="toc-number">2.</span> <span class="toc-text">DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#document-scrollingElement"><span class="toc-number">2.0.1.</span> <span class="toc-text">document.scrollingElement</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#DOM-的概念及作用"><span class="toc-number">2.0.2.</span> <span class="toc-text">DOM 的概念及作用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#DOM-的基本操作-查询、创建、添加，修改，删除"><span class="toc-number">2.0.3.</span> <span class="toc-text">DOM 的基本操作(查询、创建、添加，修改，删除)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#DOM-节点类型-元素和文本"><span class="toc-number">2.0.4.</span> <span class="toc-text">DOM 节点类型(元素和文本)</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -581,6 +607,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">CSS3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">3D转换</a>
               </li>
              
@@ -605,47 +635,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">2D转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">DOM高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">HTML5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Math</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Date</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">localStorage</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">元素类型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">事件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -665,7 +655,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">宽高自适应</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">DOM高级</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">string</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">localStorage</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">HTML5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">循环语句</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -677,11 +703,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">函数</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">元素类型</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">循环语句</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">弹性盒模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">多栏布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">宽高自适应</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表格高级</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表单高级</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -697,31 +743,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">弹性盒模型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">多栏布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">响应式布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表格高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表单高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">面向对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -729,11 +751,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">string</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">响应式布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -741,7 +759,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">面向对象</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Math</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Date</a>
               </li>
             
             <div class="clearfix"></div>

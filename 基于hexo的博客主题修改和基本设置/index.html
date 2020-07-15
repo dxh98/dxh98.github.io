@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="人模人样的搬砖老段">
 <meta property="og:description" content="引言  这种主题修改适用于对博客了解不深的菜鸟们(我就是其中一员)和那些不不想花费太多时间在自定义主题上的，我找了两篇教程就开始着手修改了，导致中间出现了一些问题，建议想要修改主题的多去看几篇教程，最好先了解一下中间可能会出现什么问题，做好心理准备。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-11T14:27:06.030Z">
+<meta property="og:updated_time" content="2020-07-15T10:46:42.606Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="人模人样的搬砖老段" type="application/atom+xml">
@@ -195,7 +195,7 @@ var _hmt = _hmt || [];
 
                     
                         <a href="/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%E5%92%8C%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2019-12-05T12:39:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
+  	<time datetime="2019-11-03T12:39:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
 </a>
                             
             </header>
@@ -211,27 +211,30 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>选主题</p>
 </blockquote>
-<p>这里先放一个hexo官网的主题库，可以选一下想要的主题，我的主题是选的以前收藏的一个博主的博客主题。<br><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a><br>选好了主题，在github上找到相应的项目。(托管在其他平台的我不太清楚，目前只会操作托管在github上的主题项目)</p>
+<p>这里先放一个 hexo 官网的主题库，可以选一下想要的主题，我的主题是选的以前收藏的一个博主的博客主题。<br><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a><br>选好了主题，在 github 上找到相应的项目。(托管在其他平台的我不太清楚，目前只会操作托管在 github 上的主题项目)</p>
 <blockquote>
 <p>下载主题</p>
 </blockquote>
-<p>在你的博客文件目录下打开git Bash，执行下列命令：</p>
+<p>在你的博客文件目录下打开 git Bash，执行下列命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;litten&#x2F;hexo-theme-yilia.git themes&#x2F;yilia</span></pre></td></tr></table></figure>
-<p>然后打开你的博客目录，会发现themes文件下多出了一个yilia文件夹。</p>
+
+<p>然后打开你的博客目录，会发现 themes 文件下多出了一个 yilia 文件夹。</p>
 <blockquote>
 <p>修改配置</p>
 </blockquote>
-<p>打开博客文件根目录下的_config.yml文件，进行修改。</p>
+<p>打开博客文件根目录下的_config.yml 文件，进行修改。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">theme: yilia    # 初始值应该是landscape</span></pre></td></tr></table></figure>
+
 <p>然后执行下列代码更新配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd themes&#x2F;yilia</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">git pull</span></pre></td></tr></table></figure>
+
 <p>然后执行 hexo s 就可以在本地看到更新后的主题了。</p>
 <blockquote>
-<p>完善主题配置(针对yilia)</p>
+<p>完善主题配置(针对 yilia)</p>
 </blockquote>
-<p>主要配置可以参考以下文章：<br>github上yilia主题的安装教程：<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia</a><br>关于hexo yilia主题配置走过的坑:<a href="https://www.jianshu.com/p/f6f19b02c661" target="_blank" rel="noopener">https://www.jianshu.com/p/f6f19b02c661</a><br>Hexo4.扩展主题的个性化设置-Hexo(yilia)+GitHub Pages搭建个人博客系列文章:<a href="https://blog.csdn.net/weixin_41287260/article/details/97693850" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41287260/article/details/97693850</a></p>
+<p>主要配置可以参考以下文章：<br>github 上 yilia 主题的安装教程：<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia</a><br>关于 hexo yilia 主题配置走过的坑:<a href="https://www.jianshu.com/p/f6f19b02c661" target="_blank" rel="noopener">https://www.jianshu.com/p/f6f19b02c661</a><br>Hexo4.扩展主题的个性化设置-Hexo(yilia)+GitHub Pages 搭建个人博客系列文章:<a href="https://blog.csdn.net/weixin_41287260/article/details/97693850" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41287260/article/details/97693850</a></p>
 <p><strong><em>注：</em></strong></p>
-<p>如果有其他不懂得地方建议多参考官方教程和相关教程，多搜索，读文档，慢慢修改，先本地服务器查看一下，确认无误后再上传到giuhub</p>
+<p>如果有其他不懂得地方建议多参考官方教程和相关教程，多搜索，读文档，慢慢修改，先本地服务器查看一下，确认无误后再上传到 giuhub</p>
 <br/>
 <br/>
 <br/>
@@ -239,7 +242,7 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo cl</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ hexo g</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$ hexo d</span></pre></td></tr></table></figure>
 
 <hr>
-<p>本文作者：人模人样的搬砖老段<br>本文链接:<a href="http://dxh98.cn/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%E5%92%8C%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/">http://dxh98.cn/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%E5%92%8C%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/</a><br>如有错误，请及时评论或者知乎私信或者B站私信哦~</p>
+<p>本文作者：人模人样的搬砖老段<br>本文链接:<a href="http://dxh98.cn/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%E5%92%8C%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/">http://dxh98.cn/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%E5%92%8C%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/</a><br>如有错误，请及时评论或者知乎私信或者 B 站私信哦~</p>
 
                                             
 
@@ -548,6 +551,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">CSS3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">3D转换</a>
               </li>
              
@@ -572,47 +579,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">2D转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">DOM高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">HTML5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Math</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Date</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">localStorage</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">元素类型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">事件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -632,7 +599,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">宽高自适应</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">DOM高级</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">string</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">localStorage</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">HTML5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">循环语句</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -644,11 +647,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">函数</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">元素类型</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">循环语句</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">弹性盒模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">多栏布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">宽高自适应</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表格高级</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表单高级</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,31 +687,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">弹性盒模型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">多栏布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">响应式布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表格高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表单高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">面向对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -696,11 +695,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">string</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">响应式布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -708,7 +703,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">面向对象</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Math</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Date</a>
               </li>
             
             <div class="clearfix"></div>
