@@ -8,16 +8,19 @@
   <link rel="dns-prefetch" href="http://dxh98.cn">
   <title>关于vuex | 人模人样的搬砖老段</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文作者：人模人样的搬砖老段本文链接：关于 vuex如有错误，请及时评论或者知乎私信或者 B 站私信哦~">
+  <meta name="description" content="初识 Vuex关于 VuexVuex 是适用于在 Vue 项目开发时使用的状态管理工具。试想一下，如果在一个项目开发中频繁的使用组件传参的方式来同步 data 中的值，一旦项目变得很庞大，管理和维护这些值将是相当棘手的工作。为此，Vue 为这些被多个组件频繁使用的值提供了一个统一管理的工具——VueX。在具有 Vuex 的 Vue 项目中，我们只需要把这些值定义在 Vuex 中，即可在整个 Vue">
 <meta name="keywords" content="Vue,Vuex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于vuex">
 <meta property="og:url" content="http:&#x2F;&#x2F;dxh98.cn&#x2F;%E5%85%B3%E4%BA%8Evuex&#x2F;index.html">
 <meta property="og:site_name" content="人模人样的搬砖老段">
-<meta property="og:description" content="本文作者：人模人样的搬砖老段本文链接：关于 vuex如有错误，请及时评论或者知乎私信或者 B 站私信哦~">
+<meta property="og:description" content="初识 Vuex关于 VuexVuex 是适用于在 Vue 项目开发时使用的状态管理工具。试想一下，如果在一个项目开发中频繁的使用组件传参的方式来同步 data 中的值，一旦项目变得很庞大，管理和维护这些值将是相当棘手的工作。为此，Vue 为这些被多个组件频繁使用的值提供了一个统一管理的工具——VueX。在具有 Vuex 的 Vue 项目中，我们只需要把这些值定义在 Vuex 中，即可在整个 Vue">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-07-15T12:27:46.644Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;upload-images.jianshu.io&#x2F;upload_images&#x2F;16550832-e1b684e312a9bd1f.png?imageMogr2&#x2F;auto-orient&#x2F;strip%7CimageView2&#x2F;2&#x2F;w&#x2F;1200&#x2F;format&#x2F;webp">
+<meta property="og:image" content="https:&#x2F;&#x2F;upload-images.jianshu.io&#x2F;upload_images&#x2F;16550832-20d0ad3c60a99111.png?imageMogr2&#x2F;auto-orient&#x2F;strip%7CimageView2&#x2F;2&#x2F;w&#x2F;701&#x2F;format&#x2F;webp">
+<meta property="og:updated_time" content="2020-07-16T01:29:13.567Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;upload-images.jianshu.io&#x2F;upload_images&#x2F;16550832-e1b684e312a9bd1f.png?imageMogr2&#x2F;auto-orient&#x2F;strip%7CimageView2&#x2F;2&#x2F;w&#x2F;1200&#x2F;format&#x2F;webp">
   
     <link rel="alternative" href="/atom.xml" title="人模人样的搬砖老段" type="application/atom+xml">
   
@@ -202,7 +205,163 @@ var _hmt = _hmt || [];
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                                        <hr>
+                                        <h4 id="初识-Vuex"><a href="#初识-Vuex" class="headerlink" title="初识 Vuex"></a>初识 Vuex</h4><h6 id="关于-Vuex"><a href="#关于-Vuex" class="headerlink" title="关于 Vuex"></a>关于 Vuex</h6><p><code>Vuex</code> 是适用于在 <code>Vue</code> 项目开发时使用的状态管理工具。试想一下，如果在一个项目开发中频繁的使用组件传参的方式来同步 <code>data</code> 中的值，一旦项目变得很庞大，管理和维护这些值将是相当棘手的工作。为此，<code>Vue</code> 为这些被多个组件频繁使用的值提供了一个统一管理的工具——<code>VueX</code>。在具有 <code>Vuex</code> 的 <code>Vue</code> 项目中，我们只需要把这些值定义在 <code>Vuex</code> 中，即可在整个 <code>Vue</code> 项目的组件中使用。</p>
+<a id="more"></a>
+
+<h6 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h6><p>由于 <code>Vuex</code> 是在学习 <code>VueCli</code> 后进行的，所以在下文出现的项目的目录请参照 <code>VueCli 2.x</code> 构建的目录。</p>
+<p>以下步骤的前提是你已经完成了 <code>Vue</code> 项目构建，并且已转至该项目的文件目录下。</p>
+<ul>
+<li>npm 安装 Vuex</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm i vuex -s</span></pre></td></tr></table></figure>
+
+<ul>
+<li>在项目的根目录下新增一个<code>store</code>文件夹，在该文件夹内创建 <code>index.js</code><br>此时你的项目的<code>src</code>文件夹应当是这样的</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">│  App.vue</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">│  main.js</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">│</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">├─assets</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">│      logo.png</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">│</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">├─components</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">│      HelloWorld.vue</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">│</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">├─router</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">│      index.js</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">│</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">└─store</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">       index.js</span></pre></td></tr></table></figure>
+
+<h6 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h6><ul>
+<li>初始化 <code>store</code> 下 <code>index.js</code> 中的内容</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">import Vue from <span class="string">'vue'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">import Vuex from <span class="string">'vuex'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">//挂载Vuex</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">Vue.use(Vuex)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">//创建VueX对象</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    state:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        //存放的键值对就是所要管理的状态</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        name:<span class="string">'helloVueX'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> default store</span></pre></td></tr></table></figure>
+
+<ul>
+<li>将 <code>store</code> 挂载到当前项目的 <code>Vue</code> 实例当中去<br>打开 main.js</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">import Vue from <span class="string">'vue'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">import App from <span class="string">'./App'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">import router from <span class="string">'./router'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">import store from <span class="string">'./store'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">Vue.config.productionTip = <span class="literal">false</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">/* eslint-disable no-new */</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  el: <span class="string">'#app'</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  router,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  store,  //store:store 和router一样，将我们创建的Vuex实例挂载到这个vue实例中</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  render: h =&gt; h(App)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr></table></figure>
+
+<ul>
+<li>在组件中使用<code>Vuex</code><br>例如在 <code>App.vue</code> 中，我们要将 <code>state</code> 中定义的 <code>name</code> 拿来在 <code>h1</code> 标签中显示</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  &lt;div id&#x3D;&quot;app&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    name:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &lt;h1&gt;&#123;&#123; $store.state.name &#125;&#125;&lt;&#x2F;h1&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  &lt;&#x2F;div&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;template&gt;</span></pre></td></tr></table></figure>
+
+<p><strong>注意，请不要在此处更改<code>state</code>中的状态的值，后文中将会说明</strong></p>
+<h6 id="安装-Vue-开发工具-VueDevtools"><a href="#安装-Vue-开发工具-VueDevtools" class="headerlink" title="安装 Vue 开发工具 VueDevtools"></a>安装 Vue 开发工具 VueDevtools</h6><p>在 Vue 项目开发中，需要监控项目中得各种值，为了提高效率，Vue 提供了一款浏览器扩展——VueDevtools。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/16550832-e1b684e312a9bd1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt="alt vue开发者工具"></p>
+<p>在学习 VueX 时，更为需要使用该插件。关于该插件的使用可以移步官网，在此不再赘叙。</p>
+<h4 id="Vuex-中的核心内容"><a href="#Vuex-中的核心内容" class="headerlink" title="Vuex 中的核心内容"></a>Vuex 中的核心内容</h4><p>在 <code>Vuex</code> 对象中，其实不止有 <code>state</code>,还有用来操作 <code>state</code> 中数据的方法集，以及当我们需要对 <code>state</code> 中的数据需要加工的方法集等等成员。</p>
+<p>成员列表：</p>
+<ul>
+<li>state 存放状态</li>
+<li>mutations state 成员操作</li>
+<li>getters 加工 state 成员给外界</li>
+<li>actions 异步操作</li>
+<li>modules 模块化状态管理</li>
+</ul>
+<h6 id="Vuex-的工作流程"><a href="#Vuex-的工作流程" class="headerlink" title="Vuex 的工作流程"></a>Vuex 的工作流程</h6><p><img src="https://upload-images.jianshu.io/upload_images/16550832-20d0ad3c60a99111.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/701/format/webp" alt="alt Vuex官网给出的流程图"></p>
+<p>首先，<code>Vue</code> 组件如果调用某个 <code>Vuex</code> 的方法过程中需要向后端请求时或者说出现异步操作时，需要 <code>dispatch</code> Vuex 中 <code>actions</code> 的方法，以保证数据的同步。可以说，<code>action</code> 的存在就是为了让 <code>mutations</code> 中的方法能在异步操作中起作用。</p>
+<p>如果没有异步操作，那么我们就可以直接在组件内提交状态中的<code>Mutations</code>中自己编写的方法来达成对<code>state</code>成员的操作。注意，上文中有提到，不建议在组件中直接对<code>state</code>中的成员进行操作，这是因为直接修改(例如：<code>this.$store.state.name = &#39;hello&#39;</code>)的话不能被<code>VueDevtools</code>所监控到。</p>
+<p>最后被修改后的 <code>state</code> 成员会被渲染到组件的原位置当中去。</p>
+<h6 id="Mutations"><a href="#Mutations" class="headerlink" title="Mutations"></a>Mutations</h6><p><code>mutations</code>是操作<code>state</code>数据的方法的集合，比如对该数据的修改、增加、删除等等。</p>
+<ul>
+<li>Mutations 使用方法</li>
+</ul>
+<p><code>Mutations</code> 方法都有默认的形参:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">([state], [payload]);</span></pre></td></tr></table></figure>
+
+<ol>
+<li><code>state</code> 方法时当前 <code>Vuex</code> 对象中的 <code>state</code></li>
+<li><code>payload</code> 是该方法在被调用传递参数时使用</li>
+</ol>
+<p>例如，我们编写一个方法，当被执行时，能把下例中的 <code>name</code> 值修改为”jack”,我们只需要这样做</p>
+<p><code>index.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">"vue"</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">"vuex"</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">Vue.use(Vuex);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.store(&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  state: &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    name: <span class="string">"helloVueX"</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  &#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  mutations: &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//es6语法，等同edit:funcion()&#123;...&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    edit(state) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">      state.name = <span class="string">"jack"</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    &#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  &#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span></pre></td></tr></table></figure>
+
+<p>而在组件中，我们需要这样去调用这个<code>mutation</code>——例如在 App.vue 的某个<code>method</code>中:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$store.commit(<span class="string">"edit"</span>);</span></pre></td></tr></table></figure>
+
+<ul>
+<li>Mutation 传值</li>
+</ul>
+<p>在实际生产过程中，会遇到需要在提交某个 <code>mutation</code> 时需要携带一些参数给方法使用。</p>
+<p>单个值提交时:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$store.commit(<span class="string">"edit"</span>, <span class="number">15</span>);</span></pre></td></tr></table></figure>
+
+<p>当需要多参提交时，推荐把他们放在一个对象中来提交:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$store.commit(<span class="string">"edit"</span>, &#123; <span class="attr">age</span>: <span class="number">15</span>, <span class="attr">sex</span>: <span class="string">"男"</span> &#125;);</span></pre></td></tr></table></figure>
+
+<p>接收挂载的参数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">edit(state,payload)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    state.name = <span class="string">'jack'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">console</span>.log(payload) <span class="comment">// 15或&#123;age:15,sex:'男'&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p><strong>另一种提交方式</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$store.commit(&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  type: <span class="string">"edit"</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  payload: &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    age: <span class="number">15</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    sex: <span class="string">"男"</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  &#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;);</span></pre></td></tr></table></figure>
+
+<blockquote>
+<p>增删 state 中的成员</p>
+</blockquote>
+<p>为了配合 <code>Vue</code> 的响应式数据，我们在 <code>Mutations</code> 的方法中，应当使用 <code>Vue</code> 提供的方法来进行操作。如果使用 <code>delete</code> 或者 <code>xx.xx = xx</code> 的形式去删或增，则 <code>Vue</code> 不能对数据进行实时响应。</p>
+<ul>
+<li>Vue.set 为某个对象设置成员的值，若不存在则新增</li>
+</ul>
+<p>例如对 state 对象中添加一个 age 成员</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Vue.set(state, <span class="string">"age"</span>, <span class="number">15</span>);</span></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Vue.delete 删除成员</p>
+</blockquote>
+<p>将刚刚添加的 age 成员删除</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Vue.delete(state, <span class="string">"age"</span>);</span></pre></td></tr></table></figure>
+
+<h6 id="Getters"><a href="#Getters" class="headerlink" title="Getters"></a>Getters</h6><p>可以对 <code>state</code> 中的成员加工后传递给外界</p>
+<p><code>Getters</code> 中的方法有两个默认参数</p>
+<ul>
+<li><code>state</code> 当前 <code>Vuex</code> 对象中的状态对象</li>
+<li><code>getters</code>当前 <code>getters</code> 对象，用于将 <code>getters</code> 下的其他 <code>getter</code> 拿来用</li>
+</ul>
+<p>例如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">getters:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    nameInfo(state)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="string">"姓名:"</span>+state.name</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    fullInfo(state,getters)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> getters.nameInfo+<span class="string">'年龄:'</span>+state.age</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>组件中调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$store.getters.fullInfo;</span></pre></td></tr></table></figure>
+
+<h6 id="Actions"><a href="#Actions" class="headerlink" title="Actions"></a>Actions</h6><p>由于直接在<code>mutation</code>方法中进行异步操作，将会引起数据失效。所以提供了<code>Actions</code>来专门进行异步操作，最终提交<code>mutation</code>方法。</p>
+<p><code>Actions</code>中的方法有两个默认参数</p>
+<ul>
+<li><code>context</code> 上下文(相当于箭头函数中的 this)对象</li>
+<li><code>payload</code> 挂载参数</li>
+</ul>
+<p>例如，我们在两秒中后执行<code>mutations</code>传值中的 <code>edit</code> 方法</p>
+<p>由于 <code>setTimeout</code> 是异步操作，所以需要使用 <code>actions</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">actions:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    aEdit(context,payload)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">            context.commit(<span class="string">'edit'</span>,payload)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        &#125;,<span class="number">2000</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>在组件中调用:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$store.dispatch(<span class="string">"aEdit"</span>, &#123; <span class="attr">age</span>: <span class="number">15</span> &#125;);</span></pre></td></tr></table></figure>
+
+<p>改进:</p>
+<p>由于是异步操作，所以我们可以为我们的异步操作封装为一个<code>Promise</code>对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"> aEdit(context,payload)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">      setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">          context.commit(<span class="string">'edit'</span>,payload)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">          resolve()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">      &#125;,<span class="number">2000</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  &#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h6 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h6><p>当项目庞大，状态非常多时，可以采用模块化管理模式。<code>Vuex</code> 允许我们将 <code>store</code> 分割成<strong>模块(module)</strong>。每个模块拥有自己的 <code>state、mutation、action、getter</code>、甚至是嵌套子模块——从上至下进行同样方式的分割。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">models:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    a:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        state:&#123;&#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        getters:&#123;&#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        ....</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>组件内调用模块 a 的状态：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$store.state.a;</span></pre></td></tr></table></figure>
+
+<p>而提交或者<code>dispatch</code>某个方法和以前一样,会自动执行所有模块内的对应<code>type</code>的方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$store.commit(<span class="string">"editKey"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$store.dispatch(<span class="string">"aEditKey"</span>);</span></pre></td></tr></table></figure>
+
+<ul>
+<li>模块的细节</li>
+</ul>
+<blockquote>
+<p>模块中<code>mutations</code>和<code>getters</code>中的方法接受的第一个参数是自身局部模块内部的<code>state</code></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">models:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    a:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        state:&#123;<span class="attr">key</span>:<span class="number">5</span>&#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        mutations:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">            editKey(state)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">                state.key = <span class="number">9</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        &#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        ....</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>getters</code>中方法的第三个参数是根节点状态</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">models:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    a:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        state:&#123;<span class="attr">key</span>:<span class="number">5</span>&#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        getters:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">            getKeyCount(state,getter,rootState)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">                <span class="keyword">return</span>  rootState.key + state.key</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        &#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        ....</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>actions</code> 中方法获取局部模块状态是 <code>context.state</code>,根节点状态是 <code>context.rootState</code></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">models:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    a:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        state:&#123;<span class="attr">key</span>:<span class="number">5</span>&#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        actions:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">            aEidtKey(context)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">                <span class="keyword">if</span>(context.state.key === context.rootState.key)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">                    context.commit(<span class="string">'editKey'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">                &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        &#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        ....</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h4 id="规范目录结构"><a href="#规范目录结构" class="headerlink" title="规范目录结构"></a>规范目录结构</h4><p>如果把整个<code>store</code>都放在<code>index.js</code>中是不合理的，所以需要拆分。比较合适的目录格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">store:.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">│  actions.js</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">│  getters.js</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">│  index.js</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">│  mutations.js</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">│  mutations_type.js   ##该项为存放mutaions方法常量的文件，按需要可加入</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">│</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">└─modules</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        Astore.js</span></pre></td></tr></table></figure>
+
+<p>对应的内容存放在对应的文件中，和以前一样，在 <code>index.js</code> 中存放并导出 <code>store</code>。<code>state</code> 中的数据尽量放在 <code>index.js</code> 中。而 <code>modules</code> 中的 <code>Astore</code> 局部模块状态如果多的话也可以进行细分。</p>
 <p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/%E5%85%B3%E4%BA%8Evuex/">关于 vuex</a><br>如有错误，请及时评论或者知乎私信或者 B 站私信哦~</p>
 
                                             
@@ -361,7 +520,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#初识-Vuex"><span class="toc-number">1.</span> <span class="toc-text">初识 Vuex</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#关于-Vuex"><span class="toc-number">1.0.1.</span> <span class="toc-text">关于 Vuex</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#安装"><span class="toc-number">1.0.2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#使用"><span class="toc-number">1.0.3.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#安装-Vue-开发工具-VueDevtools"><span class="toc-number">1.0.4.</span> <span class="toc-text">安装 Vue 开发工具 VueDevtools</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vuex-中的核心内容"><span class="toc-number">2.</span> <span class="toc-text">Vuex 中的核心内容</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Vuex-的工作流程"><span class="toc-number">2.0.1.</span> <span class="toc-text">Vuex 的工作流程</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Mutations"><span class="toc-number">2.0.2.</span> <span class="toc-text">Mutations</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Getters"><span class="toc-number">2.0.3.</span> <span class="toc-text">Getters</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Actions"><span class="toc-number">2.0.4.</span> <span class="toc-text">Actions</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Models"><span class="toc-number">2.0.5.</span> <span class="toc-text">Models</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#规范目录结构"><span class="toc-number">3.</span> <span class="toc-text">规范目录结构</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -6507,22 +6666,6 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">3D转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">关键帧动画</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">BFC</a>
               </li>
              
@@ -6539,15 +6682,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">CSS3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">2D转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">DOM高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -6575,6 +6718,10 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Math</a>
               </li>
              
@@ -6584,6 +6731,10 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">DOM高级</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -6607,11 +6758,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">事件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">localStorage</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">元素类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -6623,7 +6778,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">元素类型</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">localStorage</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">3D转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">关键帧动画</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -6631,7 +6794,23 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">闭包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">宽高自适应</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">循环语句</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -6643,15 +6822,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">循环语句</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">正则</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -6683,18 +6854,6 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">响应式布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表格高级</a>
               </li>
              
@@ -6703,15 +6862,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">面向对象</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">逻辑分支</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">宽高自适应</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">面向对象</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">响应式布局</a>
               </li>
             
             <div class="clearfix"></div>
