@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="人模人样的搬砖老段">
 <meta property="og:description" content="React 简介   声明式 (只需要告诉框架需要做什么，而不需要告诉他该怎么做，跟声明式对立的是命令式，比如 Jquery) 组件化 (Vue 中声明全局组件的方式 Vue.component 组件名 组件最大的好处是可以复用) 一次学习，随处编写 (React 可以写原生应用(ReactNative)和网页应用)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-07-15T12:28:02.507Z">
+<meta property="og:updated_time" content="2020-07-16T01:55:34.276Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="人模人样的搬砖老段" type="application/atom+xml">
@@ -234,15 +234,13 @@ var _hmt = _hmt || [];
 </li>
 <li><p>npm I react –save 或 yarn add react(有 yarn 的)<br>会在目录中产生项目依赖目录 node_modules<br>进入 node_modules react umd 找到 react.development.js<br>粘贴到项目目录下的 js 文件夹里</p>
 </li>
-<li><p>终端里 npm I react-dom –save 或 yarn add react-dom(有 yarn 的)<br>进入 node-modules react-dom umd 找到 react-dom.development.js<br>粘贴到项目目录下的 js 文件夹里</p>
-<pre><code>创建html文件
-按顺序依次引入 react.development.js  react-dom.development.js 文件
-
-可以实现hello word的呈现
-ReactDOM.render(“hello world”,document.getElementById(“box”))</code></pre><p>此处只能渲染出来文本内容，渲染不出来带标签的内容，需要下载 babel 包</p>
+<li><p>终端里 npm I react-dom –save 或 yarn add react-dom(有 yarn 的)<br>进入 node-modules react-dom umd 找到 react-dom.development.js<br>粘贴到项目目录下的 js 文件夹里<br>创建 html 文件<br>按顺序依次引入 react.development.js react-dom.development.js 文件</p>
+<p>可以实现 hello word 的呈现<br>ReactDOM.render(“hello world”,document.getElementById(“box”))</p>
+<p>此处只能渲染出来文本内容，渲染不出来带标签的内容，需要下载 babel 包</p>
 </li>
 <li><p>npm i babel-standalone 或 yarn add babel-standalone<br>进入 node_modules babel-standalone<br>复制 babel.js 粘贴到 js 文件夹里面<br>再在 html 里面接着引入</p>
-<pre><code>如果使用了babel.js</code></pre><p>那么用 script 标签的时候就要加入 type=text/babel</p>
+<p>如果使用了 babel.js</p>
+<p>那么用 script 标签的时候就要加入 type=text/babel</p>
 <p>就可以实现标签的呈现</p>
 </li>
 <li><p>在 html 文件中的引入顺序<br>a react.development.js<br>b react-dom.development.js<br>c babel.js</p>
@@ -6685,11 +6683,11 @@ ReactDOM.render(“hello world”,document.getElementById(“box”))</code></pr
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">CSS3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">BOM</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -6697,19 +6695,7 @@ ReactDOM.render(“hello world”,document.getElementById(“box”))</code></pr
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">2D转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">DOM高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -6721,11 +6707,19 @@ ReactDOM.render(“hello world”,document.getElementById(“box”))</code></pr
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Math</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Date</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -6741,11 +6735,15 @@ ReactDOM.render(“hello world”,document.getElementById(“box”))</code></pr
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Math</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">2D转换</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Date</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -6765,22 +6763,6 @@ ReactDOM.render(“hello world”,document.getElementById(“box”))</code></pr
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">localStorage</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">jQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ES5</a>
               </li>
              
@@ -6789,11 +6771,19 @@ ReactDOM.render(“hello world”,document.getElementById(“box”))</code></pr
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">redux</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">元素类型</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">BOM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">redux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -6813,31 +6803,23 @@ ReactDOM.render(“hello world”,document.getElementById(“box”))</code></pr
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">闭包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">localStorage</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">定位</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">锚点跳转</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表格高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表单高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">循环语句</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">盒模型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -6857,6 +6839,10 @@ ReactDOM.render(“hello world”,document.getElementById(“box”))</code></pr
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">逻辑分支</a>
               </li>
              
@@ -6865,15 +6851,27 @@ ReactDOM.render(“hello world”,document.getElementById(“box”))</code></pr
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表格高级</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">盒模型</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">表单高级</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">元素类型</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">循环语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">定位</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">锚点跳转</a>
               </li>
             
             <div class="clearfix"></div>
