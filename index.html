@@ -202,6 +202,693 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
 
+<article id="post-node实现图片上传到本地服务器（自定义文件夹参数）和 上传到七牛云，且压缩处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/node%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E5%88%B0%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%82%E6%95%B0%EF%BC%89%E5%92%8C%20%E4%B8%8A%E4%BC%A0%E5%88%B0%E4%B8%83%E7%89%9B%E4%BA%91%EF%BC%8C%E4%B8%94%E5%8E%8B%E7%BC%A9%E5%A4%84%E7%90%86/">node实现图片上传到本地服务器（自定义文件夹参数）&amp; 上传到七牛云，且压缩处理</a>
+    </h1>
+  
+
+                    
+                        <a href="/node%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E5%88%B0%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%82%E6%95%B0%EF%BC%89%E5%92%8C%20%E4%B8%8A%E4%BC%A0%E5%88%B0%E4%B8%83%E7%89%9B%E4%BA%91%EF%BC%8C%E4%B8%94%E5%8E%8B%E7%BC%A9%E5%A4%84%E7%90%86/" class="archive-article-date">
+  	<time datetime="2022-10-13T02:52:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-13</time>
+</a>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+                                        <h4 id="node实现图片上传到本地服务器（自定义文件夹参数）-amp-上传到七牛云，且压缩处理"><a href="#node实现图片上传到本地服务器（自定义文件夹参数）-amp-上传到七牛云，且压缩处理" class="headerlink" title="node实现图片上传到本地服务器（自定义文件夹参数）&amp; 上传到七牛云，且压缩处理"></a>node实现图片上传到本地服务器（自定义文件夹参数）&amp; 上传到七牛云，且压缩处理</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 接口文件  imgUpload.js</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">const</span> router = express.Router();</span><br><span class="line"><span class="keyword">const</span> multer = <span class="built_in">require</span>(<span class="string">'multer'</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">const</span> tinify = <span class="built_in">require</span>(<span class="string">'tinify'</span>);</span><br><span class="line">tinify.key = <span class="string">'**************'</span>; <span class="comment">// 在tinify官网申请</span></span><br><span class="line"><span class="keyword">var</span> upImg = <span class="built_in">require</span>(<span class="string">'../../../utils/uploadToQiniu'</span>)</span><br><span class="line"><span class="keyword">var</span> resJson = <span class="built_in">require</span>(<span class="string">'../../../utils/resJson'</span>)   <span class="comment">//  我自己封装的接口返回</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 单张图片上传图片地址</span></span><br><span class="line"><span class="keyword">const</span> IMAGES_PATH = path.resolve(__dirname, <span class="string">`../../../public/images/public`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 单个图片上传</span></span><br><span class="line"><span class="keyword">let</span> upload = multer(&#123;</span><br><span class="line">    storage: multer.diskStorage(&#123;</span><br><span class="line">        destination: <span class="function"><span class="keyword">function</span> (<span class="params">req, file, cb</span>) </span>&#123;</span><br><span class="line">            cb(<span class="literal">null</span>, <span class="string">'./public/images/public/'</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        filename: <span class="function"><span class="keyword">function</span> (<span class="params">req, file, cb</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> changedName = (<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()) + <span class="string">'-'</span> + file.originalname;</span><br><span class="line">            cb(<span class="literal">null</span>, changedName);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//单个图片上传  -图片存在服务器本地</span></span><br><span class="line">router.post(<span class="string">'/toLocal'</span>, upload.single(<span class="string">'image'</span>), <span class="keyword">async</span> (req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> folderName = req.body.folderName <span class="comment">//  参数中传过来的“文件夹”参数，判断图片存储路径下是否存在文件夹，没有的话会创建然后存入</span></span><br><span class="line">        <span class="keyword">let</span> filePath = IMAGES_PATH + <span class="string">'/'</span> + folderName</span><br><span class="line">        <span class="keyword">let</span> isExists = <span class="keyword">await</span> fs.existsSync(filePath)</span><br><span class="line">        <span class="keyword">if</span> (isExists) &#123;</span><br><span class="line">            <span class="comment">// 文件夹是存在的</span></span><br><span class="line">            <span class="comment">// 移动文件</span></span><br><span class="line">            rename(req.file.filename, folderName)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 文件夹不存在，先创建文件夹</span></span><br><span class="line">            fs.mkdir(filePath, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(err);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">console</span>.log(folderName + <span class="string">' mkdir success'</span>);</span><br><span class="line">                <span class="comment">// 再移动文件</span></span><br><span class="line">                rename(req.file.filename, folderName)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        resJson.success(res, &#123;</span><br><span class="line">            imgUrl: <span class="string">'images/public/'</span> + folderName + <span class="string">'/'</span> + req.file.filename</span><br><span class="line">        &#125;, <span class="string">'图片上传成功'</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">        resJson.error(res, err, <span class="string">'图片上传失败'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//单个图片上传   -图片上传到七牛云</span></span><br><span class="line">router.post(<span class="string">'/toQiNiu'</span>, upload.single(<span class="string">'image'</span>), <span class="keyword">async</span> (req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> url = <span class="keyword">await</span> upImg(req.file)</span><br><span class="line">        <span class="built_in">console</span>.log(url);</span><br><span class="line">        resJson.success(res, &#123;</span><br><span class="line">            imgUrl: url</span><br><span class="line">        &#125;, <span class="string">"图片上传成功"</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">        resJson.error(res, err, <span class="string">'图片上传失败'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 操作图片压缩的  tinify</span></span><br><span class="line"><span class="keyword">const</span> compress = <span class="function">(<span class="params">trueName</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> sourse = tinify.fromFile(trueName); <span class="comment">//输入文件</span></span><br><span class="line">    sourse.toFile(trueName, (err) =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(trueName + <span class="string">' 图片压缩成功'</span>);</span><br><span class="line">    &#125;); <span class="comment">//输出文件</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 操作图片移动的</span></span><br><span class="line"><span class="keyword">const</span> rename = <span class="function">(<span class="params">fileName, folderName</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> oldName = IMAGES_PATH + <span class="string">'/'</span> + fileName</span><br><span class="line">    <span class="keyword">let</span> newName = IMAGES_PATH + <span class="string">'/'</span> + folderName + <span class="string">'/'</span> + fileName</span><br><span class="line">    fs.rename(oldName, newName, (err) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(err);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(fileName + <span class="string">' rename success'</span>)</span><br><span class="line">        <span class="comment">// 再执行压缩图片文件</span></span><br><span class="line">        compress(newName)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = router;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * uploadToQiniu.js</span></span><br><span class="line"><span class="comment"> * 此处返回的图片地址是完整的七牛云存储地址，并且是带了七牛云的图片格式处理参数的</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> qiniu = <span class="built_in">require</span>(<span class="string">'qiniu'</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">    accessKey,</span><br><span class="line">    secretKey,</span><br><span class="line">    bucket,</span><br><span class="line">    url</span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">"../config/qiniuConfig.json"</span>);</span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">    accessKey,</span><br><span class="line">    secretKey,</span><br><span class="line">    bucket,</span><br><span class="line">    url</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> qn = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//构建上传策略函数   （获取七牛上传token）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uptoken</span>(<span class="params">bucket</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 创建鉴权对象</span></span><br><span class="line">    <span class="keyword">const</span> accessKey = config.accessKey;</span><br><span class="line">    <span class="keyword">const</span> secretKey = config.secretKey;</span><br><span class="line">    <span class="keyword">const</span> mac = <span class="keyword">new</span> qiniu.auth.digest.Mac(accessKey, secretKey);</span><br><span class="line">    <span class="comment">// 创建上传凭证</span></span><br><span class="line">    <span class="keyword">const</span> putPolicy = <span class="keyword">new</span> qiniu.rs.PutPolicy(&#123;</span><br><span class="line">        scope: bucket</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> uploadToken = putPolicy.uploadToken(mac);</span><br><span class="line">    <span class="keyword">return</span> uploadToken;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">upImg</span>(<span class="params">file</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> token = uptoken(bucket); <span class="comment">//生成上传 Token</span></span><br><span class="line">        <span class="keyword">const</span> key = file.filename; <span class="comment">//上传到七牛后保存的文件名</span></span><br><span class="line">        <span class="keyword">const</span> filePath = file.path; <span class="comment">//要上传文件的本地路径</span></span><br><span class="line">        <span class="keyword">const</span> putExtra = <span class="keyword">new</span> qiniu.form_up.PutExtra();</span><br><span class="line">        <span class="comment">// 文件上传（以下四行代码都是七牛上传文件的配置设置）</span></span><br><span class="line">        <span class="keyword">const</span> qiNiuConfig = <span class="keyword">new</span> qiniu.conf.Config();</span><br><span class="line">        qiNiuConfig.zone = qiniu.zone.Zone_z2; <span class="comment">//设置传输机房的位置，华南机房</span></span><br><span class="line">        <span class="keyword">const</span> formUploader = <span class="keyword">new</span> qiniu.form_up.FormUploader(qiNiuConfig);</span><br><span class="line">        formUploader.putFile(token, key, filePath, putExtra, <span class="function"><span class="keyword">function</span> (<span class="params">respErr, respBody, respInfo</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (respErr) &#123;</span><br><span class="line">                reject(respErr)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (respInfo.statusCode == <span class="number">200</span>) &#123; <span class="comment">//上传成功</span></span><br><span class="line">                    fs.unlink(filePath, (err) =&gt; &#123; <span class="comment">//删除本地图片</span></span><br><span class="line">                        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                            <span class="built_in">console</span>.log(err);</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="built_in">console</span>.log(<span class="string">'删除文件成功'</span>)</span><br><span class="line">                    &#125;)</span><br><span class="line">                    <span class="keyword">const</span> &#123;</span><br><span class="line">                        key</span><br><span class="line">                    &#125; = respBody</span><br><span class="line">                    resolve(<span class="string">`<span class="subst">$&#123;url&#125;</span>/<span class="subst">$&#123;key&#125;</span>?imageView2/0/q/80|imageslim`</span>)</span><br><span class="line"></span><br><span class="line">                &#125; <span class="keyword">else</span> &#123; <span class="comment">//上传失败</span></span><br><span class="line">                    <span class="built_in">console</span>.log(respInfo.statusCode);</span><br><span class="line">                    <span class="built_in">console</span>.log(respBody);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = upImg;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 七牛云所需要的参数   qiniuConfig.json</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"accessKey"</span>: <span class="string">""</span>,  <span class="comment">// 七牛云-个人中心-密钥管理，获取</span></span><br><span class="line">    <span class="string">"secretKey"</span>: <span class="string">""</span>,  <span class="comment">// 七牛云-个人中心-密钥管理，获取</span></span><br><span class="line">    <span class="string">"bucket"</span>: <span class="string">""</span>,  <span class="comment">//  七牛云存储空间的名字</span></span><br><span class="line">    <span class="string">"url"</span>: <span class="string">""</span>     <span class="comment">// 七牛云中自定义的域名</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/">node实现图片上传到本地服务器（自定义文件夹参数）&amp; 上传到七牛云，且压缩处理</a><br>如有错误，请及时评论或者知乎私信或者 B 站私信哦~</p>
+<hr>
+<p><strong>最后更新于:2022/10/13</strong></p>
+
+                                            
+
+
+                                                
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">七牛云</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tinify</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                        
+
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/node%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E5%88%B0%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%82%E6%95%B0%EF%BC%89%E5%92%8C%20%E4%B8%8A%E4%BC%A0%E5%88%B0%E4%B8%83%E7%89%9B%E4%BA%91%EF%BC%8C%E4%B8%94%E5%8E%8B%E7%BC%A9%E5%A4%84%E7%90%86/">
+                                        展开全文 >></a>
+                                </p>
+                                
+
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
+</article>
+
+            <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+                
+
+<article id="post-node项目通用配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/node%E9%A1%B9%E7%9B%AE%E9%80%9A%E7%94%A8%E9%85%8D%E7%BD%AE/">node项目通用配置</a>
+    </h1>
+  
+
+                    
+                        <a href="/node%E9%A1%B9%E7%9B%AE%E9%80%9A%E7%94%A8%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2022-10-12T02:52:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-12</time>
+</a>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+                                        <h4 id="node项目通用配置"><a href="#node项目通用配置" class="headerlink" title="node项目通用配置"></a>node项目通用配置</h4><ol>
+<li>跨域处理 <code>cors</code>插件</li>
+<li>post请求体body数据处理  <code>body-parse</code>插件</li>
+<li>图片上传时的<code>tinify</code>压缩处理</li>
+<li>图片上传到服务器本地、图片上传到七牛云</li>
+<li>接口响应封装</li>
+<li>日志输出<code>log4js</code></li>
+<li>配置swagger自动化输出接口文档     <a href=""https://blog.csdn.net/weixin_40305713/article/details/111921938"">如何在<code>nodejs</code>中使用<code>swagger</code></a></li>
+</ol>
+<hr>
+<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/">node项目通用配置</a><br>如有错误，请及时评论或者知乎私信或者 B 站私信哦~</p>
+<hr>
+<p><strong>最后更新于:2022/10/12</strong></p>
+
+                                            
+
+
+                                                
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目配置</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                        
+
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/node%E9%A1%B9%E7%9B%AE%E9%80%9A%E7%94%A8%E9%85%8D%E7%BD%AE/">
+                                        展开全文 >></a>
+                                </p>
+                                
+
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
+</article>
+
+            <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+                
+
+<article id="post-图片压缩" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9/">前端及node端的图片压缩处理</a>
+    </h1>
+  
+
+                    
+                        <a href="/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9/" class="archive-article-date">
+  	<time datetime="2022-10-11T02:52:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-11</time>
+</a>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+                                        <h4 id="前端及node端的图片压缩处理"><a href="#前端及node端的图片压缩处理" class="headerlink" title="前端及node端的图片压缩处理"></a>前端及node端的图片压缩处理</h4><p>前端</p>
+<blockquote>
+<p>此处我的业务场景是后台管理和小程序，后台管理就是正常的<code>vue</code>+<code>elementUI</code>，小程序是原生无<code>UI</code>框架，后台管理端主要涉及到的图片上传为文章主图上传、富文本编辑器中的图片上传，此处先做正常的文章主图上传压缩处理。</p>
+</blockquote>
+<p><code>input</code>框的图片选择限制选择文件类型为图片下的<code>png</code>、<code>jpg</code>、<code>jpeg</code></p>
+<h4 id="pc端封装"><a href="#pc端封装" class="headerlink" title="pc端封装"></a><code>pc</code>端封装</h4><blockquote>
+<p><code>H5</code>端的图片压缩是使用的canvas重新绘图来实现的。具体代码如下</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 压缩图片方法</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;file&#125;</span> </span>file 文件</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;Number&#125;</span> </span>quality 图片质量(取值0-1之间默认0.92)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compressImg</span>(<span class="params">file, quality</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> qualitys = <span class="number">0.52</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">parseInt</span>((file.size / <span class="number">1024</span>).toFixed(<span class="number">2</span>)))</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">parseInt</span>((file.size / <span class="number">1024</span>).toFixed(<span class="number">2</span>)) &lt; <span class="number">1024</span>) &#123;</span><br><span class="line">        qualitys = <span class="number">0.85</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="number">5</span> * <span class="number">1024</span> &lt; <span class="built_in">parseInt</span>((file.size / <span class="number">1024</span>).toFixed(<span class="number">2</span>))) &#123;</span><br><span class="line">        qualitys = <span class="number">0.92</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (quality) &#123;</span><br><span class="line">        qualitys = quality</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (file[<span class="number">0</span>]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Promise</span>.all(<span class="built_in">Array</span>.from(file).map(<span class="function"><span class="params">e</span> =&gt;</span> <span class="keyword">this</span>.compressImg(e,</span><br><span class="line">            qualitys))) <span class="comment">// 如果是 file 数组返回 Promise 数组</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(file)</span><br><span class="line">            <span class="keyword">if</span> ((file.size / <span class="number">1024</span>).toFixed(<span class="number">2</span>) &lt; <span class="number">300</span>) &#123;</span><br><span class="line">                resolve(&#123;</span><br><span class="line">                    file: file</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">const</span> reader = <span class="keyword">new</span> FileReader() <span class="comment">// 创建 FileReader</span></span><br><span class="line">                reader.onload = (&#123;</span><br><span class="line">                    target: &#123;</span><br><span class="line">                        result: src</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;) =&gt; &#123;</span><br><span class="line">                    <span class="keyword">const</span> image = <span class="keyword">new</span> Image() <span class="comment">// 创建 img 元素</span></span><br><span class="line">                    image.onload = <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">                        <span class="keyword">const</span> canvas = <span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>) <span class="comment">// 创建 canvas 元素</span></span><br><span class="line">                        <span class="keyword">const</span> context = canvas.getContext(<span class="string">'2d'</span>)</span><br><span class="line">                        <span class="keyword">var</span> targetWidth = image.width</span><br><span class="line">                        <span class="keyword">var</span> targetHeight = image.height</span><br><span class="line">                        <span class="keyword">var</span> originWidth = image.width</span><br><span class="line">                        <span class="keyword">var</span> originHeight = image.height</span><br><span class="line">                        <span class="keyword">if</span> (<span class="number">1</span> * <span class="number">1024</span> &lt;= <span class="built_in">parseInt</span>((file.size / <span class="number">1024</span>).toFixed(<span class="number">2</span>)) &amp;&amp; <span class="built_in">parseInt</span>((file.size / <span class="number">1024</span>).toFixed(<span class="number">2</span>)) &lt;= <span class="number">10</span> * <span class="number">1024</span>) &#123;</span><br><span class="line">                            <span class="keyword">var</span> maxWidth = <span class="number">1600</span></span><br><span class="line">                            <span class="keyword">var</span> maxHeight = <span class="number">1600</span></span><br><span class="line">                            targetWidth = originWidth</span><br><span class="line">                            targetHeight = originHeight</span><br><span class="line">                            <span class="comment">// 图片尺寸超过的限制</span></span><br><span class="line">                            <span class="keyword">if</span> (originWidth &gt; maxWidth || originHeight &gt; maxHeight) &#123;</span><br><span class="line">                                <span class="keyword">if</span> (originWidth / originHeight &gt; maxWidth / maxHeight) &#123;</span><br><span class="line">                                    <span class="comment">// 更宽，按照宽度限定尺寸</span></span><br><span class="line">                                    targetWidth = maxWidth</span><br><span class="line">                                    targetHeight = <span class="built_in">Math</span>.round(maxWidth * (originHeight / originWidth))</span><br><span class="line">                                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                                    targetHeight = maxHeight</span><br><span class="line">                                    targetWidth = <span class="built_in">Math</span>.round(maxHeight * (originWidth / originHeight))</span><br><span class="line">                                &#125;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">if</span> (<span class="number">10</span> * <span class="number">1024</span> &lt;= <span class="built_in">parseInt</span>((file.size / <span class="number">1024</span>).toFixed(<span class="number">2</span>)) &amp;&amp; <span class="built_in">parseInt</span>((file.size / <span class="number">1024</span>).toFixed(<span class="number">2</span>)) &lt;= <span class="number">20</span> * <span class="number">1024</span>) &#123;</span><br><span class="line">                            maxWidth = <span class="number">1400</span></span><br><span class="line">                            maxHeight = <span class="number">1400</span></span><br><span class="line">                            targetWidth = originWidth</span><br><span class="line">                            targetHeight = originHeight</span><br><span class="line">                            <span class="comment">// 图片尺寸超过的限制</span></span><br><span class="line">                            <span class="keyword">if</span> (originWidth &gt; maxWidth || originHeight &gt; maxHeight) &#123;</span><br><span class="line">                                <span class="keyword">if</span> (originWidth / originHeight &gt; maxWidth / maxHeight) &#123;</span><br><span class="line">                                    <span class="comment">// 更宽，按照宽度限定尺寸</span></span><br><span class="line">                                    targetWidth = maxWidth</span><br><span class="line">                                    targetHeight = <span class="built_in">Math</span>.round(maxWidth * (originHeight / originWidth))</span><br><span class="line">                                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                                    targetHeight = maxHeight</span><br><span class="line">                                    targetWidth = <span class="built_in">Math</span>.round(maxHeight * (originWidth / originHeight))</span><br><span class="line">                                &#125;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        canvas.width = targetWidth</span><br><span class="line">                        canvas.height = targetHeight</span><br><span class="line">                        context.clearRect(<span class="number">0</span>, <span class="number">0</span>, targetWidth, targetHeight)</span><br><span class="line">                        context.drawImage(image, <span class="number">0</span>, <span class="number">0</span>, targetWidth, targetHeight) <span class="comment">// 绘制 canvas</span></span><br><span class="line">                        <span class="keyword">const</span> canvasURL = canvas.toDataURL(<span class="string">'image/jpeg'</span>, qualitys)</span><br><span class="line">                        <span class="keyword">const</span> buffer = atob(canvasURL.split(<span class="string">','</span>)[<span class="number">1</span>])</span><br><span class="line">                        <span class="keyword">let</span> length = buffer.length</span><br><span class="line">                        <span class="keyword">const</span> bufferArray = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(<span class="keyword">new</span> <span class="built_in">ArrayBuffer</span>(length))</span><br><span class="line">                        <span class="keyword">while</span> (length--) &#123;</span><br><span class="line">                            bufferArray[length] = buffer.charCodeAt(length)</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">const</span> miniFile = <span class="keyword">new</span> File([bufferArray], file.name, &#123;</span><br><span class="line">                            type: <span class="string">'image/jpeg'</span></span><br><span class="line">                        &#125;)</span><br><span class="line">                        <span class="built_in">console</span>.log(&#123;</span><br><span class="line">                            file: miniFile,</span><br><span class="line">                            origin: file,</span><br><span class="line">                            beforeSrc: src,</span><br><span class="line">                            afterSrc: canvasURL,</span><br><span class="line">                            beforeKB: <span class="built_in">Number</span>((file.size / <span class="number">1024</span>).toFixed(<span class="number">2</span>)),</span><br><span class="line">                            afterKB: <span class="built_in">Number</span>((miniFile.size / <span class="number">1024</span>).toFixed(<span class="number">2</span>)),</span><br><span class="line">                            qualitys: qualitys</span><br><span class="line">                        &#125;)</span><br><span class="line">                        resolve(&#123;</span><br><span class="line">                            file: miniFile,</span><br><span class="line">                            origin: file,</span><br><span class="line">                            beforeSrc: src,</span><br><span class="line">                            afterSrc: canvasURL,</span><br><span class="line">                            beforeKB: <span class="built_in">Number</span>((file.size / <span class="number">1024</span>).toFixed(<span class="number">2</span>)),</span><br><span class="line">                            afterKB: <span class="built_in">Number</span>((miniFile.size / <span class="number">1024</span>).toFixed(<span class="number">2</span>))</span><br><span class="line">                        &#125;)</span><br><span class="line">                    &#125;</span><br><span class="line">                    image.src = src</span><br><span class="line">                &#125;</span><br><span class="line">                reader.readAsDataURL(file)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="小程序端封装"><a href="#小程序端封装" class="headerlink" title="小程序端封装"></a>小程序端封装</h4><blockquote>
+<p>当前业务中的小程序端涉及到的图片上传就是用户在补充信息时需要进行上传头像，用户在浏览个人资料的时候可以更改自己的头像</p>
+</blockquote>
+<blockquote>
+<p>小程序端进行图片压缩主要有三种方式可选择，一种是小程序官方提供的接口<code>wx.compressImage()</code>官方文档提供的接口能力，很怪，<code>ios</code>大多数情况下是可以的，但是安卓有时候反而会把图片变大，不做选择。第二种是用canvas重绘来进行图片压缩，可自定义性比较强一点。第三种就是找一下有没有图片压缩的插件之类的了。我选用的是第二种方式。</p>
+</blockquote>
+<blockquote>
+<p>小程序端的<code>canvas</code>绘制相关<code>api</code>有做更新，这里做老版和新版的写法说明，老版写法参考的文章<a href=""http://www.zzvips.com/article/205361.html"">微信小程序对图片进行canvas压缩的方法示例详解</a>，</p>
+<p>老版写法尝试成功，新版写法未做尝试。</p>
+</blockquote>
+<p>老版写法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 封装utils功能文件</span></span><br><span class="line"><span class="comment">// 通过canvas将图片压缩至指定大小</span></span><br><span class="line"><span class="comment">// 判断图片大小是否满足需求,limitSize的单位是kb</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">imageSizeIsLessLimitSize</span>(<span class="params">imagePath, limitSize, lessCallback, moreCallback</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//获取文件信息</span></span><br><span class="line">    <span class="built_in">console</span>.log(imagePath);</span><br><span class="line">    <span class="built_in">console</span>.log(limitSize);</span><br><span class="line">    wx.getFileInfo(&#123;</span><br><span class="line">        filePath: imagePath,</span><br><span class="line">        success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"压缩前图片大小"</span>, res.size / <span class="number">1024</span>, <span class="string">'kb'</span>);</span><br><span class="line">            <span class="comment">//如果图片太大了走moreCallback</span></span><br><span class="line">            <span class="keyword">if</span> (res.size &gt; <span class="number">1024</span> * limitSize) &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'图片太大了'</span>);</span><br><span class="line">                moreCallback()</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//图片满足要求了走lessCallback</span></span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'图片满足要求'</span>);</span><br><span class="line">                lessCallback()</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将图片画在画布上并获取画好之后的图片的路径</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCanvasImage</span>(<span class="params">canvasId, imagePath, imageW, imageH, getImgSuccess</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//创建画布内容</span></span><br><span class="line">    <span class="keyword">const</span> ctx = wx.createCanvasContext(canvasId);</span><br><span class="line">    <span class="comment">//图片画上去，imageW和imageH是画上去的尺寸，图像和画布间隔都是0</span></span><br><span class="line">    ctx.drawImage(imagePath, <span class="number">0</span>, <span class="number">0</span>, imageW, imageH);</span><br><span class="line">    <span class="comment">//这里一定要加定时器，给足够的时间去画（所以每次递归最少要耗时200ms，多次递归很耗时！）  老版实现方式是需要调用draw方法才会进行绘制，所以需要写个定时器，但是新版的是会同步执行的</span></span><br><span class="line">    ctx.draw(<span class="literal">false</span>, setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        wx.canvasToTempFilePath(&#123;</span><br><span class="line">            canvasId: canvasId,</span><br><span class="line">            x: <span class="number">0</span>,</span><br><span class="line">            y: <span class="number">0</span>,</span><br><span class="line">            width: imageW,</span><br><span class="line">            height: imageH,</span><br><span class="line">            quality: <span class="number">1</span>, <span class="comment">//最高质量，只通过尺寸放缩去压缩，画的时候都按最高质量来画</span></span><br><span class="line">            success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">                getImgSuccess(res.tempFilePath);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;, <span class="number">200</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//主函数，默认限制大小1024kb即1mb,drawWidth是绘画区域的大小</span></span><br><span class="line"><span class="comment">//初始值传入为画布自身的边长（我们这是一个正方形的画布）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLessLimitSizeImage</span>(<span class="params">canvasId, imagePath, limitSize = <span class="number">1024</span>, drawWidth, callback</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//判断图片尺寸是否满足要求</span></span><br><span class="line">    imageSizeIsLessLimitSize(imagePath, limitSize,</span><br><span class="line">        (lessRes) =&gt; &#123;</span><br><span class="line">            <span class="comment">//满足要求走callback，将压缩后的文件路径返回</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'111'</span>);</span><br><span class="line">            callback(imagePath);</span><br><span class="line">        &#125;,</span><br><span class="line">        (moreRes) =&gt; &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'222'</span>);</span><br><span class="line">            <span class="comment">//不满足要求需要压缩的时候</span></span><br><span class="line">            wx.getImageInfo(&#123;</span><br><span class="line">                src: imagePath,</span><br><span class="line">                success: <span class="function">(<span class="params">imageInfo</span>) =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">let</span> maxSide = <span class="built_in">Math</span>.max(imageInfo.width, imageInfo.height);</span><br><span class="line">                    <span class="keyword">let</span> windowW = drawWidth;</span><br><span class="line">                    <span class="keyword">let</span> scale = <span class="number">1</span>;</span><br><span class="line">                    <span class="comment">/*</span></span><br><span class="line"><span class="comment">                    这里的目的是当绘画区域缩小的比图片自身尺寸还要小的时候</span></span><br><span class="line"><span class="comment">                    取图片长宽的最大值，然后和当前绘画区域计算出需要放缩的比例</span></span><br><span class="line"><span class="comment">                    然后再画经过放缩后的尺寸，保证画出的一定是一个完整的图片。由于每次递归绘画区域都会缩小，</span></span><br><span class="line"><span class="comment">                    所以不用担心scale永远都是1绘画尺寸永远不变的情况，只要不满足压缩后体积的要求</span></span><br><span class="line"><span class="comment">                    就会缩小绘画区域，早晚会有绘画区域小于图片尺寸的情况发生</span></span><br><span class="line"><span class="comment">                    */</span></span><br><span class="line">                    <span class="built_in">console</span>.log(maxSide);</span><br><span class="line">                    <span class="built_in">console</span>.log(windowW);</span><br><span class="line">                    <span class="keyword">if</span> (maxSide &gt; windowW) &#123;</span><br><span class="line">                        scale = windowW / maxSide;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="built_in">console</span>.log(scale);</span><br><span class="line">                    <span class="comment">// trunc是去掉小数</span></span><br><span class="line">                    <span class="keyword">let</span> imageW = <span class="built_in">Math</span>.trunc(imageInfo.width * scale);</span><br><span class="line">                    <span class="keyword">let</span> imageH = <span class="built_in">Math</span>.trunc(imageInfo.height * scale);</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">'调用压缩'</span>, imageW, imageH);</span><br><span class="line">                    <span class="comment">// 图片在规定绘画区域上画并获取新的图片的path</span></span><br><span class="line">                    getCanvasImage(canvasId, imagePath, imageW, imageH,</span><br><span class="line">                        (pressImgPath) =&gt; &#123;</span><br><span class="line">                            <span class="comment">/*</span></span><br><span class="line"><span class="comment">                            再去检查是否满足要求，始终缩小绘画区域，让图片适配绘画区域</span></span><br><span class="line"><span class="comment">                            这里乘以0.95是必须的，如果不缩小绘画区域，会出现尺寸比绘画区域小，</span></span><br><span class="line"><span class="comment">                            而体积比要求压缩体积大的情况出现，就会无穷递归下去，因为scale的值永远是1</span></span><br><span class="line"><span class="comment">                            但0.95不是固定的，你可以根据需要自己改，0到1之间，越小则绘画区域缩小的越快</span></span><br><span class="line"><span class="comment">                            但不建议取得太小，绘画区域缩小的太快，压出来的将总是很糊的</span></span><br><span class="line"><span class="comment">                            */</span></span><br><span class="line">                            getLessLimitSizeImage(canvasId, pressImgPath, limitSize, drawWidth * <span class="number">0.95</span>, callback);</span><br><span class="line">                        &#125;</span><br><span class="line">                    )</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> getLessLimitSizeImage</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- wxml --&gt;</span> 	</span><br><span class="line"><span class="comment">&lt;!--用于图片压缩的canvas画布，不在页面中展示，且id固定不可变--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">style</span>=<span class="string">"width: &#123;&#123;cw&#125;&#125;px; height: &#123;&#123;cw&#125;&#125;px;position: absolute; z-index: -1; left: -10000rpx;; top: -10000rpx;"</span> <span class="attr">canvas-id</span>=<span class="string">"zipCanvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--画布结束--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// js</span></span><br><span class="line"><span class="comment">// 引入</span></span><br><span class="line"><span class="keyword">import</span> getLessLimitSizeImage <span class="keyword">from</span> <span class="string">'../../../utils/compressImage'</span></span><br><span class="line"><span class="comment">//画板边长默认是屏幕宽度，正方形画布</span></span><br><span class="line">data : &#123;</span><br><span class="line">    cw: wx.getSystemInfoSync().windowWidth,</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 在选择图片或者拍摄图片时调用</span></span><br><span class="line">wx.chooseMedia(&#123;</span><br><span class="line">            count: <span class="number">1</span>,</span><br><span class="line">            mediaType: [<span class="string">'image'</span>],</span><br><span class="line">            sourceType: [<span class="string">'album'</span>, <span class="string">'camera'</span>],</span><br><span class="line">            sizeType: [<span class="string">'original'</span>],</span><br><span class="line">            success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">let</span> canvasId = <span class="string">'zipCanvas'</span> <span class="comment">//注意这里的id和你在页面中写的html代码的canvas的id要一致</span></span><br><span class="line">                <span class="keyword">let</span> imagePath = res.tempFiles[<span class="number">0</span>].tempFilePath; <span class="comment">//原图的路径</span></span><br><span class="line">                <span class="keyword">let</span> limitSize = <span class="number">300</span>; <span class="comment">//大小限制300kb，此处的限制是，超出这个大小的图片才会被进行压缩，不超出的会直接返回图片原地址</span></span><br><span class="line">                <span class="keyword">let</span> drawWidth = wx.getSystemInfoSync().windowWidth; <span class="comment">//初始绘画区域是画布自身的宽度也就是屏幕宽度</span></span><br><span class="line">                getLessLimitSizeImage(canvasId, imagePath, limitSize, drawWidth, (resPath) =&gt; &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(resPath);</span><br><span class="line">                    <span class="comment">//resPath就是压缩后图片的路径，然后想做什么都随你</span></span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>新版的canvas绘制写法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 主要是canvas这个函数的一些内容写法不同</span></span><br><span class="line"><span class="comment">//将图片画在画布上并获取画好之后的图片的路径</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCanvasImage</span>(<span class="params">canvasId, imagePath, imageW, imageH, getImgSuccess</span>) </span>&#123;</span><br><span class="line">    wx.createSelectorQuery()</span><br><span class="line">        .select(<span class="string">'#'</span> + canvasId) <span class="comment">// 在 WXML 中填入的 id</span></span><br><span class="line">        .fields(&#123;</span><br><span class="line">            node: <span class="literal">true</span>,</span><br><span class="line">            size: <span class="literal">true</span></span><br><span class="line">        &#125;)</span><br><span class="line">        .exec(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// Canvas 对象</span></span><br><span class="line">            <span class="keyword">const</span> canvas = res[<span class="number">0</span>].node</span><br><span class="line">            <span class="comment">// Canvas 画布的实际绘制宽高</span></span><br><span class="line">            <span class="keyword">const</span> renderWidth = res[<span class="number">0</span>].width</span><br><span class="line">            <span class="keyword">const</span> renderHeight = res[<span class="number">0</span>].height</span><br><span class="line">            <span class="comment">// Canvas 绘制上下文</span></span><br><span class="line">            <span class="keyword">const</span> ctx = canvas.getContext(<span class="string">'2d'</span>)</span><br><span class="line">            <span class="comment">// 初始化画布大小</span></span><br><span class="line">            <span class="keyword">const</span> dpr = wx.getWindowInfo().pixelRatio</span><br><span class="line">            canvas.width = renderWidth * dpr</span><br><span class="line">            canvas.height = renderHeight * dpr</span><br><span class="line">            ctx.scale(dpr, dpr)</span><br><span class="line">            <span class="comment">// 绘制前清空画布</span></span><br><span class="line">            ctx.clearRect(<span class="number">0</span>, <span class="number">0</span>, canvas.width, canvas.height)</span><br><span class="line">            <span class="keyword">const</span> image = canvas.createImage()</span><br><span class="line">            image.onload = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                ctx.drawImage(</span><br><span class="line">                    image,</span><br><span class="line">                    <span class="number">0</span>,</span><br><span class="line">                    <span class="number">0</span>,</span><br><span class="line">                    imageW,</span><br><span class="line">                    imageH,</span><br><span class="line">                )</span><br><span class="line">            &#125;</span><br><span class="line">            image.src = imagePath</span><br><span class="line">            setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                wx.canvasToTempFilePath(&#123;</span><br><span class="line">                    canvas: canvas,</span><br><span class="line">                    canvasId: canvasId,</span><br><span class="line">                    x: <span class="number">0</span>,</span><br><span class="line">                    y: <span class="number">0</span>,</span><br><span class="line">                    width: imageW,</span><br><span class="line">                    height: imageH,</span><br><span class="line">                    quality: <span class="number">1</span>, <span class="comment">//最高质量，只通过尺寸放缩去压缩，画的时候都按最高质量来画</span></span><br><span class="line">                    success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">                        getImgSuccess(res.tempFilePath);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;, <span class="number">200</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- wxml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">style</span>=<span class="string">"width: &#123;&#123;cw&#125;&#125;px; height: &#123;&#123;cw&#125;&#125;px;position: absolute; z-index: -1; left: -10000rpx;; top: -10000rpx;"</span> <span class="attr">id</span>=<span class="string">"zipCanvas"</span> <span class="attr">type</span>=<span class="string">"2d"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这里的图片压缩是用图片清晰度来换取空间的，所以图片压缩的越小，就越模糊，如果业务场景是需要压缩体积且足够清晰，此种方法不可取。</p>
+</blockquote>
+<h3 id="node端"><a href="#node端" class="headerlink" title="node端"></a><code>node</code>端</h3><blockquote>
+<p>后端我用的是<code>node</code>端做的接口，框架是<code>express</code>，主要是两个场景，一个是接口接收文件数据时先进行图片压缩处理然后保存在服务器本地或者上传到七牛云，此处选择的是保存在服务器本地。另一个场景是脚本执行，选择服务器某个图片资源文件夹，进行图片压缩处理。</p>
+</blockquote>
+<h4 id="接口接收文件数据进行图片压缩处理保存在服务器本地-也可选择接七牛云图片存储"><a href="#接口接收文件数据进行图片压缩处理保存在服务器本地-也可选择接七牛云图片存储" class="headerlink" title="接口接收文件数据进行图片压缩处理保存在服务器本地(也可选择接七牛云图片存储)"></a>接口接收文件数据进行图片压缩处理保存在服务器本地(也可选择接七牛云图片存储)</h4><h4 id="选择服务器本地图片进行压缩处理"><a href="#选择服务器本地图片进行压缩处理" class="headerlink" title="选择服务器本地图片进行压缩处理"></a>选择服务器本地图片进行压缩处理</h4><blockquote>
+<p>此处选择的方案是使用<code>npm</code>包<code>tinify</code>，具体的<code>api</code>功能可以查看官网<a href=""https://tinypng.com/""><code>tiniPNG</code></a>,封装成<code>js</code>文件，随意更改图片资源的地址执行文件以压缩文件夹里的图片资源，但是<code>tinify</code>的限制是每个月免费500次请求次数，超出次数进行收费，所以目前我还没找到最优解。</p>
+</blockquote>
+<blockquote>
+<p>刚开始我也尝试了另一个<code>npm</code>包<code>images</code>的使用，但是发现无法对<code>png</code>图片进行压缩，或者是压缩效果不明显，因为规定的<code>quality</code>压缩质量字段对<code>png</code>形式的图片是不起作用的，只好放弃。</p>
+</blockquote>
+<blockquote>
+<p><code>tinify</code>虽然不能规定压缩质量，但是压缩效果还是比较令人满意的，压缩前后对比，图片质量几乎没有明显的下降。</p>
+</blockquote>
+<p>下载<code>tinify</code>包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i tinify --save</span><br></pre></td></tr></table></figure>
+
+<p>如下为示例代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 在图片上传接口中使用</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">const</span> router = express.Router();</span><br><span class="line"><span class="keyword">const</span> multer = <span class="built_in">require</span>(<span class="string">'multer'</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">var</span> resJson = <span class="built_in">require</span>(<span class="string">'../../utils/resJson'</span>)；</span><br><span class="line"><span class="keyword">const</span> tinify = <span class="built_in">require</span>(<span class="string">'tinify'</span>);</span><br><span class="line">tinify.key = <span class="string">'**************'</span>; <span class="comment">//在tinify官网获取</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 单张图片上传图片地址</span></span><br><span class="line"><span class="keyword">const</span> IMAGES_PATH = path.resolve(__dirname, <span class="string">`../../public/images/public`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 操作图片压缩的</span></span><br><span class="line"><span class="keyword">const</span> compress = <span class="function">(<span class="params">path, name</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> trueName = path + <span class="string">'/'</span> + name;</span><br><span class="line">    <span class="keyword">var</span> sourse = tinify.fromFile(trueName); <span class="comment">//输入文件</span></span><br><span class="line">    sourse.toFile(trueName); <span class="comment">//输出文件</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 单个图片上传</span></span><br><span class="line"><span class="keyword">let</span> upload = multer(&#123;</span><br><span class="line">    storage: multer.diskStorage(&#123;</span><br><span class="line">        destination: <span class="function"><span class="keyword">function</span> (<span class="params">req, file, cb</span>) </span>&#123;</span><br><span class="line">            cb(<span class="literal">null</span>, <span class="string">'./public/images/public/'</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        filename: <span class="function"><span class="keyword">function</span> (<span class="params">req, file, cb</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> changedName = (<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()) + <span class="string">'-'</span> + file.originalname;</span><br><span class="line">            cb(<span class="literal">null</span>, changedName);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//单个图片上传</span></span><br><span class="line">router.post(<span class="string">'/'</span>, upload.single(<span class="string">'image'</span>), (req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        compress(IMAGES_PATH, req.file.filename)</span><br><span class="line">        resJson.success(res, &#123;</span><br><span class="line">            imgUrl: <span class="string">'images/public/'</span> + req.file.filename</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">        resJson.srror(res, <span class="string">'头像上传失败'</span>, err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = router;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 根据设置的路径，对文件夹下的所有图片（包括子文件夹）进行压缩处理</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">const</span> tinify = <span class="built_in">require</span>(<span class="string">'tinify'</span>);</span><br><span class="line">tinify.key = <span class="string">'**************'</span>; <span class="comment">//在官网申请到的APIKEY，</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 单张图片上传图片地址</span></span><br><span class="line"><span class="keyword">const</span> IMAGES_PATH = path.resolve(__dirname, <span class="string">`../public/images/public`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 进行图片压缩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@event</span>: </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;*&#125;</span> </span>path 要压缩图片的文件夹</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;*&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> compress = <span class="function">(<span class="params">path</span>) =&gt;</span> &#123;</span><br><span class="line">    fs.readdir(path, <span class="function"><span class="keyword">function</span> (<span class="params">err, files</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'error:\n'</span> + err);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        files.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">file</span>) </span>&#123;</span><br><span class="line">            fs.stat(path + <span class="string">'/'</span> + file, <span class="function"><span class="keyword">function</span> (<span class="params">err, stat</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(err);</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (stat.isDirectory()) &#123;</span><br><span class="line">                    <span class="comment">// 如果是文件夹遍历</span></span><br><span class="line">                    compress(path + <span class="string">'/'</span> + file);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//遍历图片</span></span><br><span class="line">                    <span class="keyword">var</span> name = path + <span class="string">'/'</span> + file;</span><br><span class="line">                    <span class="keyword">var</span> sourse = tinify.fromFile(name); <span class="comment">//输入文件</span></span><br><span class="line">                    sourse.toFile(name); <span class="comment">//输出文件</span></span><br><span class="line">                    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                        <span class="built_in">console</span>.log(err)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">compress(IMAGES_PATH)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>还有一可选方案，图片在上传之后，通过<code>tinify</code>转成<code>webp</code>形式的图片，体积会很小，然后存储在数据库中的图片地址字段为<code>base64</code>形式，这样小程序中也能正常展示，在查阅相关资料的时候看到有这样的方案，未做尝试。</p>
+</blockquote>
+<hr>
+<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/">前端及node端的图片压缩处理</a><br>如有错误，请及时评论或者知乎私信或者 B 站私信哦~</p>
+<hr>
+<p><strong>最后更新于:2022/10/11</strong></p>
+
+                                            
+
+
+                                                
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图片压缩</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                        
+
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9/">
+                                        展开全文 >></a>
+                                </p>
+                                
+
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
+</article>
+
+            <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+                
+
+<article id="post-小程序项目通用配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B9%E7%9B%AE%E9%80%9A%E7%94%A8%E9%85%8D%E7%BD%AE/">小程序项目通用配置</a>
+    </h1>
+  
+
+                    
+                        <a href="/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B9%E7%9B%AE%E9%80%9A%E7%94%A8%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2022-10-10T02:52:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-10</time>
+</a>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+                                        <h4 id="小程序项目通用配置"><a href="#小程序项目通用配置" class="headerlink" title="小程序项目通用配置"></a>小程序项目通用配置</h4><ol>
+<li>封装网络请求</li>
+<li>检测小程序是否需要更新</li>
+<li>数据监听场景封装</li>
+<li>图片上传前的压缩处理</li>
+<li>国际化处理</li>
+<li>图片使用在线图片链接</li>
+<li>全局样式初始设置</li>
+<li>自定义<code>tabbar</code></li>
+<li>自定义导航栏</li>
+<li>主题色配置</li>
+</ol>
+<hr>
+<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/">小程序项目通用配置</a><br>如有错误，请及时评论或者知乎私信或者 B 站私信哦~</p>
+<hr>
+<p><strong>最后更新于:2022/10/10</strong></p>
+
+                                            
+
+
+                                                
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目配置</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图片压缩</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                        
+
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B9%E7%9B%AE%E9%80%9A%E7%94%A8%E9%85%8D%E7%BD%AE/">
+                                        展开全文 >></a>
+                                </p>
+                                
+
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
+</article>
+
+            <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+                
+
+<article id="post-aes对称加密" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/aes%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/">aes对称加密</a>
+    </h1>
+  
+
+                    
+                        <a href="/aes%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/" class="archive-article-date">
+  	<time datetime="2022-10-09T02:52:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-09</time>
+</a>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+                                        <h4 id="aes对称加密"><a href="#aes对称加密" class="headerlink" title="aes对称加密"></a>aes对称加密</h4><p><a href=""https://blog.csdn.net/qq_41499782/article/details/111479491"">node 实现aes-128-cbc对称加密</a></p>
+<hr>
+<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/">aes对称加密</a><br>如有错误，请及时评论或者知乎私信或者 B 站私信哦~</p>
+<hr>
+<p><strong>最后更新于:2022/10/09</strong></p>
+
+                                            
+
+
+                                                
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">aes</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                        
+
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/aes%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/">
+                                        展开全文 >></a>
+                                </p>
+                                
+
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
+</article>
+
+            <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+                
+
+<article id="post-HmacSHA256摘要算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/HmacSHA256%E6%91%98%E8%A6%81%E7%AE%97%E6%B3%95/">采用HmacSHA256算法对字符串进行摘要算法</a>
+    </h1>
+  
+
+                    
+                        <a href="/HmacSHA256%E6%91%98%E8%A6%81%E7%AE%97%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2022-10-08T02:52:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-08</time>
+</a>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+                                        <h4 id="采用HmacSHA256算法对字符串进行摘要算法"><a href="#采用HmacSHA256算法对字符串进行摘要算法" class="headerlink" title="采用HmacSHA256算法对字符串进行摘要算法"></a>采用HmacSHA256算法对字符串进行摘要算法</h4><p><a href=""https://blog.csdn.net/weixin_35822833/article/details/112092604"">crypto模块中你需要掌握的安全基础知识</a></p>
+<p><a href=""https://blog.csdn.net/weixin_44068742/article/details/90600085"">node.js基本模块(一)之—-crypto(md5加密、hmac加密)</a></p>
+<p><a href=""https://vimsky.com/examples/usage/node-js-crypto-createhmac-method.html"">Node.js crypto.createHmac()用法及代码示例</a></p>
+<hr>
+<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/">采用HmacSHA256算法对字符串进行摘要算法</a><br>如有错误，请及时评论或者知乎私信或者 B 站私信哦~</p>
+<hr>
+<p><strong>最后更新于:2022/10/08</strong></p>
+
+                                            
+
+
+                                                
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">摘要算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HmacSHA256</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                        
+
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/HmacSHA256%E6%91%98%E8%A6%81%E7%AE%97%E6%B3%95/">
+                                        展开全文 >></a>
+                                </p>
+                                
+
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
+</article>
+
+            <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+                
+
+<article id="post-Nodejs使用SQL Server数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Nodejs%E4%BD%BF%E7%94%A8SQL%20Server%E6%95%B0%E6%8D%AE%E5%BA%93/">Node.js使用SQL Server数据库</a>
+    </h1>
+  
+
+                    
+                        <a href="/Nodejs%E4%BD%BF%E7%94%A8SQL%20Server%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
+  	<time datetime="2022-10-01T02:52:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-01</time>
+</a>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+                                        <h4 id="Node-js使用SQL-Server数据库"><a href="#Node-js使用SQL-Server数据库" class="headerlink" title="Node.js使用SQL Server数据库"></a>Node.js使用SQL Server数据库</h4><p><a href="https://www.suajin.com/detail/705" target="_blank" rel="noopener">Nodejs使用SQL Server数据库</a></p>
+<p><a href="https://blog.csdn.net/weixin_44726970/article/details/121928476" target="_blank" rel="noopener">node连接sql server的基本操作</a></p>
+<hr>
+<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/">Node.js使用SQL Server数据库</a><br>如有错误，请及时评论或者知乎私信或者 B 站私信哦~</p>
+<hr>
+<p><strong>最后更新于:2022/10/01</strong></p>
+
+                                            
+
+
+                                                
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SQL Server</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                        
+
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/Nodejs%E4%BD%BF%E7%94%A8SQL%20Server%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                        展开全文 >></a>
+                                </p>
+                                
+
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
+</article>
+
+            <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+                
+
 <article id="post-markdown文件编辑器typora" class="article article-type-post  article-index" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -457,593 +1144,9 @@ var _hmt = _hmt || [];
 
                 
 
-<article id="post-关于vuex" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/%E5%85%B3%E4%BA%8Evuex/">关于vuex</a>
-    </h1>
-  
-
-                    
-                        <a href="/%E5%85%B3%E4%BA%8Evuex/" class="archive-article-date">
-  	<time datetime="2020-03-08T05:44:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-                            
-            </header>
-            
-                <div class="article-entry" itemprop="articleBody">
-                    
-                        <h4 id="初识-Vuex"><a href="#初识-Vuex" class="headerlink" title="初识 Vuex"></a>初识 Vuex</h4><h6 id="关于-Vuex"><a href="#关于-Vuex" class="headerlink" title="关于 Vuex"></a>关于 Vuex</h6><p><code>Vuex</code> 是适用于在 <code>Vue</code> 项目开发时使用的状态管理工具。试想一下，如果在一个项目开发中频繁的使用组件传参的方式来同步 <code>data</code> 中的值，一旦项目变得很庞大，管理和维护这些值将是相当棘手的工作。为此，<code>Vue</code> 为这些被多个组件频繁使用的值提供了一个统一管理的工具——<code>VueX</code>。在具有 <code>Vuex</code> 的 <code>Vue</code> 项目中，我们只需要把这些值定义在 <code>Vuex</code> 中，即可在整个 <code>Vue</code> 项目的组件中使用。</p>
-                            
-                                <a class="article-more-a" href="/%E5%85%B3%E4%BA%8Evuex/#more">
-                                    more >></a>
-                                
-                                    
-
-
-                                                
-        </div>
-        <div class="article-info article-info-index">
-            
-                    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Vuex</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-                        
-
-                            
-                                <p class="article-more-link">
-                                    <a class="article-more-a" href="/%E5%85%B3%E4%BA%8Evuex/">
-                                        展开全文 >></a>
-                                </p>
-                                
-
-                                    
-                                                <div class="clearfix"></div>
-        </div>
-        </div>
-</article>
-
-            <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-                
-
-<article id="post-React的基本内容" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/React%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/">React的基本内容</a>
-    </h1>
-  
-
-                    
-                        <a href="/React%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/" class="archive-article-date">
-  	<time datetime="2020-02-23T04:04:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
-</a>
-                            
-            </header>
-            
-                <div class="article-entry" itemprop="articleBody">
-                    
-                        <blockquote>
-<p>React 简介</p>
-</blockquote>
-<ol>
-<li>声明式 (只需要告诉框架需要做什么，而不需要告诉他该怎么做，跟声明式对立的是命令式，比如 Jquery)</li>
-<li>组件化 (Vue 中声明全局组件的方式 Vue.component 组件名 组件最大的好处是可以复用)</li>
-<li>一次学习，随处编写 (React 可以写原生应用(ReactNative)和网页应用)</li>
-</ol>
-                            
-                                <a class="article-more-a" href="/React%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/#more">
-                                    more >></a>
-                                
-                                    
-
-
-                                                
-        </div>
-        <div class="article-info article-info-index">
-            
-                    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-                        
-
-                            
-                                <p class="article-more-link">
-                                    <a class="article-more-a" href="/React%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/">
-                                        展开全文 >></a>
-                                </p>
-                                
-
-                                    
-                                                <div class="clearfix"></div>
-        </div>
-        </div>
-</article>
-
-            <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-                
-
-<article id="post-小程序开发中需要注意的一些内容" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E4%B8%AD%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E5%86%85%E5%AE%B9/">小程序开发中需要注意的一些内容</a>
-    </h1>
-  
-
-                    
-                        <a href="/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E4%B8%AD%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E5%86%85%E5%AE%B9/" class="archive-article-date">
-  	<time datetime="2020-02-09T11:03:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-09</time>
-</a>
-                            
-            </header>
-            
-                <div class="article-entry" itemprop="articleBody">
-                    
-                        <h4 id="主要用于记录在-小程序-项目开发中踩过的坑，或者没有了解过的东西-持续更新"><a href="#主要用于记录在-小程序-项目开发中踩过的坑，或者没有了解过的东西-持续更新" class="headerlink" title="主要用于记录在 小程序 项目开发中踩过的坑，或者没有了解过的东西(持续更新)"></a>主要用于记录在 小程序 项目开发中踩过的坑，或者没有了解过的东西(持续更新)</h4><p>前端学无止境 ヾ(ﾟ ∀ ﾟゞ)<br>秃头从未停止 ヾ(ﾟ ∀ ﾟゞ)</p>
-                            
-                                <a class="article-more-a" href="/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E4%B8%AD%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E5%86%85%E5%AE%B9/#more">
-                                    more >></a>
-                                
-                                    
-
-
-                                                
-        </div>
-        <div class="article-info article-info-index">
-            
-                    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目开发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">注意点</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-                        
-
-                            
-                                <p class="article-more-link">
-                                    <a class="article-more-a" href="/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E4%B8%AD%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E5%86%85%E5%AE%B9/">
-                                        展开全文 >></a>
-                                </p>
-                                
-
-                                    
-                                                <div class="clearfix"></div>
-        </div>
-        </div>
-</article>
-
-            <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-                
-
-<article id="post-vue开发中需要注意的一些内容" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/vue%E5%BC%80%E5%8F%91%E4%B8%AD%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E5%86%85%E5%AE%B9/">vue开发中需要注意的一些内容</a>
-    </h1>
-  
-
-                    
-                        <a href="/vue%E5%BC%80%E5%8F%91%E4%B8%AD%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E5%86%85%E5%AE%B9/" class="archive-article-date">
-  	<time datetime="2020-01-26T09:03:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-26</time>
-</a>
-                            
-            </header>
-            
-                <div class="article-entry" itemprop="articleBody">
-                    
-                        <h4 id="主要用于记录在-Vue-项目开发中踩过的坑，或者没有了解过的东西-持续更新"><a href="#主要用于记录在-Vue-项目开发中踩过的坑，或者没有了解过的东西-持续更新" class="headerlink" title="主要用于记录在 Vue 项目开发中踩过的坑，或者没有了解过的东西(持续更新)"></a>主要用于记录在 Vue 项目开发中踩过的坑，或者没有了解过的东西(持续更新)</h4><p>前端学无止境 ヾ(ﾟ ∀ ﾟゞ)<br>秃头从未停止 ヾ(ﾟ ∀ ﾟゞ)</p>
-                            
-                                <a class="article-more-a" href="/vue%E5%BC%80%E5%8F%91%E4%B8%AD%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E5%86%85%E5%AE%B9/#more">
-                                    more >></a>
-                                
-                                    
-
-
-                                                
-        </div>
-        <div class="article-info article-info-index">
-            
-                    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目开发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">注意点</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-                        
-
-                            
-                                <p class="article-more-link">
-                                    <a class="article-more-a" href="/vue%E5%BC%80%E5%8F%91%E4%B8%AD%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E5%86%85%E5%AE%B9/">
-                                        展开全文 >></a>
-                                </p>
-                                
-
-                                    
-                                                <div class="clearfix"></div>
-        </div>
-        </div>
-</article>
-
-            <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-                
-
-<article id="post-Vue之写一个简单的Todolist" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Vue%E4%B9%8B%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84Todolist/">Vue之写一个简单的Todolist</a>
-    </h1>
-  
-
-                    
-                        <a href="/Vue%E4%B9%8B%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84Todolist/" class="archive-article-date">
-  	<time datetime="2020-01-12T06:20:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-12</time>
-</a>
-                            
-            </header>
-            
-                <div class="article-entry" itemprop="articleBody">
-                    
-                                        <h4 id="Todolist"><a href="#Todolist" class="headerlink" title="Todolist"></a>Todolist</h4><p>待办事项。效果参考网址<a href="https://codepen.io/btc022003/pen/OdagLN" target="_blank" rel="noopener">vue-todolist</a><br>示例效果中用的是 localStorage 本地存储，所以直接定义了空数组，利用数组的方式。</p>
-<hr>
-<p>本文作者：人模人样的搬砖老段<br>本文链接：<a href="http://dxh98.cn/Vue%E4%B9%8B%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84Todolist/">Vue 之写一个简单的 Todolist</a><br>如有错误，请及时评论或者知乎私信或者 B 站私信哦~</p>
-
-                                            
-
-
-                                                
-        </div>
-        <div class="article-info article-info-index">
-            
-                    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-                        
-
-                            
-                                <p class="article-more-link">
-                                    <a class="article-more-a" href="/Vue%E4%B9%8B%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84Todolist/">
-                                        展开全文 >></a>
-                                </p>
-                                
-
-                                    
-                                                <div class="clearfix"></div>
-        </div>
-        </div>
-</article>
-
-            <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-                
-
-<article id="post-Vue的一些基本内容" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Vue%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/">Vue的一些基本内容</a>
-    </h1>
-  
-
-                    
-                        <a href="/Vue%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/" class="archive-article-date">
-  	<time datetime="2019-12-29T11:00:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-29</time>
-</a>
-                            
-            </header>
-            
-                <div class="article-entry" itemprop="articleBody">
-                    
-                        <h4 id="Vue-js"><a href="#Vue-js" class="headerlink" title="Vue.js"></a>Vue.js</h4><p>Vue.js 是一款渐进式 Javascript 框架，什么是渐进式？就是我们可以由浅入深的，由简单到复杂的，去使用 Vue.js</p>
-                            
-                                <a class="article-more-a" href="/Vue%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/#more">
-                                    more >></a>
-                                
-                                    
-
-
-                                                
-        </div>
-        <div class="article-info article-info-index">
-            
-                    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-                        
-
-                            
-                                <p class="article-more-link">
-                                    <a class="article-more-a" href="/Vue%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/">
-                                        展开全文 >></a>
-                                </p>
-                                
-
-                                    
-                                                <div class="clearfix"></div>
-        </div>
-        </div>
-</article>
-
-            <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-                
-
-<article id="post-关于闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/%E5%85%B3%E4%BA%8E%E9%97%AD%E5%8C%85/">关于闭包</a>
-    </h1>
-  
-
-                    
-                        <a href="/%E5%85%B3%E4%BA%8E%E9%97%AD%E5%8C%85/" class="archive-article-date">
-  	<time datetime="2019-12-15T14:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
-</a>
-                            
-            </header>
-            
-                <div class="article-entry" itemprop="articleBody">
-                    
-                        <h4 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h4><p>闭包就是能够读取其他函数内部变量的函数。在 JS 中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解为”定义在一个函数内部的函数”。</p>
-                            
-                                <a class="article-more-a" href="/%E5%85%B3%E4%BA%8E%E9%97%AD%E5%8C%85/#more">
-                                    more >></a>
-                                
-                                    
-
-
-                                                
-        </div>
-        <div class="article-info article-info-index">
-            
-                    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">闭包</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-                        
-
-                            
-                                <p class="article-more-link">
-                                    <a class="article-more-a" href="/%E5%85%B3%E4%BA%8E%E9%97%AD%E5%8C%85/">
-                                        展开全文 >></a>
-                                </p>
-                                
-
-                                    
-                                                <div class="clearfix"></div>
-        </div>
-        </div>
-</article>
-
-            <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-                
-
 
 <nav id="page-nav">
-  <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+  <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
 </nav>
 
 
@@ -7178,7 +7281,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">2D转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -7194,19 +7305,19 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">2D转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">DOM高级</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color5">摘要算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HmacSHA256</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -7214,7 +7325,19 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SQL Server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -7226,19 +7349,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">项目开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">注意点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color4">aes</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -7266,15 +7377,39 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">localStorage</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">typora</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">七牛云</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tinify</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">注意点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">localStorage</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -7298,11 +7433,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vuex</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color5">图片压缩</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -7322,19 +7461,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">弹性盒模型</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">多栏布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">循环语句</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -7358,11 +7489,27 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">盒模型</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">响应式布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">循环语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">盒模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">面向对象</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">逻辑分支</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -7371,14 +7518,6 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">表单高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">逻辑分支</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">面向对象</a>
               </li>
             
             <div class="clearfix"></div>
