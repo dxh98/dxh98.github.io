@@ -225,36 +225,12 @@ var _hmt = _hmt || [];
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                                        <p>官网地址：<a href="https://ollama.com" target="_blank" rel="noopener">Ollama官网</a></p>
-<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>官网首页点击download即可选择对应平台的Ollama进行安装，下载慢的话可选择尝试挂上科学上网</p>
-<p>Ollama默认是安装到C盘的用户默认安装目录下的，如果想要移动到其他的盘下，请参考此文章</p>
-<p><a href="https://blog.llyth.cn/1555.html" target="_blank" rel="noopener">将Ollama安装到其它磁盘</a></p>
-<p>需要先移动文件夹，再执行命令，会在原位置创建一个类似快捷方式的快捷访问，但是实际存储位置已经改为修改后的盘符位置，需要修改对应的文件夹名字为命令对应的文件夹名</p>
-<h4 id="下载模型"><a href="#下载模型" class="headerlink" title="下载模型"></a>下载模型</h4><p>Ollama官网左上方导航栏点击modules即可跳转到模型列表页，点击对应模型进入详情页，如需要下载DeepSeek-R1的模型，根据自己的电脑配置选择相应大小的模型，如我的电脑配置为 内存为D5 7600 32G*2 ，显卡为7900xt，显卡显存大小为20G，是足够运行32b蒸馏模型的</p>
-<p>cmd运行如下命令即可开始下载模型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ollama run deepseek-r1:32b</span><br></pre></td></tr></table></figure>
-
-<p>下载完成后即开始加载模型，可以开始对话</p>
-<p>如果报错未成功加载模型，则需要检查配置，出现报错的可能性很多，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: llama runner process has terminated: error loading model: unable to allocate CUDA0 buffer</span><br></pre></td></tr></table></figure>
-
-<p>如配置不足够运行该模型，完全爆显存，或者显卡的驱动未更新，我目前经历过的就是显卡驱动未及时更新，运行14b能成功，运行32b无法成功加载，更新显卡驱动到最新版之后，32b模型能成功运行，第一次尝试可先选择1.5b模型运行</p>
-<h4 id="模型配置需求"><a href="#模型配置需求" class="headerlink" title="模型配置需求"></a>模型配置需求</h4><p><strong>如果是windows系统</strong></p>
-<p>一般 内存大小为16G，显卡显存大小为8G，可成功加载最大8B的蒸馏模型</p>
-<p>内存大小为16G，显卡显存大小为10G或者12G，可成功加载14B蒸馏模型</p>
-<p>内存大小为20G+，显卡显存大小至少20G，可成功加载32B蒸馏模型</p>
-<p><strong>如果是mac系统</strong></p>
-<p>可参考如图</p>
-<p><img src="http://i0.hdslb.com/bfs/new_dyn/d428446ed5fc858db8ba8bc3987358f526097712.jpg" alt="mac系统需要配置参考图"></p>
-<h4 id="Ollama相关命令"><a href="#Ollama相关命令" class="headerlink" title="Ollama相关命令"></a>Ollama相关命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ollama list		&#x2F;&#x2F; 查看加载过的模型列表</span><br><span class="line">ollama ps		&#x2F;&#x2F; 查看上一次加载模型的资源占用情况</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://www.cnblogs.com/hujunwei/p/18658780" target="_blank" rel="noopener">Ollama常用命令</a></p>
-<hr>
-<p>本文作者：Ray<br>本文链接：<a href="http://dxh98.cn/3D%E8%BD%AC%E6%8D%A2%E5%92%8C%E5%85%B3%E9%94%AE%E5%B8%A7%E5%8A%A8%E7%94%BB/">Ollama本地部署DeepSeek-R1模型</a><br>如有错误，请及时评论或者 B 站私信哦~</p>
-<hr>
-<p><strong>最后更新于:2024/12/16</strong></p>
-
-                                            
+                        <p>官网地址：<a href="https://ollama.com" target="_blank" rel="noopener">Ollama官网</a></p>
+                            
+                                <a class="article-more-a" href="/Ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2DeepSeek-R1%E6%A8%A1%E5%9E%8B/#more">
+                                    more >></a>
+                                
+                                    
 
 
                                                 
@@ -335,19 +311,12 @@ var _hmt = _hmt || [];
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                                        <p>参考文章</p>
-<p><a href="https://blog.csdn.net/zzz777qqq/article/details/144930229" target="_blank" rel="noopener">Stable Diffusion之最全详解图解</a></p>
-<p><a href="https://www.zhihu.com/tardis/bd/art/600251419?source_id=1001" target="_blank" rel="noopener">十分钟读懂Stable Diffusion</a></p>
-<p><a href="https://blog.csdn.net/weixin_55154866/article/details/139287369" target="_blank" rel="noopener">一文读懂Stable Diffusion</a></p>
-<h6 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h6><p>基于深度学习的开源文生图模型</p>
-<h6 id="学习初衷"><a href="#学习初衷" class="headerlink" title="学习初衷"></a>学习初衷</h6><h6 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h6><p>AI艺术创作</p>
-<p>可用于 电商产品主图、橱窗图制作，模特一键穿衣，广告图设计创作、固定风格图片内容生成等</p>
-<h6 id="入门教程"><a href="#入门教程" class="headerlink" title="入门教程"></a>入门教程</h6><hr>
-<p>本文作者：Ray<br>本文链接：<a href="http://dxh98.cn/3D%E8%BD%AC%E6%8D%A2%E5%92%8C%E5%85%B3%E9%94%AE%E5%B8%A7%E5%8A%A8%E7%94%BB/">StableDiffution入门</a><br>如有错误，请及时评论或者 B 站私信哦~</p>
-<hr>
-<p><strong>最后更新于:2024/02/24</strong></p>
-
-                                            
+                        <h6 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h6><p>基于深度学习的开源文生图模型</p>
+                            
+                                <a class="article-more-a" href="/StableDiffution%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/#more">
+                                    more >></a>
+                                
+                                    
 
 
                                                 
@@ -428,51 +397,13 @@ var _hmt = _hmt || [];
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                                        <p>NestJS是基于NodeJS的服务端框架。</p>
+                        <p>NestJS是基于NodeJS的服务端框架。</p>
 <p><a href="https://nest.nodejs.cn/" target="_blank" rel="noopener">NestJS中文官网</a></p>
-<h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><p>nodejs环境 官网要求版本 &gt;= 20 ，全局安装NestJS CLI</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g @nestjs/cli</span><br></pre></td></tr></table></figure>
-
-<p>安装完成后，我们可以通过命令检测安装是否成功</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nest -h</span><br></pre></td></tr></table></figure>
-
-<p>如果出现以下内容，则为安装成功</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Usage: <span class="title">nest</span> &lt;<span class="title">command</span>&gt; [<span class="title">options</span>]</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">Options</span>:</span></span><br><span class="line"><span class="function">  -<span class="title">v</span>, --<span class="title">version</span>                                   <span class="title">Output</span> <span class="title">the</span> <span class="title">current</span> <span class="title">version</span>.</span></span><br><span class="line"><span class="function">  -<span class="title">h</span>, --<span class="title">help</span>                                      <span class="title">Output</span> <span class="title">usage</span> <span class="title">information</span>.</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">Commands</span>:</span></span><br><span class="line"><span class="function">  <span class="title">new</span>|<span class="title">n</span> [<span class="title">options</span>] [<span class="title">name</span>]                          <span class="title">Generate</span> <span class="title">Nest</span> <span class="title">application</span>.</span></span><br><span class="line"><span class="function">  <span class="title">build</span> [<span class="title">options</span>] [<span class="title">app</span>]                           <span class="title">Build</span> <span class="title">Nest</span> <span class="title">application</span>.</span></span><br><span class="line"><span class="function">  <span class="title">start</span> [<span class="title">options</span>] [<span class="title">app</span>]                           <span class="title">Run</span> <span class="title">Nest</span> <span class="title">application</span>.</span></span><br><span class="line"><span class="function">  <span class="title">generate</span>|<span class="title">g</span> [<span class="title">options</span>] &lt;<span class="title">schematic</span>&gt; [<span class="title">name</span>] [<span class="title">path</span>]  <span class="title">Generate</span> <span class="title">a</span> <span class="title">Nest</span> <span class="title">element</span>.</span></span><br><span class="line"><span class="function">    <span class="title">Available</span> <span class="title">schematics</span>:</span></span><br><span class="line"><span class="function">      ┌───────────────┬─────────────┐</span></span><br><span class="line"><span class="function">      │ <span class="title">name</span>          │ <span class="title">alias</span>       │</span></span><br><span class="line"><span class="function">      │ <span class="title">application</span>   │ <span class="title">application</span> │</span></span><br><span class="line"><span class="function">      │ <span class="title">angular</span>-<span class="title">app</span>   │ <span class="title">ng</span>-<span class="title">app</span>      │</span></span><br><span class="line"><span class="function">      │ <span class="title">class</span>         │ <span class="title">cl</span>          │</span></span><br><span class="line"><span class="function">      │ <span class="title">configuration</span> │ <span class="title">config</span>      │</span></span><br><span class="line"><span class="function">      │ <span class="title">controller</span>    │ <span class="title">co</span>          │</span></span><br><span class="line"><span class="function">      │ <span class="title">decorator</span>     │ <span class="title">d</span>           │</span></span><br><span class="line"><span class="function">      │ <span class="title">filter</span>        │ <span class="title">f</span>           │</span></span><br><span class="line"><span class="function">      │ <span class="title">gateway</span>       │ <span class="title">ga</span>          │</span></span><br><span class="line"><span class="function">      │ <span class="title">guard</span>         │ <span class="title">gu</span>          │</span></span><br><span class="line"><span class="function">      │ <span class="title">interceptor</span>   │ <span class="title">in</span>          │</span></span><br><span class="line"><span class="function">      │ <span class="title">interface</span>     │ <span class="title">interface</span>   │</span></span><br><span class="line"><span class="function">      │ <span class="title">middleware</span>    │ <span class="title">mi</span>          │</span></span><br><span class="line"><span class="function">      │ <span class="title">module</span>        │ <span class="title">mo</span>          │</span></span><br><span class="line"><span class="function">      │ <span class="title">pipe</span>          │ <span class="title">pi</span>          │</span></span><br><span class="line"><span class="function">      │ <span class="title">provider</span>      │ <span class="title">pr</span>          │</span></span><br><span class="line"><span class="function">      │ <span class="title">resolver</span>      │ <span class="title">r</span>           │</span></span><br><span class="line"><span class="function">      │ <span class="title">service</span>       │ <span class="title">s</span>           │</span></span><br><span class="line"><span class="function">      │ <span class="title">library</span>       │ <span class="title">lib</span>         │</span></span><br><span class="line"><span class="function">      │ <span class="title">sub</span>-<span class="title">app</span>       │ <span class="title">app</span>         │</span></span><br><span class="line"><span class="function">      └───────────────┴─────────────┘</span></span><br><span class="line"><span class="function">  <span class="title">info</span>|<span class="title">i</span>                                          <span class="title">Display</span> <span class="title">Nest</span> <span class="title">project</span> <span class="title">details</span>.</span></span><br><span class="line"><span class="function">  <span class="title">update</span>|<span class="title">u</span> [<span class="title">options</span>]                              <span class="title">Update</span> <span class="title">Nest</span> <span class="title">dependencies</span>.</span></span><br><span class="line"><span class="function">  <span class="title">add</span> [<span class="title">options</span>] &lt;<span class="title">library</span>&gt;                         <span class="title">Adds</span> <span class="title">support</span> <span class="title">for</span> <span class="title">an</span> <span class="title">external</span> <span class="title">library</span> <span class="title">to</span> <span class="title">your</span> <span class="title">project</span>.</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h4><p>命令行切换至你想要创建项目的目录下，执行</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nest new my-nest-project</span><br><span class="line"><span class="built_in">cd</span> my-nest-project</span><br><span class="line">npm i          </span><br><span class="line">npm run <span class="built_in">start</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="项目主要结构"><a href="#项目主要结构" class="headerlink" title="项目主要结构"></a>项目主要结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">src&#x2F;</span><br><span class="line">├── app.controller.spec.ts    # 控制器测试文件</span><br><span class="line">├── app.controller.ts         # 基础控制器</span><br><span class="line">├── app.module.ts            # 根模块</span><br><span class="line">├── app.service.ts           # 基础服务</span><br><span class="line">└── main.ts                  # 应用入口文件</span><br></pre></td></tr></table></figure>
-
-<h4 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h4><h6 id="1-控制器Controllors"><a href="#1-控制器Controllors" class="headerlink" title="1.控制器Controllors"></a>1.控制器Controllors</h6><p>控制器负责处理传来的请求和向客户端返回响应</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/app.controller.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Controller, Get, Post, Body &#125; <span class="keyword">from</span> <span class="string">'@nestjs/common'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppService &#125; <span class="keyword">from</span> <span class="string">'./app.service'</span>;</span><br><span class="line"></span><br><span class="line">@Controller(<span class="string">'api'</span>)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppController</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(private readonly appService: AppService) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  @Get(<span class="string">'hello'</span>)</span><br><span class="line">  getHello(): string &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.appService.getHello();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Post(<span class="string">'message'</span>)</span><br><span class="line">  createMessage(@Body() message: &#123; <span class="attr">content</span>: string &#125;) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.appService.createMessage(message);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="2-提供者Providers"><a href="#2-提供者Providers" class="headerlink" title="2.提供者Providers"></a>2.提供者Providers</h6><p>提供者是 NestJS 中的基础概念，多数情况下用于封装业务逻辑</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/app.service.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">'@nestjs/common'</span>;</span><br><span class="line"></span><br><span class="line">@Injectable()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppService</span> </span>&#123;</span><br><span class="line">  private messages: string[] = [];</span><br><span class="line"></span><br><span class="line">  getHello(): string &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello World!'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  createMessage(message: &#123; <span class="attr">content</span>: string &#125;): string &#123;</span><br><span class="line">    <span class="keyword">this</span>.messages.push(message.content);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`Message created: <span class="subst">$&#123;message.content&#125;</span>`</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getAllMessages(): string[] &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.messages;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="3-模块Modules"><a href="#3-模块Modules" class="headerlink" title="3.模块Modules"></a>3.模块Modules</h6><p>模块是用来组织应用程序结构的基本单位</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/app.module.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Module &#125; <span class="keyword">from</span> <span class="string">'@nestjs/common'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppController &#125; <span class="keyword">from</span> <span class="string">'./app.controller'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppService &#125; <span class="keyword">from</span> <span class="string">'./app.service'</span>;</span><br><span class="line"></span><br><span class="line">@Module(&#123;</span><br><span class="line">  imports: [],</span><br><span class="line">  controllers: [AppController],</span><br><span class="line">  providers: [AppService],</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="4-中间件Middleware"><a href="#4-中间件Middleware" class="headerlink" title="4.中间件Middleware"></a>4.中间件Middleware</h6><p>中间件是在路由处理程序之前调用的函数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/common/middleware/logger.middleware.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Injectable, NestMiddleware &#125; <span class="keyword">from</span> <span class="string">'@nestjs/common'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Request, Response, NextFunction &#125; <span class="keyword">from</span> <span class="string">'express'</span>;</span><br><span class="line"></span><br><span class="line">@Injectable()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">LoggerMiddleware</span> <span class="title">implements</span> <span class="title">NestMiddleware</span> </span>&#123;</span><br><span class="line">  use(req: Request, <span class="attr">res</span>: Response, <span class="attr">next</span>: NextFunction) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`Request... Method: <span class="subst">$&#123;req.method&#125;</span>, Path: <span class="subst">$&#123;req.path&#125;</span>`</span>);</span><br><span class="line">    next();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在模块中应用中间件</span></span><br><span class="line"><span class="comment">// src/app.module.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Module, NestModule, MiddlewareConsumer &#125; <span class="keyword">from</span> <span class="string">'@nestjs/common'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; LoggerMiddleware &#125; <span class="keyword">from</span> <span class="string">'./common/middleware/logger.middleware'</span>;</span><br><span class="line"></span><br><span class="line">@Module(&#123;</span><br><span class="line">  <span class="comment">// ... 其他配置</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> <span class="title">implements</span> <span class="title">NestModule</span> </span>&#123;</span><br><span class="line">  configure(consumer: MiddlewareConsumer) &#123;</span><br><span class="line">    consumer</span><br><span class="line">      .apply(LoggerMiddleware)</span><br><span class="line">      .forRoutes(<span class="string">'*'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="5-管道Pipes"><a href="#5-管道Pipes" class="headerlink" title="5.管道Pipes"></a>5.管道Pipes</h6><p>管道用于数据转换和验证</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/common/pipes/validation.pipe.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; PipeTransform, Injectable, ArgumentMetadata, BadRequestException &#125; <span class="keyword">from</span> <span class="string">'@nestjs/common'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; validate &#125; <span class="keyword">from</span> <span class="string">'class-validator'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; plainToClass &#125; <span class="keyword">from</span> <span class="string">'class-transformer'</span>;</span><br><span class="line"></span><br><span class="line">@Injectable()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">ValidationPipe</span> <span class="title">implements</span> <span class="title">PipeTransform</span>&lt;<span class="title">any</span>&gt; </span>&#123;</span><br><span class="line">  <span class="keyword">async</span> transform(value: any, &#123; metatype &#125;: ArgumentMetadata) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!metatype || !<span class="keyword">this</span>.toValidate(metatype)) &#123;</span><br><span class="line">      <span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> object = plainToClass(metatype, value);</span><br><span class="line">    <span class="keyword">const</span> errors = <span class="keyword">await</span> validate(object);</span><br><span class="line">    <span class="keyword">if</span> (errors.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> BadRequestException(<span class="string">'Validation failed'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  private toValidate(metatype: <span class="built_in">Function</span>): boolean &#123;</span><br><span class="line">    <span class="keyword">const</span> types: <span class="built_in">Function</span>[] = [<span class="built_in">String</span>, <span class="built_in">Boolean</span>, <span class="built_in">Number</span>, <span class="built_in">Array</span>, <span class="built_in">Object</span>];</span><br><span class="line">    <span class="keyword">return</span> !types.includes(metatype);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="6-异常过滤器Exception-Filters"><a href="#6-异常过滤器Exception-Filters" class="headerlink" title="6.异常过滤器Exception Filters"></a>6.异常过滤器Exception Filters</h6><p>用于处理应用程序中的异常</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/common/filters/http-exception.filter.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; ExceptionFilter, Catch, ArgumentsHost, HttpException &#125; <span class="keyword">from</span> <span class="string">'@nestjs/common'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Request, Response &#125; <span class="keyword">from</span> <span class="string">'express'</span>;</span><br><span class="line"></span><br><span class="line">@Catch(HttpException)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpExceptionFilter</span> <span class="title">implements</span> <span class="title">ExceptionFilter</span> </span>&#123;</span><br><span class="line">  <span class="keyword">catch</span>(exception: HttpException, <span class="attr">host</span>: ArgumentsHost) &#123;</span><br><span class="line">    <span class="keyword">const</span> ctx = host.switchToHttp();</span><br><span class="line">    <span class="keyword">const</span> response = ctx.getResponse&lt;Response&gt;();</span><br><span class="line">    <span class="keyword">const</span> request = ctx.getRequest&lt;Request&gt;();</span><br><span class="line">    <span class="keyword">const</span> status = exception.getStatus();</span><br><span class="line"></span><br><span class="line">    response</span><br><span class="line">      .status(status)</span><br><span class="line">      .json(&#123;</span><br><span class="line">        statusCode: status,</span><br><span class="line">        timestamp: <span class="keyword">new</span> <span class="built_in">Date</span>().toISOString(),</span><br><span class="line">        path: request.url,</span><br><span class="line">        message: exception.message,</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="7-守卫Guards"><a href="#7-守卫Guards" class="headerlink" title="7.守卫Guards"></a>7.守卫Guards</h6><p>守卫用于处理授权逻辑</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/common/guards/auth.guard.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Injectable, CanActivate, ExecutionContext &#125; <span class="keyword">from</span> <span class="string">'@nestjs/common'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Observable &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"></span><br><span class="line">@Injectable()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AuthGuard</span> <span class="title">implements</span> <span class="title">CanActivate</span> </span>&#123;</span><br><span class="line">  canActivate(</span><br><span class="line">    context: ExecutionContext,</span><br><span class="line">  ): boolean | <span class="built_in">Promise</span>&lt;boolean&gt; | Observable&lt;boolean&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> request = context.switchToHttp().getRequest();</span><br><span class="line">    <span class="comment">// 在这里实现你的授权逻辑</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// 或 false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>本文作者：Ray<br>本文链接：<a href="http://dxh98.cn/3D%E8%BD%AC%E6%8D%A2%E5%92%8C%E5%85%B3%E9%94%AE%E5%B8%A7%E5%8A%A8%E7%94%BB/">NestJS入门</a><br>如有错误，请及时评论或者 B 站私信哦~</p>
-<hr>
-<p><strong>最后更新于:2024/01/28</strong></p>
-
-                                            
+                            
+                                <a class="article-more-a" href="/NestJS%E5%85%A5%E9%97%A8/#more">
+                                    more >></a>
+                                
+                                    
 
 
                                                 
@@ -742,11 +673,11 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图片压缩</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图片压缩</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
         		</li>
       		
 		</ul>
@@ -828,7 +759,7 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目配置</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -836,7 +767,7 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目配置</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
         		</li>
       		
 		</ul>
@@ -7323,39 +7254,23 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NestJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ollama</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">DeepSeek-R1</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">本地部署deepseek</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SQL Server</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">StableDiffution</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AIGC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">注意点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -7391,15 +7306,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">项目开发</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">注意点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color2">typora</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -7411,11 +7322,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">typora</a>
+                <a href="javascript:void(0)" class="js-tag color5">项目配置</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -7439,11 +7346,23 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vuex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片压缩</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -7456,14 +7375,6 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">宽高自适应</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -7507,10 +7418,6 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片压缩</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">表格高级</a>
               </li>
              
@@ -7527,7 +7434,31 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">项目配置</a>
+                <a href="javascript:void(0)" class="js-tag color2">NestJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ollama</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">DeepSeek-R1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">本地部署deepseek</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">StableDiffution</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AIGC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
               </li>
             
             <div class="clearfix"></div>
