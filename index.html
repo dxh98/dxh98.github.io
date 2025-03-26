@@ -225,12 +225,38 @@ var _hmt = _hmt || [];
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                        <p>官网地址：<a href="https://ollama.com" target="_blank" rel="noopener">Ollama官网</a></p>
-                            
-                                <a class="article-more-a" href="/Ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2DeepSeek-R1%E6%A8%A1%E5%9E%8B/#more">
-                                    more >></a>
-                                
-                                    
+                                        <a id="more"></a>
+
+<p>官网地址：<a href="https://ollama.com" target="_blank" rel="noopener">Ollama官网</a></p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>官网首页点击download即可选择对应平台的Ollama进行安装，下载慢的话可选择尝试挂上科学上网</p>
+<p>Ollama默认是安装到C盘的用户默认安装目录下的，如果想要移动到其他的盘下，请参考此文章</p>
+<p><a href="https://blog.llyth.cn/1555.html" target="_blank" rel="noopener">将Ollama安装到其它磁盘</a></p>
+<p>需要先移动文件夹，再执行命令，会在原位置创建一个类似快捷方式的快捷访问，但是实际存储位置已经改为修改后的盘符位置，需要修改对应的文件夹名字为命令对应的文件夹名</p>
+<h4 id="下载模型"><a href="#下载模型" class="headerlink" title="下载模型"></a>下载模型</h4><p>Ollama官网左上方导航栏点击modules即可跳转到模型列表页，点击对应模型进入详情页，如需要下载DeepSeek-R1的模型，根据自己的电脑配置选择相应大小的模型，如我的电脑配置为 内存为D5 7600 32G*2 ，显卡为7900xt，显卡显存大小为20G，是足够运行32b蒸馏模型的</p>
+<p>cmd运行如下命令即可开始下载模型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ollama run deepseek-r1:32b</span><br></pre></td></tr></table></figure>
+
+<p>下载完成后即开始加载模型，可以开始对话</p>
+<p>如果报错未成功加载模型，则需要检查配置，出现报错的可能性很多，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: llama runner process has terminated: error loading model: unable to allocate CUDA0 buffer</span><br></pre></td></tr></table></figure>
+
+<p>如配置不足够运行该模型，完全爆显存，或者显卡的驱动未更新，我目前经历过的就是显卡驱动未及时更新，运行14b能成功，运行32b无法成功加载，更新显卡驱动到最新版之后，32b模型能成功运行，第一次尝试可先选择1.5b模型运行</p>
+<h4 id="模型配置需求"><a href="#模型配置需求" class="headerlink" title="模型配置需求"></a>模型配置需求</h4><p><strong>如果是windows系统</strong></p>
+<p>一般 内存大小为16G，显卡显存大小为8G，可成功加载最大8B的蒸馏模型</p>
+<p>内存大小为16G，显卡显存大小为10G或者12G，可成功加载14B蒸馏模型</p>
+<p>内存大小为20G+，显卡显存大小至少20G，可成功加载32B蒸馏模型</p>
+<p><strong>如果是mac系统</strong></p>
+<p>可参考如图</p>
+<p><img src="http://i0.hdslb.com/bfs/new_dyn/d428446ed5fc858db8ba8bc3987358f526097712.jpg" alt="mac系统需要配置参考图"></p>
+<h4 id="Ollama相关命令"><a href="#Ollama相关命令" class="headerlink" title="Ollama相关命令"></a>Ollama相关命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ollama list		&#x2F;&#x2F; 查看加载过的模型列表</span><br><span class="line">ollama ps		&#x2F;&#x2F; 查看上一次加载模型的资源占用情况</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.cnblogs.com/hujunwei/p/18658780" target="_blank" rel="noopener">Ollama常用命令</a></p>
+<hr>
+<p>本文作者：Ray<br>本文链接：<a href="http://dxh98.cn/3D%E8%BD%AC%E6%8D%A2%E5%92%8C%E5%85%B3%E9%94%AE%E5%B8%A7%E5%8A%A8%E7%94%BB/">Ollama本地部署DeepSeek-R1模型</a><br>如有错误，请及时评论或者 B 站私信哦~</p>
+<hr>
+<p><strong>最后更新于:2024/12/16</strong></p>
+
+                                            
 
 
                                                 
@@ -311,7 +337,7 @@ var _hmt = _hmt || [];
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                        <h6 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h6><p>基于深度学习的开源文生图模型</p>
+                        <p>StableDiffution基于深度学习的开源文生图模型</p>
                             
                                 <a class="article-more-a" href="/StableDiffution%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/#more">
                                     more >></a>
@@ -398,7 +424,6 @@ var _hmt = _hmt || [];
                 <div class="article-entry" itemprop="articleBody">
                     
                         <p>NestJS是基于NodeJS的服务端框架。</p>
-<p><a href="https://nest.nodejs.cn/" target="_blank" rel="noopener">NestJS中文官网</a></p>
                             
                                 <a class="article-more-a" href="/NestJS%E5%85%A5%E9%97%A8/#more">
                                     more >></a>
@@ -7254,7 +7279,23 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NestJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SQL Server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ollama</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">DeepSeek-R1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">本地部署deepseek</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -7271,6 +7312,18 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">StableDiffution</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AIGC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -7431,34 +7484,6 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">面向对象</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NestJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ollama</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">DeepSeek-R1</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">本地部署deepseek</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">StableDiffution</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AIGC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
               </li>
             
             <div class="clearfix"></div>

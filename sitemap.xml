@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://dxh98.cn/Ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2DeepSeek-R1%E6%A8%A1%E5%9E%8B/</loc>
-    
-    <lastmod>2025-03-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://dxh98.cn/NestJS%E5%85%A5%E9%97%A8/</loc>
     
     <lastmod>2025-03-26</lastmod>
@@ -21,6 +12,15 @@
   
   <url>
     <loc>http://dxh98.cn/StableDiffution%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</loc>
+    
+    <lastmod>2025-03-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://dxh98.cn/Ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2DeepSeek-R1%E6%A8%A1%E5%9E%8B/</loc>
     
     <lastmod>2025-03-26</lastmod>
     
@@ -632,7 +632,35 @@
   </url>
   
   <url>
+    <loc>http://dxh98.cn/tags/NestJS/</loc>
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://dxh98.cn/tags/SQL-Server/</loc>
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://dxh98.cn/tags/Ollama/</loc>
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://dxh98.cn/tags/DeepSeek-R1/</loc>
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://dxh98.cn/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2deepseek/</loc>
     <lastmod>2025-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -661,6 +689,27 @@
   
   <url>
     <loc>http://dxh98.cn/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://dxh98.cn/tags/StableDiffution/</loc>
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://dxh98.cn/tags/AIGC/</loc>
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://dxh98.cn/tags/AI%E7%BB%98%E7%94%BB/</loc>
     <lastmod>2025-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -941,55 +990,6 @@
   
   <url>
     <loc>http://dxh98.cn/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
-    <lastmod>2025-03-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://dxh98.cn/tags/NestJS/</loc>
-    <lastmod>2025-03-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://dxh98.cn/tags/Ollama/</loc>
-    <lastmod>2025-03-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://dxh98.cn/tags/DeepSeek-R1/</loc>
-    <lastmod>2025-03-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://dxh98.cn/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2deepseek/</loc>
-    <lastmod>2025-03-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://dxh98.cn/tags/StableDiffution/</loc>
-    <lastmod>2025-03-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://dxh98.cn/tags/AIGC/</loc>
-    <lastmod>2025-03-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://dxh98.cn/tags/AI%E7%BB%98%E7%94%BB/</loc>
     <lastmod>2025-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
